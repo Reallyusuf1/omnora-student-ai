@@ -1,103 +1,678 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omnora Student AI</title>
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    
-    <!-- CSS file -->
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omnora Student AI</title>
+  <style>
+    /* ===== MODERN COLOUR PALETTE ===== */
+    :root {
+      --primary: #1a1a4e;
+      --primary-light: #2d2b6b;
+      --secondary: #6c63ff;
+      --accent: #00c9a7;
+      --bg: #f0f2f8;
+      --card-bg: #ffffff;
+      --text-dark: #1a1a2e;
+      --text-muted: #4a4a6a;
+      --shadow: 0 8px 30px rgba(26, 26, 78, 0.12);
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    /* ===== HEADER / HERO ===== */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(145deg, var(--primary), var(--primary-light));
+      border-radius: var(--radius);
+      color: white;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(108, 99, 255, 0.15), transparent);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ai-brain {
+      font-size: 72px;
+      display: inline-block;
+      filter: drop-shadow(0 0 30px rgba(108, 99, 255, 0.5));
+      animation: pulse 2.5s ease-in-out infinite;
+      margin-bottom: 10px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: white;
+      box-shadow: 0 4px 20px rgba(108, 99, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(108, 99, 255, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* ===== FEATURES GRID ===== */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      padding: 30px 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(26, 26, 78, 0.18);
+      border-color: var(--secondary);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .feature-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--secondary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .feature-link:hover {
+      color: var(--primary);
+    }
+
+    /* ===== ASK AI SECTION ===== */
+    .ask-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 35px 30px;
+      box-shadow: var(--shadow);
+      margin: 40px 0;
+    }
+
+    .ask-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .ask-header .ai-brain-small {
+      font-size: 36px;
+    }
+
+    .ask-header h2 {
+      font-size: 1.6rem;
+      color: var(--primary);
+    }
+
+    .ask-input-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ask-input-group input {
+      flex: 1;
+      padding: 16px 20px;
+      border: 2px solid #e0e0e8;
+      border-radius: 50px;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.3s;
+      min-width: 200px;
+    }
+
+    .ask-input-group input:focus {
+      border-color: var(--secondary);
+    }
+
+    .ask-input-group button {
+      padding: 16px 36px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+      color: white;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(108, 99, 255, 0.3);
+    }
+
+    .ask-input-group button:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 30px rgba(108, 99, 255, 0.45);
+    }
+
+    .ai-response-box {
+      margin-top: 20px;
+      padding: 20px 24px;
+      background: #f8f9ff;
+      border-radius: var(--radius);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .ai-response-box strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .ai-response-box p {
+      color: var(--text-muted);
+    }
+
+    .quick-chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .chip {
+      background: #f0f2ff;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      color: var(--primary);
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .chip:hover {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      margin: 40px 0;
+    }
+
+    .testimonials h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 30px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--secondary);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .testimonial-card .name {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .testimonial-card .location {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-section {
+      margin: 40px 0;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 35px 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 25px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eee;
+      padding: 18px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h4 {
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .faq-item p {
+      color: var(--text-muted);
+    }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      padding: 50px 30px;
+      border-radius: var(--radius);
+      text-align: center;
+      color: white;
+      margin: 40px 0;
+    }
+
+    .newsletter h2 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .newsletter p {
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-form input {
+      padding: 14px 24px;
+      border-radius: 50px;
+      border: none;
+      width: 300px;
+      max-width: 100%;
+      font-size: 1rem;
+    }
+
+    .newsletter-form button {
+      padding: 14px 36px;
+      border-radius: 50px;
+      background: var(--accent);
+      color: var(--primary);
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .newsletter-form button:hover {
+      transform: scale(1.04);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.8);
+      padding: 40px 20px 20px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid h4 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .footer-grid a {
+      display: block;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      margin-bottom: 6px;
+      transition: color 0.2s;
+    }
+
+    .footer-grid a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .stats { gap: 25px; }
+      .features { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 40px 16px; }
+      .hero h1 { font-size: 1.6rem; }
+      .btn { padding: 12px 24px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <!-- ===== NAVBAR ===== -->
-        <nav class="navbar">
-            <div class="logo">
-                <h2>Omnora Labs</h2>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-
-        <!-- ===== HERO ===== -->
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Omnora Student AI</h1>
-                <p>Your intelligent study companion to learn faster, understand deeper, and achieve more.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Start Learning</button>
-                    <button class="btn-secondary">Learn More</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FEATURES ===== -->
-        <section class="features">
-            <div class="card">
-                <h3>Ask Questions</h3>
-                <p>Get instant answers to academic questions.</p>
-                <a href="#" class="card-link">Ask now →</a>
-            </div>
-            <div class="card">
-                <h3>Generate Study Plans</h3>
-                <p>Personalized study plans for students.</p>
-                <a href="#" class="card-link">Create plan →</a>
-            </div>
-            <div class="card">
-                <h3>Practice Quizzes</h3>
-                <p>Improve your learning with quizzes.</p>
-                <a href="#" class="card-link">Start quiz →</a>
-            </div>
-        </section>
-
-        <!-- ===== ASK OMNORA AI ===== -->
-        <section class="ask-section">
-            <h2 class="ask-title">Ask Omnora AI</h2>
-            <div class="ask-row">
-                <input type="text" class="ask-input" id="questionInput" placeholder="Type your question here..." />
-                <button class="btn-ask" id="askButton">Ask AI</button>
-            </div>
-            <div class="response-box" id="responseBox">
-                <div class="resp-label">AI Response</div>
-                <div class="resp-text" id="responseText">
-                    Omnora Student AI is still under development.
-                    <span class="dev-badge">Real AI responses will be added soon.</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FOOTER ===== -->
-        <footer class="footer">
-            <div class="footer-brand">
-                <span class="brand">Omnora Labs</span>
-                <p>Building the future of education in Africa through artificial intelligence.</p>
-            </div>
-            <div class="footer-links">
-                <span class="link-label">Quick Links</span>
-                <a href="#">Home</a>
-                <a href="#">Features</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </div>
-        </footer>
-
-        <div class="copyright">
-            © 2025 Omnora Labs. All rights reserved.
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="ai-brain">🧠</div>
+      <h1>Omnora <span>Student AI</span></h1>
+      <p>Your intelligent study companion to learn faster, understand deeper, and achieve more.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">Start Learning</a>
+        <a href="#" class="btn btn-outline">Learn More</a>
+      </div>
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-number">10K+</div>
+          <div class="stat-label">Students</div>
         </div>
-
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Quizzes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4.9</div>
+          <div class="stat-label">⭐ Rating</div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- ===== JAVASCRIPT file ===== -->
-    <script src="script.js"></script>
+  <!-- ===== FEATURES ===== -->
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">❓</div>
+      <h3>Ask Questions</h3>
+      <p>Get instant answers to any academic question.</p>
+      <a href="#" class="feature-link">Ask now →</a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📋</div>
+      <h3>Generate Study Plans</h3>
+      <p>Personalized study plans tailored to your goals.</p>
+      <a href="#" class="feature-link">Create plan →</a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧪</div>
+      <h3>Practice Quizzes</h3>
+      <p>Test your knowledge with AI-powered quizzes.</p>
+      <a href="#" class="feature-link">Start quiz →</a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🃏</div>
+      <h3>Smart Flashcards</h3>
+      <p>Turn your notes into interactive flashcards.</p>
+      <a href="#" class="feature-link">Try now →</a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Progress Tracker</h3>
+      <p>See your learning growth in real-time.</p>
+      <a href="#" class="feature-link">View →</a>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👥</div>
+      <h3>Study Groups</h3>
+      <p>Collaborate and learn with peers.</p>
+      <a href="#" class="feature-link">Join →</a>
+    </div>
+  </section>
+
+  <!-- ===== ASK AI ===== -->
+  <section class="ask-section">
+    <div class="ask-header">
+      <span class="ai-brain-small">🧠</span>
+      <h2>Ask Omnora AI</h2>
+    </div>
+    <div class="ask-input-group">
+      <input type="text" placeholder="Type your question here..." />
+      <button>Ask AI</button>
+    </div>
+    <div class="ai-response-box">
+      <strong>AI Response</strong>
+      <p>Omnora Student AI is still under development.<br />Real AI responses will be added soon.</p>
+      <div class="quick-chips">
+        <span class="chip">📘 Explain algebra</span>
+        <span class="chip">🧪 Chemistry help</span>
+        <span class="chip">📝 Essay outline</span>
+        <span class="chip">🌍 History summary</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials">
+    <h2>What Students Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>“Omnora AI helped me understand complex topics in minutes. The quizzes are a game-changer!”</p>
+        <div class="name">— Ada Okonkwo</div>
+        <div class="location">Lagos, Nigeria</div>
+      </div>
+      <div class="testimonial-card">
+        <p>“I love the study plans. They keep me on track and I've improved my grades significantly.”</p>
+        <div class="name">— Kofi Mensah</div>
+        <div class="location">Accra, Ghana</div>
+      </div>
+      <div class="testimonial-card">
+        <p>“The AI brain is like having a personal tutor 24/7. Absolutely brilliant for African students.”</p>
+        <div class="name">— Zara Hassan</div>
+        <div class="location">Nairobi, Kenya</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h4>What is Omnora Student AI?</h4>
+      <p>It's an AI-powered study companion designed to help African students learn faster and smarter.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is it free to use?</h4>
+      <p>Yes! Omnora Student AI is completely free for all students during the beta phase.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Which subjects does it support?</h4>
+      <p>We cover STEM, humanities, languages, and more – with new subjects added regularly.</p>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="newsletter">
+    <h2>🚀 Stay in the Loop</h2>
+    <p>Get updates on new features, study tips, and more.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email" />
+      <button>Subscribe</button>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>🧠 Omnora Labs</h4>
+        <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Building the future of education in Africa through artificial intelligence.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Omnora Labs. All rights reserved.
+    </div>
+  </footer>
+
+</div>
 
 </body>
 </html>
