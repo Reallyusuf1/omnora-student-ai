@@ -1,140 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omnora Student AI</title>
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omnora Student AI</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">
-      <h2>OMNORA LABS</h2>
+    <div class="container">
+
+        <!-- ===== NAVBAR ===== -->
+        <nav class="navbar">
+            <div class="logo">
+                <h2>OMNORA LABS</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <span class="nav-tag">AI-POWERED LEARNING</span>
+        </nav>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero">
+            <div class="hero-text">
+                <span class="hero-tag">✦ Omnora Student AI</span>
+                <h1>Omnora Student AI</h1>
+                <p>Your intelligent study companion to learn faster, understand deeper, and achieve more.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Start Learning</button>
+                    <button class="btn-secondary">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="brain-circle">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4616/4616734.png" alt="AI Brain" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURES ===== -->
+        <section class="features">
+            <div class="card">
+                <h3>Ask Questions</h3>
+                <p>Get instant answers to academic questions.</p>
+                <a href="#" class="card-link">Ask now →</a>
+            </div>
+            <div class="card">
+                <h3>Generate Study Plans</h3>
+                <p>Personalized study plans for students.</p>
+                <a href="#" class="card-link">Create plan →</a>
+            </div>
+            <div class="card">
+                <h3>Practice Quizzes</h3>
+                <p>Improve your learning with quizzes.</p>
+                <a href="#" class="card-link">Start quiz →</a>
+            </div>
+        </section>
+
+        <!-- ===== ASK OMNORA AI ===== -->
+        <section class="ask-section">
+            <div class="ask-row">
+                <label for="questionInput">Ask Omnora AI</label>
+                <input type="text" class="ask-input" id="questionInput" placeholder="Type your question here..." />
+                <button class="btn-ask" id="askButton">Ask AI</button>
+            </div>
+            <div class="response-box" id="responseBox">
+                <div class="resp-label">AI Response</div>
+                <div class="resp-text" id="responseText">
+                    Omnora Student AI is still under development.
+                    <span class="dev-badge">Real AI responses will be added soon.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-brand">
+                <span class="brand">OMNORA LABS</span>
+                <p>Building the future of education in Africa through artificial intelligence.</p>
+            </div>
+            <div class="footer-links">
+                <span class="link-label">Quick Links</span>
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </footer>
+
+        <div class="copyright">
+            © 2025 Omnora Labs. All rights reserved.
+        </div>
+
     </div>
 
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-
-    <button class="nav-btn">
-      Omnora Student AI
-    </button>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-
-    <div class="hero-text">
-
-      <span class="badge">
-        AI-POWERED LEARNING
-      </span>
-
-      <h1>
-        Omnora
-        <span>Student AI</span>
-      </h1>
-
-      <p>
-        Your intelligent study companion to learn
-        faster, understand deeper, and achieve more.
-      </p>
-
-      <div class="hero-buttons">
-        <button class="primary-btn">
-          Start Learning
-        </button>
-
-        <button class="secondary-btn">
-          Learn More
-        </button>
-      </div>
-
-    </div>
-
-    <div class="hero-image">
-  <div class="brain-circle">
-    <img src="https://cdn-icons-png.flaticon.com/512/4616/4616734.png" alt="AI Brain">
-  </div>
-    </div>
-
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features">
-
-    <div class="card">
-      <h3>📚 Ask Questions</h3>
-      <p>
-        Get instant answers to academic questions.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>📅 Generate Study Plans</h3>
-      <p>
-        Personalized study plans for students.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>📊 Practice Quizzes</h3>
-      <p>
-        Improve your learning with quizzes.
-      </p>
-    </div>
-
-  </section>
-
-  <!-- AI CHAT -->
-  <section class="chat-box">
-
-    <h2>Ask Omnora AI</h2>
-
-    <textarea
-      id="userInput"
-      placeholder="Type your question here..."
-    ></textarea>
-
-    <button onclick="askAI()">
-      Ask AI
-    </button>
-
-    <div id="response">
-      AI response will appear here...
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-
-    <div>
-      <h3>OMNORA LABS</h3>
-      <p>
-        Building the future of education in Africa
-        through artificial intelligence.
-      </p>
-    </div>
-
-    <div>
-      <h4>Quick Links</h4>
-
-<p><a href="#">Home</a></p>
-<p><a href="#">Features</a></p>
-<p><a href="#">About</a></p>
-<p><a href="#">Contact</a></p>
-    </div>
-
-  </footer>
-
-  <script src="script.js"></script>
+    <!-- ===== JAVASCRIPT file ===== -->
+    <script src="script.js"></script>
 
 </body>
 </html>
