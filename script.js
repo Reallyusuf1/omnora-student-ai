@@ -2,7 +2,7 @@
 
 function askAI() {
     // Get the question from the input field
-    let question = document.getElementById("questionInput").value.trim().toLowerCase();
+    let question = document.getElementById("userQuestion").value.trim().toLowerCase();
     let response = document.getElementById("responseText");
 
     // If no question is asked
@@ -41,7 +41,7 @@ function askAI() {
     }
 
     // PHOTOSYNTHESIS
-    else if (question.includes("photosynthesis") || question.includes("photonsynthesis") || question.includes("plant") || question.includes("sunlight") || question.includes("chlorophyll")) {
+    else if (question.includes("photosynthesis") || question.includes("plant") || question.includes("sunlight") || question.includes("chlorophyll")) {
         answer = "Photosynthesis is the process by which plants, algae, and some bacteria convert sunlight, water, and carbon dioxide into glucose (food) and oxygen. This process is essential for life on Earth as it produces oxygen and serves as the foundation of the food chain.";
     }
 
@@ -111,8 +111,8 @@ function askAI() {
 
 // ===== AUTOMATIC RESPONSE ON ENTER KEY =====
 document.addEventListener("DOMContentLoaded", function() {
-    const input = document.getElementById("questionInput");
-    const askBtn = document.getElementById("askButton");
+    const input = document.getElementById("userQuestion");
+    const askBtn = document.getElementById("askBtn");
 
     if (input) {
         input.addEventListener("keypress", function(event) {
