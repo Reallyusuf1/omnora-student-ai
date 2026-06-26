@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ha">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omnora Student AI · Smart Study Companion</title>
-    <!-- Font Awesome 6 (free) -->
+    <title>Omnora Student AI</title>
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
-        /* ===== RESET & BASE ===== */
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
         * {
             margin: 0;
             padding: 0;
@@ -15,260 +19,370 @@
         }
 
         body {
-            background: #f0f6fe;
+            background: linear-gradient(145deg, #0a0e1a 0%, #141b2d 50%, #1a2540 100%);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #0b1a2e;
-            padding: 24px 20px;
-            line-height: 1.5;
+            color: #ffffff;
+            padding: 16px;
+            line-height: 1.6;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 1140px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: #ffffff;
-            border-radius: 32px;
+            background: linear-gradient(165deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 36px;
             padding: 32px 38px 28px;
-            box-shadow: 0 20px 60px rgba(0, 20, 40, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
         }
 
-        /* ===== HEADER / NAV ===== */
+        /* ============================================================
+           SCROLLBAR
+           ============================================================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #2563eb, #7c3aed);
+            border-radius: 10px;
+        }
+
+        /* ============================================================
+           HEADER / NAV
+           ============================================================ */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 16px;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .logo-icon {
-            background: #1b3b6b;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             color: #fff;
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 14px;
-            font-size: 22px;
-            font-weight: 700;
+            border-radius: 16px;
+            font-size: 24px;
+            font-weight: 800;
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
+            transition: 0.3s;
+        }
+        .logo-icon:hover {
+            transform: scale(1.05) rotate(-5deg);
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.4);
         }
 
         .logo-text {
-            font-weight: 700;
-            font-size: 22px;
-            letter-spacing: -0.4px;
-            color: #0b1a2e;
+            font-weight: 800;
+            font-size: 26px;
+            letter-spacing: -0.5px;
         }
-        .logo-text span {
-            color: #1b3b6b;
+        .logo-text .omnora {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo-text .labs {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav {
             display: flex;
-            gap: 26px;
-            font-weight: 500;
-            color: #2c3e58;
+            gap: 20px;
             flex-wrap: wrap;
             align-items: center;
         }
         .nav a {
             text-decoration: none;
-            color: inherit;
-            font-size: 15px;
-            transition: 0.2s;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 6px 4px;
+            position: relative;
+        }
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            transition: 0.3s;
         }
         .nav a:hover {
-            color: #1b3b6b;
+            color: #fff;
+        }
+        .nav a:hover::after {
+            width: 100%;
         }
         .nav .active {
-            background: #1b3b6b;
             color: #fff;
-            padding: 6px 20px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(124, 58, 237, 0.2));
+            padding: 8px 22px;
             border-radius: 40px;
+            border: 1px solid rgba(37, 99, 235, 0.2);
         }
-        .nav .active:hover {
-            color: #fff;
+        .nav .active::after {
+            display: none;
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
         .hero {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(145deg, #f0f6fe, #ffffff);
-            padding: 22px 28px;
-            border-radius: 24px;
-            border: 1px solid #e6eef9;
-            margin-bottom: 34px;
+            background: linear-gradient(145deg, rgba(37, 99, 235, 0.06), rgba(124, 58, 237, 0.03));
+            padding: 28px 32px;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            margin-bottom: 36px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.05), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
-        .hero-left h2 {
-            font-size: 13px;
-            font-weight: 600;
-            color: #1b3b6b;
-            letter-spacing: 1.8px;
-            text-transform: uppercase;
-            margin-bottom: 6px;
+        .hero-left {
+            flex: 1;
+            min-width: 260px;
+            position: relative;
+            z-index: 1;
         }
-        .hero-left h2 i {
+
+        .hero-left .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(124, 58, 237, 0.2));
+            padding: 5px 16px;
+            border-radius: 40px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #60a5fa;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            margin-bottom: 10px;
+        }
+        .hero-left .badge i {
             margin-right: 6px;
+            font-size: 12px;
         }
 
         .hero-left h1 {
-            font-size: 34px;
-            font-weight: 700;
-            color: #0b1a2e;
-            margin-bottom: 8px;
+            font-size: 40px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 6px;
+            line-height: 1.15;
         }
         .hero-left h1 i {
-            color: #1b3b6b;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-right: 8px;
+        }
+        .hero-left h1 .highlight {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-left p {
             font-size: 17px;
-            color: #2c3e58;
+            color: rgba(255, 255, 255, 0.6);
             max-width: 500px;
-            margin-bottom: 18px;
-            line-height: 1.6;
+            margin-bottom: 20px;
+            line-height: 1.7;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 14px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .btn-primary {
-            background: #1b3b6b;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             color: #fff;
-            padding: 12px 30px;
+            padding: 13px 32px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: 0.2s;
-            box-shadow: 0 4px 14px rgba(27, 59, 107, 0.25);
+            transition: 0.3s;
+            box-shadow: 0 4px 25px rgba(37, 99, 235, 0.3);
             border: none;
             cursor: pointer;
         }
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(27, 59, 107, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(37, 99, 235, 0.4);
         }
 
         .btn-outline {
             background: transparent;
-            color: #1b3b6b;
-            padding: 12px 30px;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 13px 32px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            border: 2px solid #1b3b6b;
-            transition: 0.2s;
+            border: 1.5px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
             cursor: pointer;
         }
         .btn-outline:hover {
-            background: #1b3b6b;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(37, 99, 235, 0.3);
             color: #fff;
         }
 
         .hero-stats {
             display: flex;
-            gap: 28px;
-            background: #fff;
-            padding: 10px 24px;
+            gap: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 22px;
             border-radius: 60px;
-            border: 1px solid #eaf1fa;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
         }
         .hero-stats span {
             font-weight: 700;
             font-size: 18px;
-            color: #0b1a2e;
+            color: #fff;
         }
         .hero-stats small {
             font-weight: 400;
-            color: #3d5775;
+            color: rgba(255, 255, 255, 0.4);
             font-size: 13px;
             margin-left: 4px;
         }
         .hero-stats .stars {
-            color: #f5b342;
+            color: #fbbf24;
         }
 
-        /* ===== FEATURES GRID (6 cards) ===== */
+        /* ============================================================
+           FEATURES GRID
+           ============================================================ */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-            gap: 18px;
-            margin: 34px 0 38px;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 16px;
+            margin: 36px 0 40px;
         }
 
         .feature-card {
-            background: #f8faff;
-            padding: 18px 12px 14px;
-            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 22px 16px 18px;
+            border-radius: 24px;
             text-align: center;
-            border: 1px solid #eef3f9;
-            transition: 0.25s;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: 0.3s;
+            backdrop-filter: blur(10px);
+            cursor: default;
         }
         .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(27, 59, 107, 0.06);
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(37, 99, 235, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
         }
         .feature-card i {
-            font-size: 28px;
-            color: #1b3b6b;
+            font-size: 30px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 8px;
+            display: block;
         }
         .feature-card h3 {
             font-size: 15px;
-            font-weight: 600;
-            color: #0b1a2e;
-            margin-bottom: 4px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 3px;
         }
         .feature-card p {
             font-size: 13px;
-            color: #3d5775;
+            color: rgba(255, 255, 255, 0.4);
             margin-bottom: 8px;
-            line-height: 1.4;
+            line-height: 1.5;
         }
         .feature-card a {
             font-weight: 600;
-            color: #1b3b6b;
+            color: #60a5fa;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+        .feature-card a:hover {
+            color: #a78bfa;
         }
         .feature-card a i {
             font-size: 11px;
             margin-left: 4px;
-            color: #1b3b6b;
+            -webkit-text-fill-color: #60a5fa;
+            display: inline;
         }
 
-        /* ===== AI SECTION (with brain) ===== */
+        /* ============================================================
+           AI SECTION - BIG BOX
+           ============================================================ */
         .ai-section {
-            background: #eef4fe;
-            border-radius: 24px;
-            padding: 26px 28px;
-            margin: 34px 0 30px;
-            border: 1px solid #dce8f5;
+            background: linear-gradient(145deg, rgba(37, 99, 235, 0.04), rgba(124, 58, 237, 0.02));
+            border-radius: 28px;
+            padding: 30px 32px;
+            margin: 36px 0 32px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
         }
 
         .ai-wrapper {
@@ -283,395 +397,232 @@
         }
         .ai-left h2 {
             font-size: 26px;
-            font-weight: 700;
-            color: #0b1a2e;
+            font-weight: 800;
+            color: #fff;
             margin-bottom: 4px;
         }
         .ai-left h2 i {
-            color: #1b3b6b;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-right: 8px;
         }
         .ai-left p {
-            color: #1f3a57;
-            font-size: 15px;
-            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 14px;
+            margin-bottom: 12px;
         }
         .ai-brain {
-            font-size: 42px;
-            color: #1b3b6b;
-            background: rgba(27, 59, 107, 0.07);
-            width: 72px;
-            height: 72px;
+            font-size: 44px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(124, 58, 237, 0.08));
+            width: 76px;
+            height: 76px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: 0.3s;
         }
+        .ai-brain:hover {
+            transform: scale(1.05);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+        .ai-brain i {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
         .ai-left .divider {
-            width: 60px;
-            height: 4px;
-            background: #1b3b6b;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
             border-radius: 10px;
             margin-top: 12px;
         }
 
+        /* ============================================================
+           BIG COMMAND BOX
+           ============================================================ */
         .ai-right {
-            flex: 2 1 320px;
-            background: #fff;
-            padding: 18px 20px 22px;
-            border-radius: 20px;
-            border: 1px solid #e6eef9;
+            flex: 2 1 380px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 22px 24px 26px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
         }
 
         .question-row {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
             margin-bottom: 16px;
         }
         .question-row input {
-            flex: 2 1 200px;
-            padding: 12px 18px;
-            border: 1.5px solid #d6e0ec;
+            flex: 2 1 220px;
+            padding: 14px 20px;
+            border: 1.5px solid rgba(255, 255, 255, 0.06);
             border-radius: 60px;
             font-size: 15px;
-            background: #fafcff;
-            color: #0b1a2e;
+            background: rgba(255, 255, 255, 0.03);
+            color: #fff;
             outline: none;
-            transition: 0.2s;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+        .question-row input::placeholder {
+            color: rgba(255, 255, 255, 0.25);
         }
         .question-row input:focus {
-            border-color: #1b3b6b;
-            box-shadow: 0 0 0 3px rgba(27, 59, 107, 0.08);
+            border-color: rgba(37, 99, 235, 0.4);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.06);
+            background: rgba(255, 255, 255, 0.05);
         }
         .question-row button {
-            background: #1b3b6b;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
             color: #fff;
             border: none;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 60px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 15px;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.3s;
             display: flex;
             align-items: center;
             gap: 8px;
+            box-shadow: 0 4px 25px rgba(37, 99, 235, 0.25);
+            font-family: inherit;
         }
         .question-row button:hover {
-            background: #12315a;
-            transform: scale(1.02);
+            transform: scale(1.03);
+            box-shadow: 0 6px 35px rgba(37, 99, 235, 0.35);
+        }
+        .question-row button:active {
+            transform: scale(0.97);
         }
 
+        /* ============================================================
+           AI RESPONSE BOX
+           ============================================================ */
         .ai-response {
-            background: #f4f9ff;
-            border-radius: 16px;
-            padding: 14px 18px;
-            border-left: 5px solid #1b3b6b;
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            padding: 16px 20px;
+            border-left: 4px solid;
+            border-image: linear-gradient(180deg, #2563eb, #7c3aed) 1;
+            min-height: 100px;
+            transition: 0.3s;
         }
         .ai-response .label {
-            font-weight: 600;
-            color: #1b3b6b;
+            font-weight: 700;
             font-size: 14px;
             display: flex;
             align-items: center;
             gap: 8px;
             margin-bottom: 4px;
         }
+        .ai-response .label i {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 18px;
+        }
+        .ai-response .label span {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         .ai-response .response-text {
-            font-weight: 500;
-            color: #0b1a2e;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.75);
             font-size: 15px;
-            line-height: 1.6;
-            min-height: 28px;
+            line-height: 1.7;
+            min-height: 40px;
         }
 
+        /* ============================================================
+           SUGGESTIONS
+           ============================================================ */
         .suggestions {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
             margin-top: 14px;
         }
         .suggestions a {
-            background: #fff;
-            padding: 6px 18px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 16px;
             border-radius: 40px;
-            font-size: 14px;
-            color: #1b3b6b;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
             text-decoration: none;
-            border: 1px solid #cbd8e9;
-            transition: 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: 0.3s;
             cursor: pointer;
+            font-family: inherit;
         }
         .suggestions a:hover {
-            background: #1b3b6b;
+            background: rgba(37, 99, 235, 0.1);
             color: #fff;
-            border-color: #1b3b6b;
+            border-color: rgba(37, 99, 235, 0.2);
         }
 
-        /* ===== TESTIMONIALS ===== */
+        /* ============================================================
+           TESTIMONIALS
+           ============================================================ */
         .testimonials {
-            margin: 38px 0 30px;
+            margin: 36px 0 32px;
         }
         .testimonials h3 {
             font-size: 26px;
-            font-weight: 600;
-            color: #0b1a2e;
+            font-weight: 700;
+            color: #fff;
             margin-bottom: 20px;
         }
         .testimonials h3 i {
-            color: #1b3b6b;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-right: 10px;
         }
 
         .testi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
         }
         .testi-card {
-            background: #fafdff;
-            padding: 18px 16px;
-            border-radius: 20px;
-            border: 1px solid #e7eef6;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px 18px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+        .testi-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(37, 99, 235, 0.1);
         }
         .testi-card p {
             font-size: 15px;
             font-style: italic;
-            color: #142b42;
-            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
         }
         .testi-card .name {
             font-weight: 700;
-            margin-top: 10px;
-            font-style: normal;
-            color: #0b1a2e;
-        }
-        .testi-card .place {
-            font-size: 14px;
-            color: #3d5775;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            margin-top: 38px;
-            padding-top: 24px;
-            border-top: 1px solid #dde6f0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 18px;
-        }
-        .footer-brand {
-            font-weight: 700;
-            font-size: 18px;
-            color: #0b1a2e;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .footer-brand i {
-            color: #1b3b6b;
-            font-size: 20px;
-        }
-        .footer-links {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-        .footer-links a {
-            text-decoration: none;
-            color: #1f3a57;
-            font-weight: 500;
-            font-size: 15px;
-            transition: 0.2s;
-        }
-        .footer-links a:hover {
-            color: #1b3b6b;
-        }
-        .footer-social {
-            display: flex;
-            gap: 16px;
-        }
-        .footer-social a {
-            color: #1f3a57;
-            font-size: 20px;
-            transition: 0.2s;
-        }
-        .footer-social a:hover {
-            color: #1b3b6b;
-        }
-        .footer-copy {
-            width: 100%;
-            text-align: center;
-            color: #3d5775;
-            font-size: 14px;
-            margin-top: 6px;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            .hero {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 18px;
-            }
-            .hero-stats {
-                padding: 8px 18px;
-                gap: 16px;
-            }
-            .nav {
-                gap: 14px;
-            }
-            .footer {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-        }
-        @media (max-width: 480px) {
-            .hero-left h1 {
-                font-size: 26px;
-            }
-            .features {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-
-    <!-- ===== HEADER ===== -->
-    <div class="header">
-        <div class="logo">
-            <div class="logo-icon"><i class="fas fa-brain"></i></div>
-            <div class="logo-text"><span>OMNORA</span> LABS</div>
-        </div>
-        <div class="nav">
-            <a href="#">Home</a>
-            <a href="#">Features</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#" class="active">Omnora Student AI</a>
-        </div>
-    </div>
-
-    <!-- ===== HERO ===== -->
-    <div class="hero">
-        <div class="hero-left">
-            <h2><i class="fas fa-robot"></i> AI-POWERED LEARNING</h2>
-            <h1><i class="fas fa-graduation-cap"></i> Omnora Student AI</h1>
-            <p>Your intelligent study companion to learn faster, understand deeper, and achieve more.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn-primary"><i class="fas fa-play"></i> Start Learning</a>
-                <a href="#" class="btn-outline">Learn More</a>
-            </div>
-        </div>
-        <div class="hero-stats">
-            <span>20K+ <small>Students</small></span>
-            <span>1K+ <small>Quizzes</small></span>
-            <span class="stars"><i class="fas fa-star"></i> 4.9</span>
-        </div>
-    </div>
-
-    <!-- ===== FEATURES (6 cards) ===== -->
-    <div class="features">
-        <div class="feature-card">
-            <i class="fas fa-question-circle"></i>
-            <h3>Ask Questions</h3>
-            <p>Get instant answers to any academic question.</p>
-            <a href="#">Ask now <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-calendar-alt"></i>
-            <h3>Generate Study Plans</h3>
-            <p>Personalized study plans tailored to your goals.</p>
-            <a href="#">Create plan <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-puzzle-piece"></i>
-            <h3>Practice Quizzes</h3>
-            <p>Test your knowledge with AI-powered quizzes.</p>
-            <a href="#">Start quiz <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-id-card"></i>
-            <h3>Smart Flashcards</h3>
-            <p>Turn your notes into interactive flashcards.</p>
-            <a href="#">Try now <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Progress Tracker</h3>
-            <p>See your learning growth in real-time.</p>
-            <a href="#">View <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-users"></i>
-            <h3>Study Groups</h3>
-            <p>Collaborate and learn with peers.</p>
-            <a href="#">Join <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </div>
-
-    <!-- ===== AI SECTION ===== -->
-    <div class="ai-section">
-        <div class="ai-wrapper">
-            <div class="ai-left">
-                <h2><i class="fas fa-comment-dots"></i> Ask Omnora AI</h2>
-                <p>Type your question below and get smart answers.</p>
-                <div class="ai-brain"><i class="fas fa-brain"></i></div>
-                <div class="divider"></div>
-            </div>
-            <div class="ai-right">
-                <div class="question-row">
-                    <input type="text" id="userQuestion" placeholder="Type your question here..." value="What is the Pythagorean theorem?" />
-                    <button id="askBtn"><i class="fas fa-paper-plane"></i> Ask AI</button>
-                </div>
-                <div class="ai-response">
-                    <div class="label"><i class="fas fa-robot"></i> AI Response</div>
-                    <div class="response-text" id="responseText">Loading answer...</div>
-                    <div class="suggestions" id="suggestionContainer">
-                        <a data-question="Explain algebra">Explain algebra</a>
-                        <a data-question="Chemistry help">Chemistry help</a>
-                        <a data-question="Essay outline">Essay outline</a>
-                        <a data-question="History summary">History summary</a>
-                        <a data-question="What is photosynthesis?">Photosynthesis</a>
-                        <a data-question="Newton's laws">Newton's laws</a>
-                        <a data-question="What is DNA?">What is DNA?</a>
-                        <a data-question="Calculus explained">Calculus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <div class="testimonials">
-        <h3><i class="fas fa-quote-left"></i> What Students Say</h3>
-        <div class="testi-grid">
-            <div class="testi-card">
-                <p>"Omnora AI helped me understand complex topics in minutes. The quizzes are a game-changer!"</p>
-                <div class="name">— Ada Okonkwo</div>
-                <div class="place">Lagos, Nigeria</div>
-            </div>
-            <div class="testi-card">
-                <p>"I love the study plans. They keep me on track and I've improved my grades significantly."</p>
-                <div class="name">— Kofi Mensah</div>
-                <div class="place">Accra, Ghana</div>
-            </div>
-            <div class="testi-card">
-                <p>"The AI brain is like having a personal tutor 24/7. Absolutely brilliant for African students."</p>
-                <div class="name">— Zara Hassan</div>
-                <div class="place">Nairobi, Kenya</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== FOOTER ===== -->
-    <div c
+  
