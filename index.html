@@ -625,4 +625,471 @@
         }
         .testi-card .name {
             font-weight: 700;
-  
+            margin-top: 10px;
+            font-style: normal;
+            color: #fff;
+        }
+        .testi-card .place {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .footer {
+            margin-top: 40px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 28px;
+            margin-bottom: 22px;
+        }
+
+        .footer-brand {
+            font-weight: 800;
+            font-size: 20px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-brand i {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 22px;
+        }
+        .footer-brand .omnora {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .footer-brand .labs {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-desc {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            display: block;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 13px;
+            padding: 4px 0;
+            transition: 0.3s;
+        }
+        .footer-links a:hover {
+            color: #60a5fa;
+        }
+
+        .footer-social a {
+            display: block;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 13px;
+            padding: 4px 0;
+            transition: 0.3s;
+        }
+        .footer-social a:hover {
+            color: #60a5fa;
+        }
+        .footer-social a i {
+            width: 22px;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 13px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .footer-bottom i {
+            color: #fbbf24;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                border-radius: 24px;
+            }
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+                padding: 22px;
+            }
+            .hero-left h1 {
+                font-size: 30px;
+            }
+            .hero-stats {
+                padding: 8px 16px;
+                gap: 14px;
+            }
+            .nav {
+                gap: 12px;
+            }
+            .nav a {
+                font-size: 13px;
+            }
+            .ai-section {
+                padding: 20px;
+            }
+            .ai-right {
+                padding: 16px;
+            }
+            .question-row input {
+                flex: 1 1 100%;
+            }
+            .question-row button {
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-left h1 {
+                font-size: 26px;
+            }
+            .features {
+                grid-template-columns: 1fr 1fr;
+            }
+            .logo-text {
+                font-size: 20px;
+            }
+            .hero-stats span {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ==========================================================
+    HEADER
+    ========================================================== -->
+    <div class="header">
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-brain"></i></div>
+            <div class="logo-text">
+                <span class="omnora">OMNORA</span> <span class="labs">LABS</span>
+            </div>
+        </div>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#" class="active">Omnora Student AI</a>
+        </div>
+    </div>
+
+    <!-- ==========================================================
+    HERO
+    ========================================================== -->
+    <div class="hero">
+        <div class="hero-left">
+            <div class="badge"><i class="fas fa-robot"></i> AI-POWERED LEARNING</div>
+            <h1><i class="fas fa-graduation-cap"></i> Omnora <span class="highlight">Student AI</span></h1>
+            <p>Your intelligent study companion to learn faster, understand deeper, and achieve more.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary"><i class="fas fa-play"></i> Start Learning</a>
+                <a href="#" class="btn-outline">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <span>20K+ <small>Students</small></span>
+            <span>1K+ <small>Quizzes</small></span>
+            <span class="stars"><i class="fas fa-star"></i> 4.9</span>
+        </div>
+    </div>
+
+    <!-- ==========================================================
+    FEATURES
+    ========================================================== -->
+    <div class="features">
+        <div class="feature-card">
+            <i class="fas fa-question-circle"></i>
+            <h3>Ask Questions</h3>
+            <p>Get instant answers to any academic question.</p>
+            <a href="#">Ask now <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Generate Study Plans</h3>
+            <p>Personalized study plans tailored to your goals.</p>
+            <a href="#">Create plan <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-puzzle-piece"></i>
+            <h3>Practice Quizzes</h3>
+            <p>Test your knowledge with AI-powered quizzes.</p>
+            <a href="#">Start quiz <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <!-- ==========================================================
+    AI SECTION - BIG BOX
+    ========================================================== -->
+    <div class="ai-section">
+        <div class="ai-wrapper">
+            <div class="ai-left">
+                <h2><i class="fas fa-comment-dots"></i> Ask Omnora AI</h2>
+                <p>Type your question below to get smart answers.</p>
+                <div class="ai-brain"><i class="fas fa-brain"></i></div>
+                <div class="divider"></div>
+            </div>
+            <div class="ai-right">
+                <div class="question-row">
+                    <input type="text" id="userQuestion" placeholder="Type your question here..." />
+                    <button id="askBtn"><i class="fas fa-paper-plane"></i> Ask AI</button>
+                </div>
+                <div class="ai-response">
+                    <div class="label">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Response</span>
+                    </div>
+                    <div class="response-text" id="responseText">Ask me anything about math, science, history, and more!</div>
+                    <div class="suggestions">
+                        <a data-question="Explain algebra">Explain algebra</a>
+                        <a data-question="Chemistry help">Chemistry help</a>
+                        <a data-question="Essay outline">Essay outline</a>
+                        <a data-question="History summary">History summary</a>
+                        <a data-question="What is photosynthesis?">Photosynthesis</a>
+                        <a data-question="Newton's laws">Newton's laws</a>
+                        <a data-question="What is DNA?">What is DNA?</a>
+                        <a data-question="Calculus explained">Calculus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================
+    TESTIMONIALS
+    ========================================================== -->
+    <div class="testimonials">
+        <h3><i class="fas fa-quote-left"></i> What Students Say</h3>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <p>"Omnora AI helped me understand complex topics in minutes. The quizzes are a game-changer!"</p>
+                <div class="name">— Ada Okonkwo</div>
+                <div class="place">Lagos, Nigeria</div>
+            </div>
+            <div class="testi-card">
+                <p>"I love the study plans. They keep me on track and I've improved my grades significantly."</p>
+                <div class="name">— Kofi Mensah</div>
+                <div class="place">Accra, Ghana</div>
+            </div>
+            <div class="testi-card">
+                <p>"The AI brain is like having a personal tutor 24/7. Absolutely brilliant for African students."</p>
+                <div class="name">— Zara Hassan</div>
+                <div class="place">Nairobi, Kenya</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================
+    FOOTER
+    ========================================================== -->
+    <div class="footer">
+        <div class="footer-top">
+            <div>
+                <div class="footer-brand">
+                    <i class="fas fa-brain"></i>
+                    <span class="omnora">OMNORA</span> <span class="labs">LABS</span>
+                </div>
+                <div class="footer-desc">
+                    Building the future of Education in Africa through Artificial Intelligence.
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fas fa-envelope"></i> Gmail</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <i class="fas fa-heart"></i> &copy; 2026 Omnora Labs. All rights reserved.
+        </div>
+    </div>
+
+</div>
+
+<!-- ==========================================================
+JAVASCRIPT
+========================================================== -->
+<script>
+    // ===== OMNORA STUDENT AI - SMART RESPONSES =====
+
+    function askAI() {
+        let question = document.getElementById("userQuestion").value.trim().toLowerCase();
+        let response = document.getElementById("responseText");
+
+        if (question === "") {
+            response.innerHTML = "Please type a question to get started. 🧠";
+            return;
+        }
+
+        let answer = "";
+
+        // BUSINESS & ECONOMICS
+        if (question.includes("business") || question.includes("economy") || question.includes("profit") || question.includes("market")) {
+            answer = "Business is the activity of buying and selling goods or services to earn profit. In economics, businesses play a key role in creating value, generating employment, and driving innovation in the market.";
+        }
+        // HTML
+        else if (question.includes("html") || question.includes("hypertext") || question.includes("markup") || question.includes("web structure")) {
+            answer = "HTML stands for HyperText Markup Language. It is the standard language used to create and structure content on the web. HTML uses elements like headings, paragraphs, links, and images to build web pages.";
+        }
+        // CSS
+        else if (question.includes("css") || question.includes("cascading") || question.includes("style") || question.includes("design") || question.includes("website design")) {
+            answer = "CSS stands for Cascading Style Sheets. It is used to control the presentation and layout of web pages. With CSS, you can change colors, fonts, spacing, and create responsive designs for different screen sizes.";
+        }
+        // JAVASCRIPT
+        else if (question.includes("javascript") || question.includes("js") || question.includes("interactive") || question.includes("dynamic website")) {
+            answer = "JavaScript is a powerful programming language that makes websites interactive and dynamic. It allows developers to add features like animations, form validation, real-time updates, and much more. JavaScript runs in the browser and is essential for modern web development.";
+        }
+        // ARTIFICIAL INTELLIGENCE
+        else if (question.includes("artificial intelligence") || question.includes("ai") || question.includes("machine learning") || question.includes("deep learning") || question.includes("neural network")) {
+            answer = "Artificial Intelligence (AI) is a field of computer science that enables machines to simulate human intelligence. AI includes technologies like machine learning, natural language processing, computer vision, and robotics. AI is transforming industries from healthcare to education, and it's the core technology behind Omnora Student AI!";
+        }
+        // PHOTOSYNTHESIS
+        else if (question.includes("photosynthesis") || question.includes("plant") || question.includes("sunlight") || question.includes("chlorophyll")) {
+            answer = "Photosynthesis is the process by which plants, algae, and some bacteria convert sunlight, water, and carbon dioxide into glucose (food) and oxygen. This process is essential for life on Earth as it produces oxygen and serves as the foundation of the food chain.";
+        }
+        // COMPUTER
+        else if (question.includes("computer") || question.includes("cpu") || question.includes("processor") || question.includes("hardware")) {
+            answer = "A computer is an electronic device that processes data and performs tasks according to programmed instructions. It consists of hardware (physical components like CPU, memory, and storage) and software (programs and operating systems). Computers are used in almost every field today.";
+        }
+        // INTERNET
+        else if (question.includes("internet") || question.includes("web") || question.includes("online") || question.includes("network") || question.includes("www")) {
+            answer = "The Internet is a global network of interconnected computers and servers that communicate using standardized protocols. It enables billions of people worldwide to access information, communicate, and share data. The World Wide Web (WWW) is a service that runs on the Internet, providing websites and web applications.";
+        }
+        // MATHEMATICS
+        else if (question.includes("mathematics") || question.includes("math") || question.includes("algebra") || question.includes("geometry") || question.includes("calculus") || question.includes("number")) {
+            answer = "Mathematics is the study of numbers, quantities, shapes, patterns, and their relationships. It includes branches like algebra (equations and variables), geometry (shapes and spaces), calculus (change and motion), and statistics (data analysis). Mathematics is the language of science and technology.";
+        }
+        // SCIENCE (general)
+        else if (question.includes("science") || question.includes("physics") || question.includes("chemistry") || question.includes("biology") || question.includes("experiment")) {
+            answer = "Science is the systematic study of the natural world through observation, experimentation, and reasoning. It includes branches like Physics (matter and energy), Chemistry (substances and reactions), and Biology (living organisms). Scientific discoveries have shaped modern civilization and continue to solve global challenges.";
+        }
+        // HISTORY
+        else if (question.includes("history") || question.includes("past") || question.includes("ancient") || question.includes("civilization") || question.includes("world war")) {
+            answer = "History is the study of past events, societies, and civilizations. It helps us understand how human societies have evolved, the causes and consequences of major events, and how our present world has been shaped by the past. Key areas include ancient civilizations, world wars, and social movements.";
+        }
+        // GEOGRAPHY
+        else if (question.includes("geography") || question.includes("map") || question.includes("country") || question.includes("continent") || question.includes("ocean") || question.includes("climate")) {
+            answer = "Geography is the study of Earth's landscapes, environments, and the relationships between people and their environments. It includes physical geography (landforms, climate, ecosystems) and human geography (population, culture, economics). Geography helps us understand global connections and environmental challenges.";
+        }
+        // LITERATURE
+        else if (question.includes("literature") || question.includes("book") || question.includes("novel") || question.includes("poetry") || question.includes("author") || question.includes("writing")) {
+            answer = "Literature is the art of written works, including fiction, non-fiction, poetry, and drama. It reflects human experiences, ideas, and emotions across cultures and time periods. Studying literature develops critical thinking, empathy, and an appreciation for language and storytelling.";
+        }
+        // PROGRAMMING (general)
+        else if (question.includes("programming") || question.includes("coding") || question.includes("software") || question.includes("developer") || question.includes("algorithm")) {
+            answer = "Programming is the process of creating instructions for computers to execute. It involves writing code in programming languages like Python, Java, C++, and JavaScript. Programming is used to build websites, apps, games, AI systems, and much more. It requires problem-solving skills, logical thinking, and creativity.";
+        }
+        // STUDY TIPS
+        else if (question.includes("study") || question.includes("exam") || question.includes("test") || question.includes("revision") || question.includes("prepare")) {
+            answer = "Here are some effective study tips: 1) Set clear goals and break them into smaller tasks. 2) Use active recall and spaced repetition to improve memory. 3) Create a quiet, organized study environment. 4) Take regular breaks using the Pomodoro technique (25 mins study, 5 mins break). 5) Practice with quizzes and past exam papers. 6) Get enough sleep and stay hydrated. Remember, consistency is key!";
+        }
+        // GREETINGS
+        else if (question.includes("hello") || question.includes("hi") || question.includes("hey") || question.includes("good morning") || question.includes("good afternoon") || question.includes("good evening")) {
+            answer = "Hello! 👋 Welcome to Omnora Student AI. I'm here to help you learn faster and understand deeper. What subject or topic would you like to explore today?";
+        }
+        // THANK YOU
+        else if (question.includes("thank") || question.includes("thanks") || question.includes("appreciate") || question.includes("grateful")) {
+            answer = "You're welcome! 😊 I'm glad I could help. If you have more questions, feel free to ask anytime. Happy learning with Omnora Student AI! 🚀";
+        }
+        // DEFAULT RESPONSE
+        else {
+            answer = "Omnora Student AI is still under development. 🧠 Real AI responses will be added soon. Please check back later! 🚀";
+        }
+
+        response.innerHTML = answer;
+    }
+
+    // ===== AUTOMATIC RESPONSE ON ENTER KEY =====
+    document.addEventListener("DOMContentLoaded", function() {
+        const input = document.getElementById("userQuestion");
+        const askBtn = document.getElementById("askBtn");
+
+        if (input) {
+            input.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    askAI();
+                }
+            });
+        }
+
+        if (askBtn) {
+            askBtn.addEventListener("click", function(event) {
+                event.preventDefault();
+                askAI();
+            });
+        }
+
+        // Suggestion clicks
+        document.querySelectorAll('.suggestions a').forEach(function(suggestion) {
+            suggestion.addEventListener('click', function(e) {
+                e.preventDefault();
+                const question = this.getAttribute('data-question');
+                if (input) {
+                    input.value = question;
+                    askAI();
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
