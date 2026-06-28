@@ -29,11 +29,19 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    const reply =
-      data.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Sorry, I couldn't generate a response.";
+    const data = await response.json();
 
-    res.status(200).json({ reply });
+console.log(data);
+
+if (data.error) {
+  return res.status(500).json({
+    error: data.error.message
+  });
+}
+
+const reply = data.candidates[0].content.parts[0].text;
+
+res.status(200).json({ reply });
 
   } catch (error) {
     res.status(500).json({
