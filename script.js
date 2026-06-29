@@ -3,6 +3,7 @@
 async function askAI() {
     const input = document.getElementById("userQuestion");
     const response = document.getElementById("responseText");
+    const askBtn = document.getElementById("askBtn");
 
     const question = input.value.trim();
 
@@ -10,6 +11,10 @@ async function askAI() {
         response.innerHTML = "Please type a question to get started. 🧠";
         return;
     }
+
+    // Prevent multiple clicks
+    askBtn.disabled = true;
+    askBtn.innerHTML = "🧠 Thinking...";
 
     response.innerHTML = "🧠 Thinking...";
 
@@ -37,6 +42,10 @@ async function askAI() {
         console.error(error);
         response.innerHTML =
             "❌ Unable to connect to Omnora Student AI. Please try again.";
+    } finally {
+        // Enable button again
+        askBtn.disabled = false;
+        askBtn.innerHTML = "Ask AI";
     }
 }
 
@@ -65,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
 
             const question = this.dataset.question;
-
             input.value = question;
 
             askAI();
