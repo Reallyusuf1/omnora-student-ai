@@ -13,28 +13,24 @@ export default async function handler(req, res) {
     }
 
     const response = await fetch(
-      "https://api.groq.com/openai/v1/chat/completions",
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
-          messages: [
+          contents: [
             {
-              role: "system",
-              content:
-                "You are Omnora Student AI, an educational assistant created by Omnora Labs. Give clear, accurate, student-friendly answers."
-            },
-            {
-              role: "user",
-              content: message
+              parts: [
+                {
+                  text: `You are Omnora Student AI, an educational assistant created by Omnora Labs. Give clear, accurate, student-friendly answers.
+
+Student: ${message}`
+                }
+              ]
             }
-          ],
-          temperature: 0.5,
-          max_tokens: 1024
+          ]
         })
       }
     );
@@ -45,15 +41,16 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       return res.status(response.status).json({
-        error: data.error?.message || "Groq API request failed."
+        error: data.error?.message || "Gemini API request failed."
       });
     }
 
-    const reply = data.choices?.[0]?.message?.content;
+    const reply =
+      data.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!reply) {
       return res.status(500).json({
-        error: "Groq returned no response.",
+        error: "Gemini returned no response.",
         data
       });
     }
@@ -67,4 +64,4 @@ export default async function handler(req, res) {
       error: error.message || "Internal Server Error"
     });
   }
-}
+                        }
