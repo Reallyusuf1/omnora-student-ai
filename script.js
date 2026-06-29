@@ -1,9 +1,16 @@
-// ===== OMNORA STUDENT AI - GEMINI VERSION =====
+// ===== OMNORA STUDENT AI =====
+
+let isCooldown = false;
 
 async function askAI() {
     const input = document.getElementById("userQuestion");
     const response = document.getElementById("responseText");
     const askBtn = document.getElementById("askBtn");
+
+    if (isCooldown) {
+        response.innerHTML = "⏳ Please wait 3 seconds before asking another question.";
+        return;
+    }
 
     const question = input.value.trim();
 
@@ -13,6 +20,7 @@ async function askAI() {
     }
 
     // Prevent multiple clicks
+    isCooldown = true;
     askBtn.disabled = true;
     askBtn.innerHTML = "🧠 Thinking...";
 
@@ -43,9 +51,12 @@ async function askAI() {
         response.innerHTML =
             "❌ Unable to connect to Omnora Student AI. Please try again.";
     } finally {
-        // Enable button again
-        askBtn.disabled = false;
-        askBtn.innerHTML = "Ask AI";
+        // Enable button again after 3 seconds
+        setTimeout(() => {
+            askBtn.disabled = false;
+            askBtn.innerHTML = "Ask AI";
+            isCooldown = false;
+        }, 3000);
     }
 }
 
