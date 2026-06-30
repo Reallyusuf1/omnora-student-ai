@@ -1,3 +1,12 @@
+import { callGemini } from "./providers/gemini.js";
+import { callGroq } from "./providers/groq.js";
+
+const PROVIDERS = [
+  { name: "gemini", fn: callGemini },
+  { name: "groq", fn: callGroq }
+  // { name: "openrouter", fn: callOpenRouter } // Ƙara daga baya
+];
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -5,65 +14,47 @@ export default async function handler(req, res) {
 
   try {
     const { message } = req.body;
-
-    if (!message) {
-      return res.status(400).json({
-        error: "Message is required."
-      });
+    if (!message || typeof message !== "string" || message.trim().length === 0) {
+      return res.status(400).json({ error: "Valid message is required." });
     }
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [
-                {
-                  text: `You are Omnora Student AI, an educational assistant created by Omnora Labs. Answer clearly and help students learn.
+    // Limit message length for safety
+    if (message.length > 3000) {
+      return res.status(400).json({ error: "Message too long." });
+    }
 
-Student: ${message}`
-                }
-              ]
-            }
-          ]
-        })
+    let lastError = null;
+
+    for (const provider of PROVIDERS) {
+      try {
+        console.log(`[Omnora AI] Trying provider: ${provider.name}`);
+        const reply = await provider.fn(message.trim());
+        
+        console.log(`[Omnora AI] Success with: ${provider.name}`);
+        return res.status(200).json({ 
+          reply, 
+          provider: provider.name 
+        });
+      } catch (err) {
+        lastError = err;
+        console.warn(`[Omnora AI] ${provider.name} failed:`, err.message);
+        
+        if (!err.isRateLimit) {
+          // Non-rate-limit error → stop and return error
+          break;
+        }
+        // Rate limit → try next provider
       }
-    );
-
-    const data = await response.json();
-
-    // Print Gemini response in Vercel Logs
-    console.log(JSON.stringify(data, null, 2));
-
-    // Gemini returned an error
-    if (!response.ok) {
-      return res.status(response.status).json({
-        error: data.error?.message || "Gemini API request failed."
-      });
     }
 
-    const reply =
-      data.candidates?.[0]?.content?.parts?.[0]?.text;
-
-    if (!reply) {
-      return res.status(500).json({
-        error: "Gemini returned no response.",
-        data
-      });
-    }
-
-    return res.status(200).json({ reply });
+    // All providers failed
+    return res.status(503).json({
+      error: "All AI providers are temporarily busy. Please try again in a moment.",
+      details: lastError?.message || "Service unavailable"
+    });
 
   } catch (error) {
-    console.error(error);
-
-    return res.status(500).json({
-      error: error.message || "Internal Server Error"
-    });
+    console.error("[Omnora AI] Unexpected error:", error);
+    return res.status(500).json({ error: "Internal server error. Please try again." });
   }
 }
