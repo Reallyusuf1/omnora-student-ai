@@ -3,16 +3,64 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  try {
-    const { message } = req.body;
+  const { message } = req.body;
 
-    if (!message) {
-      return res.status(400).json({
-        error: "Message is required."
-      });
+  if (!message) {
+    return res.status(400).json({ error: "Message is required." });
+  }
+
+  // ==========================
+  // 1. GROQ
+  // ==========================
+  try {
+    const groq = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are Omnora Student AI created by Omnora Labs. Give clear, accurate, student-friendly answers."
+          },
+          {
+            role: "user",
+            content: message
+          }
+        ],
+        temperature: 0.5,
+        max_tokens: 1024
+      })
+    });
+
+    const data = await groq.json();
+
+    if (groq.ok) {
+      const reply = data.choices?.[0]?.message?.content;
+
+      if (reply) {
+        console.log("✅ Answered by Groq");
+        return res.status(200).json({
+          provider: "Groq",
+          reply
+        });
+      }
     }
 
-    const response = await fetch(
+    console.log("❌ Groq failed");
+  } catch (e) {
+    console.log("Groq Error:", e.message);
+  }
+
+  // ==========================
+  // 2. GEMINI
+  // ==========================
+  try {
+    const gemini = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         method: "POST",
@@ -24,9 +72,10 @@ export default async function handler(req, res) {
             {
               parts: [
                 {
-                  text: `You are Omnora Student AI, an educational assistant created by Omnora Labs. Answer clearly and help students learn.
+                  text: `You are Omnora Student AI created by Omnora Labs.
 
-Student: ${message}`
+Student:
+${message}`
                 }
               ]
             }
@@ -35,35 +84,79 @@ Student: ${message}`
       }
     );
 
-    const data = await response.json();
+    const data = await gemini.json();
 
-    // Print Gemini response in Vercel Logs
-    console.log(JSON.stringify(data, null, 2));
+    if (gemini.ok) {
+      const reply =
+        data.candidates?.[0]?.content?.parts?.[0]?.text;
 
-    // Gemini returned an error
-    if (!response.ok) {
-      return res.status(response.status).json({
-        error: data.error?.message || "Gemini API request failed."
-      });
+      if (reply) {
+        console.log("✅ Answered by Gemini");
+        return res.status(200).json({
+          provider: "Gemini",
+          reply
+        });
+      }
     }
 
-    const reply =
-      data.candidates?.[0]?.content?.parts?.[0]?.text;
-
-    if (!reply) {
-      return res.status(500).json({
-        error: "Gemini returned no response.",
-        data
-      });
-    }
-
-    return res.status(200).json({ reply });
-
-  } catch (error) {
-    console.error(error);
-
-    return res.status(500).json({
-      error: error.message || "Internal Server Error"
-    });
+    console.log("❌ Gemini failed");
+  } catch (e) {
+    console.log("Gemini Error:", e.message);
   }
+
+  // ==========================
+  // 3. OPENROUTER
+  // ==========================
+  try {
+    const openrouter = await fetch(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          model: "openai/gpt-4.1-mini",
+          messages: [
+            {
+              role: "system",
+              content:
+                "You are Omnora Student AI created by Omnora Labs. Give clear, accurate, student-friendly answers."
+            },
+            {
+              role: "user",
+              content: message
+            }
+          ]
+        })
+      }
+    );
+
+    const data = await openrouter.json();
+
+    if (openrouter.ok) {
+      const reply = data.choices?.[0]?.message?.content;
+
+      if (reply) {
+        console.log("✅ Answered by OpenRouter");
+        return res.status(200).json({
+          provider: "OpenRouter",
+          reply
+        });
+      }
+    }
+
+    console.log("❌ OpenRouter failed");
+  } catch (e) {
+    console.log("OpenRouter Error:", e.message);
+  }
+
+  // ==========================
+  // ALL FAILED
+  // ==========================
+  return res.status(500).json({
+    error:
+      "All AI providers are currently unavailable. Please try again later."
+  });
 }
