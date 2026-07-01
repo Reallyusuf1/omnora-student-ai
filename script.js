@@ -43,7 +43,7 @@ async function askAI() {
 
     } catch (error) {
         console.error(error);
-        response.innerHTML = "❌ Unable to connect to Omnora Student AI. Please try again.";
+        response.innerHTML = "❌ Unable to connect. Please try again.";
     } finally {
         setTimeout(() => {
             askBtn.disabled = false;
