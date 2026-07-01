@@ -907,6 +907,33 @@
         </div>
     </div>
 
+        
+    <!-- Quiz Verification Modal -->
+<div id="quizModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; color:#000; padding:25px; border-radius:12px; width:90%; max-width:480px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+    <h2 style="margin-top:0;">Daily Quiz Access</h2>
+    <p>Shigar da bayanan ka (Primary 1 - SSS3)</p>
+    
+    <input type="text" id="fullName" placeholder="Full Name" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    <input type="text" id="schoolName" placeholder="School Name" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    <input type="text" id="studentClass" placeholder="Class (e.g. JSS2, SSS3)" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    <input type="text" id="admissionNumber" placeholder="Admission Number" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    <input type="text" id="promoCode" placeholder="Promo Code (Optional)" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    
+    <button onclick="verifyStudent()" style="width:100%; padding:14px; background:#2196F3; color:white; border:none; border-radius:8px; margin:15px 0 8px;">Verify & Start Quiz</button>
+    <button onclick="closeModal()" style="width:100%; padding:14px; background:#666; color:white; border:none; border-radius:8px;">Cancel</button>
+  </div>
+</div>
+
+    <!-- Daily Quiz Container -->
+<div id="dailyQuizContainer" style="display:none; padding:20px; background:#f8f9fa; border-radius:12px; margin:20px; color:#000;">
+  <h2>Daily Quiz <span id="quizScore" style="float:right; color:green;">0/10 Points</span></h2>
+  <div id="quizQuestion"></div>
+  <div id="quizOptions" style="margin:15px 0;"></div>
+  <button onclick="nextQuestion()" id="nextBtn" style="display:none; width:100%; padding:12px; background:#4CAF50; color:white; border:none; border-radius:8px;">Next Question</button>
+</div>
+        
+
     <!-- ==========================================================
     TESTIMONIALS
     ========================================================== -->
@@ -982,31 +1009,6 @@ if ("serviceWorker" in navigator) {
 }
         
     </script>
-
-    <!-- Quiz Verification Modal -->
-<div id="quizModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
-  <div style="background:#fff; color:#000; padding:25px; border-radius:12px; width:90%; max-width:480px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
-    <h2 style="margin-top:0;">Daily Quiz Access</h2>
-    <p>Shigar da bayanan ka (Primary 1 - SSS3)</p>
-    
-    <input type="text" id="fullName" placeholder="Full Name" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
-    <input type="text" id="schoolName" placeholder="School Name" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
-    <input type="text" id="studentClass" placeholder="Class (e.g. JSS2, SSS3)" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
-    <input type="text" id="admissionNumber" placeholder="Admission Number" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
-    <input type="text" id="promoCode" placeholder="Promo Code (Optional)" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
-    
-    <button onclick="verifyStudent()" style="width:100%; padding:14px; background:#2196F3; color:white; border:none; border-radius:8px; margin:15px 0 8px;">Verify & Start Quiz</button>
-    <button onclick="closeModal()" style="width:100%; padding:14px; background:#666; color:white; border:none; border-radius:8px;">Cancel</button>
-  </div>
-</div>
-
-    <!-- Daily Quiz Container -->
-<div id="dailyQuizContainer" style="display:none; padding:20px; background:#f8f9fa; border-radius:12px; margin:20px; color:#000;">
-  <h2>Daily Quiz <span id="quizScore" style="float:right; color:green;">0/10 Points</span></h2>
-  <div id="quizQuestion"></div>
-  <div id="quizOptions" style="margin:15px 0;"></div>
-  <button onclick="nextQuestion()" id="nextBtn" style="display:none; width:100%; padding:12px; background:#4CAF50; color:white; border:none; border-radius:8px;">Next Question</button>
-</div>
 
 </body>
 </html>
