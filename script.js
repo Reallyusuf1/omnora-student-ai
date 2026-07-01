@@ -61,8 +61,7 @@ const dailyQuestions = [
   { question: "Who is the current President of Nigeria?", options: ["A. Muhammadu Buhari", "B. Bola Ahmed Tinubu", "C. Goodluck Jonathan", "D. Atiku Abubakar"], answer: "B" },
   { question: "What is the National Animal of Nigeria?", options: ["A. Lion", "B. Eagle", "C. Horse", "D. Camel"], answer: "A" },
   { question: "Which is the National Anthem of Nigeria?", options: ["A. Arise, O Compatriots", "B. God Save the Queen", "C. The Star-Spangled Banner", "D. Nkosi Sikelel' iAfrika"], answer: "A" },
-  { question: "What does SSS3 stand for in Nigerian education?", options: ["A. Senior Secondary School 3", "B. Science Students School 3", "C. Special Science School 3", "D. Secondary School Stage 3"], answer: "A" }
-  // Za mu ƙara 16 more daga baya
+  { question: "What does SSS3 stand for?", options: ["A. Senior Secondary School 3", "B. Science Students School 3", "C. Special Science School 3", "D. Secondary School Stage 3"], answer: "A" }
 ];
 
 function startDailyQuiz() {
