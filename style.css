@@ -356,6 +356,92 @@ body {
         transform: translate(-25px,20px);
     }
            }
+/* ============================================================
+   FLOATING CARDS
+============================================================ */
+
+.floating-elements{
+    position:absolute;
+    inset:0;
+    z-index:5;
+    pointer-events:none;
+}
+
+.floating-card{
+    position:absolute;
+    width:180px;
+    padding:14px 16px;
+    border-radius:18px;
+
+    background:rgba(17,24,39,.72);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 20px 45px rgba(0,0,0,.28);
+
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+
+    transition:.35s ease;
+}
+
+.floating-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(96,165,250,.35);
+}
+
+.card-icon{
+    font-size:20px;
+    color:#60a5fa;
+    margin-top:2px;
+    flex-shrink:0;
+}
+
+.card-content h3{
+    font-size:15px;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:4px;
+}
+
+.card-content p{
+    font-size:12px;
+    line-height:1.5;
+    color:rgba(255,255,255,.70);
+}
+
+.coming-soon{
+    display:inline-block;
+    margin-top:6px;
+    font-size:11px;
+    color:#a78bfa;
+    font-weight:600;
+}
+
+/* Card Positions */
+
+.floating-card-1{
+    top:35px;
+    left:0;
+}
+
+.floating-card-2{
+    bottom:55px;
+    left:18px;
+}
+
+.floating-card-3{
+    top:35px;
+    right:0;
+}
+
+.floating-card-4{
+    bottom:40px;
+    right:10px;
+    width:210px;
+}
 
 /* ============================================================
    FEATURES GRID
