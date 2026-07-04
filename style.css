@@ -783,6 +783,31 @@ body {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ai-features {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+.ai-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ai-feature i {
+    flex-shrink: 0;
+}
+
+.ai-feature-content {
+    flex: 1;
+}
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -844,6 +869,14 @@ body {
     .features {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+       .ai-features {
+    max-width: 100%;
+}
+
+.ai-feature {
+    align-items: flex-start;
+    text-align: left;
+}
     }
 }
 
@@ -860,4 +893,4 @@ body {
     .hero-stats span {
         font-size: 15px;
     }
-    }
+}
