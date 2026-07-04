@@ -894,36 +894,3 @@ body {
         font-size: 15px;
     }
 }
-.teacher-dashboard-badge {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: 20px;
-    padding: 14px 18px;
-    border-radius: 16px;
-    background: rgba(88, 101, 242, 0.12);
-    border: 1px solid rgba(88, 101, 242, 0.25);
-}
-
-.teacher-content {
-    flex: 1;
-}
-
-.teacher-content strong {
-    display: block;
-    color: #fff;
-    font-size: 16px;
-}
-
-.teacher-content span {
-    color: #bfc8ff;
-    font-size: 14px;
-}
-
-.teacher-status {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #4CAF50;
-}
