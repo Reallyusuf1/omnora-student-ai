@@ -1187,7 +1187,45 @@ body {
         display:block;
     }
 
-   }
+.nav{
+    position:fixed;
+    top:0;
+    left:-100%;
+    width:280px;
+    height:100vh;
+    background:#111827;
+    padding:90px 25px 30px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+    transition:left .35s ease;
+    z-index:999;
+    box-shadow:8px 0 30px rgba(0,0,0,.35);
+}
+
+.nav a{
+    width:100%;
+    font-size:18px;
+}
+
+.header-auth{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:20px;
+}
+
+.login-btn,
+.signup-btn{
+    width:100%;
+    text-align:center;
+}
+
+.nav.active{
+    left:0;
+}
 /* Hero Buttons */
 
 .hero-actions{
@@ -1229,4 +1267,5 @@ body {
 .btn-secondary:hover{
     color:#ffffff;
     background:rgba(96,165,250,.18);
+}
 }
