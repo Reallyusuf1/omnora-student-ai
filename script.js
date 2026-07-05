@@ -174,19 +174,26 @@ const nav = document.querySelector(".nav");
 
 if (menuToggle && nav) {
 
-  menuToggle.addEventListener("click", function () {
-    nav.classList.toggle("active");
-  });
+    menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("active");
 
-  document.addEventListener("click", function (e) {
+        if (nav.classList.contains("active")) {
+            menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
 
-    if (
-      !nav.contains(e.target) &&
-      !menuToggle.contains(e.target)
-    ) {
-      nav.classList.remove("active");
-    }
+    document.addEventListener("click", function (e) {
 
-  });
+        if (
+            !nav.contains(e.target) &&
+            !menuToggle.contains(e.target)
+        ) {
+            nav.classList.remove("active");
+            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+
+    });
 
 }
