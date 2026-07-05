@@ -1,10 +1,11 @@
 import { callGemini } from "./providers/gemini.js";
 import { callGroq } from "./providers/groq.js";
+import { callOpenRouter } from "./providers/openrouter.js";
 
 const PROVIDERS = [
   { name: "gemini", fn: callGemini },
-  { name: "groq", fn: callGroq }
-  // { name: "openrouter", fn: callOpenRouter } // Ƙara daga baya
+  { name: "groq", fn: callGroq },
+  { name: "openrouter", fn: callOpenRouter }
 ];
 
 export default async function handler(req, res) {
