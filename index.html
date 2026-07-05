@@ -475,6 +475,94 @@ if ("serviceWorker" in navigator) {
 }
         
     </script>
+<!-- ==========================================
+     AUTHENTICATION MODAL
+========================================== -->
 
+<div id="auth-modal" class="auth-modal">
+
+  <div class="auth-container">
+
+    <button class="auth-close" aria-label="Close">
+      &times;
+    </button>
+
+    <div class="auth-tabs">
+      <button class="tab-btn active" data-tab="login">
+        Login
+      </button>
+
+      <button class="tab-btn" data-tab="signup">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- LOGIN -->
+
+    <div id="login-form" class="auth-form active">
+
+      <h2>Welcome Back</h2>
+
+      <p>Login to your Omnora Account.</p>
+
+      <input
+        type="email"
+        placeholder="Email Address"
+      >
+
+      <input
+        type="password"
+        placeholder="Password"
+      >
+
+      <button class="auth-submit">
+        Login
+      </button>
+
+    </div>
+
+    <!-- SIGN UP -->
+
+    <div id="signup-form" class="auth-form">
+
+      <h2>Create Account</h2>
+
+      <p>Create your Omnora Student AI account.</p>
+
+      <input
+        type="text"
+        placeholder="Full Name"
+      >
+
+      <input
+        type="email"
+        placeholder="Email Address"
+      >
+
+      <input
+        type="tel"
+        placeholder="Phone Number (Optional)"
+      >
+
+      <input
+        type="password"
+        placeholder="Password"
+      >
+
+      <input
+        type="password"
+        placeholder="Confirm Password"
+      >
+
+      <button class="auth-submit">
+        Create Account
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+        
     </body>
 </html>
