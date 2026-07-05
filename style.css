@@ -1075,3 +1075,67 @@ body {
         font-size: 15px;
     }
 }
+/* ===== MOBILE HERO FIX ===== */
+
+@media (max-width: 768px) {
+
+  .visual-content{
+    min-height: 420px;
+    position: relative;
+  }
+
+  .ai-brain{
+    width: 160px;
+    height: 160px;
+    margin: 30px auto;
+  }
+
+  .ai-brain i{
+    font-size: 70px;
+  }
+
+  .brain-ring{
+    transform: translate(-50%, -50%) scale(.6);
+  }
+
+  .ring-1,
+  .ring-2,
+  .ring-3{
+    animation-duration: 18s;
+  }
+
+  .floating-elements{
+    position: relative;
+    width: 100%;
+    height: auto;
+    inset: auto;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .floating-card{
+    position: static;
+    width: 100%;
+    min-height: 90px;
+  }
+
+  .floating-card-1,
+  .floating-card-2,
+  .floating-card-3,
+  .floating-card-4{
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+
+  .hero-stats{
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+}
