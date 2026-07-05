@@ -104,20 +104,31 @@
     HEADER
     ========================================================== -->
     <header id="site-header">
+
+    <div class="header">
+
         <div class="logo">
-            <div class="logo-icon"><i class="fas fa-brain"></i></div>
+            <div class="logo-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+
             <div class="logo-text">
-                <span class="omnora">OMNORA</span> <span class="labs">LABS</span>
+                <span class="omnora">OMNORA</span>
+                <span class="labs">LABS</span>
             </div>
         </div>
+
         <nav class="nav" aria-label="Primary Navigation">
             <a href="#">Home</a>
-            <a href="#">Features</a>
+            <a href="#quick-actions">Features</a>
             <a href="#">About</a>
             <a href="#">Contact</a>
             <a href="#" class="active">Omnora Student AI</a>
-        </div>
+        </nav>
+
     </div>
+
+    </header>
 
     <!-- ==========================================================
     HERO
@@ -135,7 +146,7 @@
 
             <h1 class="hero-title">
     Omnora
-    <span>Student AI</span>
+    <span class="gradient-text">Student AI</span>
             </h1>
 
             <p class="hero-description">
@@ -277,7 +288,8 @@
     FEATURES
     ========================================================== -->
     <section id="quick-actions">
-        <div class="feature-card">
+    <div class="features">
+        <article class="feature-card">
             <i class="fas fa-question-circle"></i>
             <h3>Ask Questions</h3>
 <p>Get instant answers to any academic question.</p>
@@ -285,13 +297,15 @@
 <a href="#ai-platform">
     Ask now <i class="fas fa-arrow-right"></i>
 </a>
-        </div>
+        </article>
+        
         <article class="feature-card">
             <i class="fas fa-calendar-alt"></i>
+            
             <h3>Teachers Dashboard</h3>
-
 <p>
-For teachers only. Create AI lesson plans, quizzes,
+For teachers only. Create
+    AI lesson plans, quizzes,
 and classroom resources.
 </p>
 
@@ -300,7 +314,8 @@ and classroom resources.
 <a href="#hero">
     Teacher Access → <i class="fas fa-arrow-right"></i>
 </a>
-        </div>
+        </article>
+            
         <article class="feature-card">
     <i class="fas fa-puzzle-piece"></i>
     <h3>Daily Quizzes for Students</h3>
@@ -308,7 +323,9 @@ and classroom resources.
     <button onclick="window.location.href='quizzes.html'" style="padding:10px 20px; background:#4CAF50; color:white; border:none; border-radius:8px;">
   Start Daily Quiz
     </button>
-        </div>
+        </article>
+    </div>
+    </section>
 
     <!-- ==========================================================
     AI SECTION - BIG BOX
@@ -346,6 +363,7 @@ and classroom resources.
             </div>
         </div>
     </div>
+</section>
 
         
     <!-- Quiz Verification Modal -->
@@ -397,6 +415,7 @@ and classroom resources.
             </div>
         </div>
     </div>
+            </section>
 
     <!-- ==========================================================
     FOOTER
