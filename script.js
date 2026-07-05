@@ -195,3 +195,64 @@ if (menuToggle && nav) {
         }
 
     });
+    /* ==========================================
+   AUTHENTICATION MODAL
+========================================== */
+
+const authModal = document.getElementById("auth-modal");
+
+const loginBtn = document.querySelector(".login-btn");
+const signupBtn = document.querySelector(".signup-btn");
+
+const closeBtn = document.querySelector(".auth-close");
+
+const loginTab = document.querySelector('[data-tab="login"]');
+const signupTab = document.querySelector('[data-tab="signup"]');
+
+const loginForm = document.getElementById("login-form");
+const signupForm = document.getElementById("signup-form");
+
+function openLoginModal() {
+    authModal.style.display = "flex";
+
+    loginTab.classList.add("active");
+    signupTab.classList.remove("active");
+
+    loginForm.classList.add("active");
+    signupForm.classList.remove("active");
+}
+
+function openSignupModal() {
+    authModal.style.display = "flex";
+
+    signupTab.classList.add("active");
+    loginTab.classList.remove("active");
+
+    signupForm.classList.add("active");
+    loginForm.classList.remove("active");
+}
+
+function closeAuthModal() {
+    authModal.style.display = "none";
+}
+
+loginBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    openLoginModal();
+});
+
+signupBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    openSignupModal();
+});
+
+closeBtn.addEventListener("click", closeAuthModal);
+
+window.addEventListener("click", function (e) {
+    if (e.target === authModal) {
+        closeAuthModal();
+    }
+});
+
+loginTab.addEventListener("click", openLoginModal);
+signupTab.addEventListener("click", openSignupModal);
