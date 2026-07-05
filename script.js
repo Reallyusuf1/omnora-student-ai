@@ -195,5 +195,3 @@ if (menuToggle && nav) {
         }
 
     });
-
-}
