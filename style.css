@@ -1048,17 +1048,17 @@ body {
         gap: 20px;
     }
     .features {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-       .ai-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.ai-features {
     max-width: 100%;
 }
 
 .ai-feature {
     align-items: flex-start;
     text-align: left;
-}
-    }
 }
 
 @media (max-width: 480px) {
@@ -1073,7 +1073,6 @@ body {
     }
     .hero-stats span {
         font-size: 15px;
-    }
 }
 /* ===== MOBILE HERO FIX ===== */
 
