@@ -253,6 +253,3 @@ window.addEventListener("click", function (e) {
         closeAuthModal();
     }
 });
-
-loginTab.addEventListener("click", openLoginModal);
-signupTab.addEventListener("click", openSignupModal);
