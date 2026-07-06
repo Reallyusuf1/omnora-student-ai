@@ -1060,6 +1060,7 @@ body {
     align-items: flex-start;
     text-align: left;
 }
+}
 
 @media (max-width: 480px) {
     .hero-left h1 {
@@ -1073,6 +1074,7 @@ body {
     }
     .hero-stats span {
         font-size: 15px;
+}
 }
 /* ===== MOBILE HERO FIX ===== */
 
