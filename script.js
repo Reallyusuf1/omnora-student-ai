@@ -77,7 +77,7 @@ function showQuestion() {
     
     let optionsHTML = '';
     q.options.forEach(opt => {
-        optionsHTML += `<button onclick="selectAnswer('\( {opt[0]}')" style="display:block; width:100%; margin:8px 0; padding:12px; background:#eee; border:none; border-radius:6px;"> \){opt}</button>`;
+        optionsHTML += `<button onclick="selectAnswer('${opt[0]}')" style="display:block; width:100%; margin:8px 0; padding:12px; background:#eee; border:none; border-radius:6px;"> \){opt}</button>`;
     });
     document.getElementById('quizOptions').innerHTML = optionsHTML;
     document.getElementById('nextBtn').style.display = 'none';
@@ -195,7 +195,8 @@ if (menuToggle && nav) {
         }
 
     });
-    /* ==========================================
+    
+}/* ==========================================
    AUTHENTICATION MODAL
 ========================================== */
 
