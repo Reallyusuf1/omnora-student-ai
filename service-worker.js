@@ -1,4 +1,4 @@
-const CACHE_NAME = "omnora-student-ai-v1";
+const CACHE_NAME = "omnora-student-ai-v2";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
