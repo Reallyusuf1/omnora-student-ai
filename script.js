@@ -174,15 +174,17 @@ const nav = document.querySelector(".nav");
 
 if (menuToggle && nav) {
 
-    menuToggle.addEventListener("click", function () {
-        nav.classList.toggle("active");
+    menuToggle.addEventListener("click", function (e) {
+    e.stopPropagation();
 
-        if (nav.classList.contains("active")) {
-            menuToggle.innerHTML = '<i class="fas fa-times"></i>';
-        } else {
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
+    nav.classList.toggle("active");
+
+    if (nav.classList.contains("active")) {
+        menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+    } else {
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+});
 
     document.addEventListener("click", function (e) {
 
