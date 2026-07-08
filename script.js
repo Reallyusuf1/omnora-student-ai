@@ -173,7 +173,7 @@ const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
 const menuOverlay = document.querySelector(".menu-overlay");
 
-if (menuToggle && nav && menuOverlay) {
+if (menuToggle && nav) {
 
     menuToggle.addEventListener("click", function (e) {
     e.stopPropagation();
