@@ -1,20 +1,48 @@
-/*
-========================================
-OMNORA STUDENT AI
-Base Styles
-Build V2
-========================================
+/* ============================================================
+   OMNORA STUDENT AI - COMPLETE STYLESHEET
+   ============================================================ */
 
-Purpose:
-- CSS Reset
-- HTML & Body defaults
-- Global box-sizing
-- Default typography
-- Global accessibility rules
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-NOTE:
-Do not place component styles here.
-Component styles belong in components.css
-Layout styles belong in layout.css
-Theme variables belong in variables.css
-*/
+body {
+    background: linear-gradient(145deg, #0a0e1a 0%, #141b2d 50%, #1a2540 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #ffffff;
+    padding: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 36px;
+    padding: 32px 38px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2563eb, #7c3aed);
+    border-radius: 10px;
+}
