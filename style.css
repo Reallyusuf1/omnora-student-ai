@@ -1199,7 +1199,8 @@ touch-action: manipulation;
     position:fixed;
     top:0;
     left:-100%;
-    width:280px;
+    width:85%;
+max-width:320px;
     height:100vh;
     background:#111827;
     padding:90px 25px 30px;
@@ -1475,4 +1476,22 @@ border-radius:20px;
         overflow-y:auto;
     }
 
+}
+.menu-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+
+    z-index:999;
+}
+
+.menu-overlay.active{
+    opacity:1;
+    visibility:visible;
 }
