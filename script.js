@@ -182,9 +182,17 @@ if (menuToggle && nav) {
         menuOverlay.classList.toggle("active");
 
     if (nav.classList.contains("active")) {
-        menuToggle.innerHTML = '<i class="fas fa-times"></i>';
-    } else {
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+
+    document.body.classList.add("menu-open");
+
+    menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+
+} else {
+
+    document.body.classList.remove("menu-open");
+
+    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+
     }
 });
 
@@ -197,6 +205,7 @@ if (menuToggle && nav) {
             nav.classList.remove("active");
             menuOverlay.classList.remove("active");
             menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            document.body.classList.remove("menu-open");
         }
 
     });
