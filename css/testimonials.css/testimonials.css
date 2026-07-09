@@ -1,0 +1,53 @@
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials {
+    margin: 36px 0 32px;
+}
+.testimonials h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.testimonials h3 i {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-right: 10px;
+}
+
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+.testi-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px 18px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+.testi-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(37, 99, 235, 0.1);
+}
+.testi-card p {
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+}
+.testi-card .name {
+    font-weight: 700;
+    margin-top: 10px;
+    font-style: normal;
+    color: #fff;
+}
+.testi-card .place {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.3);
+}
