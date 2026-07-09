@@ -489,3 +489,32 @@ z-index: 10002;
     width:210px;
 }
 
+/* ==========================================
+   MOBILE HERO FIX
+========================================== */
+
+@media (max-width: 768px) {
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .hero-visual {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .floating-elements {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .floating-card {
+    position: static;
+    width: 100%;
+    margin: 12px 0;
+  }
+
+}
