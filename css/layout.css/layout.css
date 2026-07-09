@@ -406,87 +406,86 @@ z-index: 10002;
    FLOATING CARDS
 ============================================================ */
 
-.floating-elements{
-    position:absolute;
-    inset:0;
-    z-index:5;
-    pointer-events:none;
+/* ==========================================
+   HERO CARDS / FLOATING AREA FIX
+========================================== */
+
+.floating-elements {
+    position: static;
+    inset: auto;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    pointer-events: auto;
 }
 
-.floating-card{
-    position:absolute;
-    width:180px;
-    padding:14px 16px;
-    border-radius:18px;
-
-    background:rgba(17,24,39,.72);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.08);
-    box-shadow:0 20px 45px rgba(0,0,0,.28);
-
-    display:flex;
-    align-items:flex-start;
-    gap:12px;
-
-    transition:.35s ease;
+.floating-card,
+.floating-card-1,
+.floating-card-2,
+.floating-card-3,
+.floating-card-4 {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: 190px;
+    min-height: 190px;
 }
 
-.floating-card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(96,165,250,.35);
+.floating-card {
+    display: flex;
+    align-items: stretch;
 }
 
-.card-icon{
-    font-size:20px;
-    color:#60a5fa;
-    margin-top:2px;
-    flex-shrink:0;
+.card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.card-content h3{
-    font-size:15px;
-    font-weight:700;
-    color:#fff;
-    margin-bottom:4px;
+.card-content p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
-.card-content p{
-    font-size:12px;
-    line-height:1.5;
-    color:rgba(255,255,255,.70);
+.hero-visual .visual-background,
+.hero-visual .brain-ring,
+.hero-visual .brain-pulse {
+    display: none;
 }
 
-.coming-soon{
-    display:inline-block;
-    margin-top:6px;
-    font-size:11px;
-    color:#a78bfa;
-    font-weight:600;
+.hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Card Positions */
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        gap: 24px;
+    }
 
-.floating-card-1{
-    top:35px;
-    left:0;
-}
+    .floating-elements {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
 
-.floating-card-2{
-    bottom:55px;
-    left:18px;
-}
-
-.floating-card-3{
-    top:35px;
-    right:0;
-}
-
-.floating-card-4{
-    bottom:40px;
-    right:10px;
-    width:210px;
+    .floating-card,
+    .floating-card-1,
+    .floating-card-2,
+    .floating-card-3,
+    .floating-card-4 {
+        height: auto;
+        min-height: 150px;
+    }
 }
 
 /* ==========================================
