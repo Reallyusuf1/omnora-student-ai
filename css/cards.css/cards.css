@@ -122,6 +122,8 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
 }
+
+@media (max-width: 768px) {
     .floating-elements{
     position: static;
     display: grid;
