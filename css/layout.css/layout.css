@@ -223,14 +223,14 @@ z-index: 10002;
 .visual-content{
     position:relative;
     z-index:2;
+    display:grid;
 
-    display:flex;
-    flex-direction:column;
+    grid-template-columns:minmax(280px,1fr) minmax(320px,420px);
+    gap:28px;
     align-items:center;
-    justify-content:center;
-
     width:100%;
-    height:100%;
+    min-height:620px;
+    padding:40px;
 }
 
 .ai-brain{
@@ -566,12 +566,6 @@ z-index: 10002;
     -webkit-box-orient: vertical;
 }
 
-.hero-visual .visual-background,
-.hero-visual .brain-ring,
-.hero-visual .brain-pulse {
-    display: none;
-}
-
 .hero-visual {
     display: flex;
     align-items: center;
@@ -626,9 +620,4 @@ z-index: 10002;
         -webkit-line-clamp: 3;
     }
 
-    .hero-visual .visual-background,
-    .hero-visual .brain-ring,
-    .hero-visual .brain-pulse {
-        display: none;
-    }
 }
