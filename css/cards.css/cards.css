@@ -32,23 +32,37 @@
 
 .floating-card-1 {
     top: 20px;
-    left: 0;
+    right: 0;
+    left: auto;
 }
 
 .floating-card-2 {
-    bottom: 28px;
+    bottom: 20px;
     left: 0;
+    right: auto;
 }
 
 .floating-card-3 {
-    top: 20px;
+    top: 50%;
     right: 0;
+    left: auto;
+    transform: translateY(-50%);
 }
 
 .floating-card-4 {
     bottom: 20px;
-    right: 8px;
+    right: 0;
+    left: auto;
+
     width: 210px;
+    min-height: 210px;
+}
+
+.floating-card-1,
+.floating-card-2,
+.floating-card-3 {
+    width: 180px;
+    min-height: 180px;
 }
 
 .floating-card {
@@ -71,17 +85,6 @@ align-items: flex-start;
     transition: transform .3s ease,
                 box-shadow .3s ease,
                 border-color .3s ease;
-}
-
-.floating-card-1,
-.floating-card-2,
-.floating-card-3 {
-    width: 180px;
-    min-height: 180px;
-}
-
-.floating-card-4 {
-    min-height: 210px;
 }
 
 .floating-card:hover {
