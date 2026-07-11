@@ -1,7 +1,11 @@
 @import url("./variables.css/variables.css");
 @import url("./base.css/base.css");
 @import url("./typography.css/typography.css");
+
 @import url("./layout.css/layout.css");
+@import url("./cards.css/cards.css");
+@import url("./brain.css/brain.css");
+
 @import url("./navigation.css/navigation.css");
 @import url("./components.css/components.css");
 @import url("./features.css/features.css");
