@@ -466,29 +466,33 @@ z-index: 10002;
 ========================================== */
 
 .floating-elements {
-    position: static;
-    inset: auto;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    width: 100%;
-    pointer-events: auto;
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
 }
 
-.floating-card,
-.floating-card-1,
-.floating-card-2,
-.floating-card-3,
+.floating-card {
+    position: absolute;
+    width: 180px;
+}
+
+.floating-card-1 {
+    top: 35px;
+    left: 0;
+}
+.floating-card-2 {
+    bottom: 55px;
+    left: 18px;
+}
+.floating-card-3 {
+    top: 35px;
+    right: 0;
+}
 .floating-card-4 {
-    position: static;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    height: 190px;
-    min-height: 190px;
+    bottom: 40px;
+    right: 10px;
+    width: 210px;
 }
 
 .floating-card {
