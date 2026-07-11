@@ -31,21 +31,24 @@
 }
 
 .floating-card-1 {
-    top: 35px;
+    top: 20px;
     left: 0;
 }
+
 .floating-card-2 {
-    bottom: 55px;
-    left: 18px;
+    bottom: 20px;
+    left: 0;
 }
+
 .floating-card-3 {
-    top: 35px;
+    top: 20px;
     right: 0;
 }
+
 .floating-card-4 {
-    bottom: 40px;
-    right: 10px;
-    width: 210px;
+    bottom: 20px;
+    right: 0;
+    width: 200px;
 }
 
 .floating-card {
