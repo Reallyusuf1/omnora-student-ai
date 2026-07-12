@@ -144,12 +144,17 @@ align-items: flex-start;
 @media (max-width: 768px) {
     .floating-elements{
     position: static;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    width: 100%;
-    margin-top: 20px;
+    display: inline-grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap:16px;
+    width:100%;
+    height:auto !important;
+    margin-top:20px;
+    align-content:start;
     }
+  .floating-elements{
+    height: fit-content !important;
+  }
 
   .floating-card,
 .floating-card-1,
@@ -161,9 +166,9 @@ align-items: flex-start;
     width: 100%;
     max-width: 180px;
 
-    height: 190px !important;
-min-height: 190px !important;
-max-height: 190px !important;
+    height: 200px !important;
+min-height: 200px !important;
+max-height: 200px !important;
 
     margin: 0;
     justify-self: center;
