@@ -66,6 +66,7 @@ height: 380px;
 
     pointer-events:none;
 }
+
 .ai-brain i{
     font-size:120px;
     color:#ffffff;
@@ -74,6 +75,7 @@ height: 380px;
 
     animation:brainPulse 3s ease-in-out infinite;
 }
+
 /* =====================================================
    AI BRAIN CORE
 ===================================================== */
