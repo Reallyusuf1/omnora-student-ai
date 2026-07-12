@@ -67,10 +67,6 @@ height: 380px;
     pointer-events:none;
 }
 
-.ai-brain i{
-    animation: brainPulse 3s ease-in-out infinite;
-}
-
 /* =====================================================
    AI BRAIN CORE
 ===================================================== */
@@ -92,12 +88,27 @@ height: 380px;
     align-items: center;
     justify-content: center;
 }
+.brain-img{
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
 
-.brain-image i{
-    font-size: 120px;
-    color: #ffffff;
+    filter:
+        drop-shadow(0 0 18px rgba(96,165,250,.45))
+        drop-shadow(0 0 45px rgba(124,58,237,.35));
 
-    filter: drop-shadow(0 0 18px rgba(96,165,250,.55));
+    transition:
+        transform .4s ease,
+        filter .4s ease;
+}
+
+.ai-brain:hover .brain-img{
+    transform: scale(1.03);
+    filter:
+        drop-shadow(0 0 25px rgba(96,165,250,.65))
+        drop-shadow(0 0 60px rgba(124,58,237,.55));
 }
    
 /* =====================================================
