@@ -146,7 +146,7 @@ align-items: flex-start;
     position: static;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 16px;
     width: 100%;
     margin-top: 20px;
     }
@@ -162,7 +162,7 @@ align-items: flex-start;
     max-width: 180px;
 
     height: auto;
-    min-height: 180px;
+    min-height: 160px;
 
     margin: 0;
     justify-self: center;
@@ -177,7 +177,7 @@ justify-content: flex-start;
     .card-content {
     width: 100%;
     height: auto;
-    margin-top: 12px;
+    margin-top: 8px;
 
     display: flex;
     flex-direction: column;
@@ -186,8 +186,8 @@ justify-content: flex-start;
     gap: 4px;
     }
   .floating-card {
-    padding: 14px;
-    gap: 10px;
+    padding: 12px;
+    gap: 8px;
   }
 
     .card-content p {
