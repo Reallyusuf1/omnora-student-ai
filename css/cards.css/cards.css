@@ -47,8 +47,8 @@ display: block;
     position: absolute;
 
     top: 450px;
-    right: 350;
-    left: auto;
+    right: 300;
+    left:600;
 
     width: 210px;
     min-height: 210px;
