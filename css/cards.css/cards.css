@@ -36,7 +36,7 @@ display: block;
 }
 
 .floating-card-3 {
-    top: 440px;
+    top: 450px;
     right: 0;
     left: auto;
 }
@@ -47,7 +47,7 @@ display: block;
     position: absolute;
 
     top: 450px;
-    right: 240;
+    right: 270;
     left: auto;
 
     width: 210px;
