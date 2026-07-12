@@ -42,7 +42,14 @@ display: block;
 }
 
 .floating-card-4 {
-    display: none;
+    display: flex;
+
+    position: absolute;
+
+    top: 480px;
+    right: 0;
+    left: auto;
+
     width: 210px;
     min-height: 210px;
 }
