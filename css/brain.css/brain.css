@@ -68,12 +68,7 @@ height: 380px;
 }
 
 .ai-brain i{
-    font-size:120px;
-    color:#ffffff;
-
-    filter:drop-shadow(0 0 18px rgba(96,165,250,.55));
-
-    animation:brainPulse 3s ease-in-out infinite;
+    animation: brainPulse 3s ease-in-out infinite;
 }
 
 /* =====================================================
@@ -88,7 +83,23 @@ height: 380px;
     align-items:center;
     justify-content:center;
     z-index:5;
-                        }
+}
+   .brain-image{
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brain-image i{
+    font-size: 120px;
+    color: #ffffff;
+
+    filter: drop-shadow(0 0 18px rgba(96,165,250,.55));
+}
+   
 /* =====================================================
    AI BRAIN RINGS
 ===================================================== */
@@ -127,6 +138,23 @@ height: 520px;
 /* =====================================================
    BRAIN ANIMATIONS
 ===================================================== */
+.brain-glow{
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+        rgba(96,165,250,.18) 0%,
+        rgba(124,58,237,.10) 45%,
+        transparent 75%);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
 .brain-pulse{
     position:absolute;
     top:50%;
@@ -143,5 +171,3 @@ height: 340px;
     z-index:0;
     pointer-events:none;
 }
-
- }
