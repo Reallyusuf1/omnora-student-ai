@@ -173,13 +173,15 @@ const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
 const menuOverlay = document.querySelector(".menu-overlay");
 
-if (menuToggle && nav) {
+if (menuToggle && nav && menuOverlay) {
 
     menuToggle.addEventListener("click", function (e) {
     e.stopPropagation();
 
     nav.classList.toggle("active");
-        menuOverlay.classList.toggle("active");
+        if (menuOverlay) {
+    menuOverlay.classList.toggle("active");
+        }
 
     if (nav.classList.contains("active")) {
 
@@ -203,7 +205,9 @@ if (menuToggle && nav) {
             !menuToggle.contains(e.target)
         ) {
             nav.classList.remove("active");
-            menuOverlay.classList.remove("active");
+            if (menuOverlay) {
+    menuOverlay.classList.remove("active");
+            }
             menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             document.body.classList.remove("menu-open");
         }
