@@ -299,5 +299,8 @@ overflow:visible;
         justify-content: center;
         align-items: center;
     }
+   .visual-content {
+    height: auto;
+   }
 
 }
