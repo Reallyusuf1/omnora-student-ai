@@ -59,7 +59,7 @@
 }
 
 /* AI Platform Brain */
-.ai-brain i {
+.ai-platform-brain i {
     animation: pulse 2s ease-in-out infinite;
 }
 
@@ -139,4 +139,10 @@
     50% {
         transform: scale(1.1);
     }
+   
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1);
+}
+   
 }
