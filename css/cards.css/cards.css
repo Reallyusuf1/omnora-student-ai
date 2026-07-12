@@ -9,20 +9,13 @@
 .floating-elements {
     position: relative;
 
-    display: grid;
-    grid-template-columns: repeat(2, minmax(170px, 1fr));
-
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-
-    gap: 24px;
-
     width: 100%;
-    max-width: 420px;
+max-width: 520px;
+height: 700px;
 
-    margin: 32px auto 0;
+margin: 0;
+
+display: block;
 }
 
 .floating-card {
@@ -37,16 +30,15 @@
 }
 
 .floating-card-2 {
-    top: 250px;
+    top: 230px;
     right: 0;
     left: auto;
 }
 
 .floating-card-3 {
-    top: 480px;
+    top: 440px;
     right: 0;
     left: auto;
-    transform: none;
 }
 
 .floating-card-4 {
