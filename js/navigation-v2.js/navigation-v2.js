@@ -10,6 +10,7 @@ function openSidebar() {
     mobileSidebar.classList.add("active");
     menuOverlay.classList.add("active");
     document.body.classList.add("menu-open");
+    mobileSidebar.scrollTop = 0;
 }
 
 function closeSidebar() {
@@ -29,6 +30,9 @@ function initializeNavigation() {
     if (!menuToggle || !mobileSidebar || !menuOverlay) return;
 
     menuToggle.addEventListener("click", toggleSidebar);
+    mobileSidebar.addEventListener("touchmove", (e) => {
+    e.stopPropagation();
+ } );
 
     menuOverlay.addEventListener("click", closeSidebar);
 
