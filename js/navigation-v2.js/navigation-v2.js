@@ -1,7 +1,7 @@
 // ==========================================
 // Navigation V2
 // ==========================================
-alert("Navigation JS Loaded");
+
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileSidebar = document.querySelector(".mobile-sidebar");
 const menuOverlay = document.querySelector(".menu-overlay");
@@ -10,8 +10,6 @@ function openSidebar() {
     mobileSidebar.classList.add("active");
     menuOverlay.classList.add("active");
     document.body.classList.add("menu-open");
-
-    alert("Sidebar Open");
 }
 
 function closeSidebar() {
