@@ -291,6 +291,10 @@ overflow:visible;
         text-align: center;
         gap: 24px;
     }
+   body.menu-open{
+    overflow: hidden;
+    touch-action: none;
+   }
 
     .hero-visual {
         width: 100%;
