@@ -5,12 +5,13 @@
 @import url("./layout.css/layout.css");
 @import url("./cards.css/cards.css");
 @import url("./brain.css/brain.css");
+
+@import url("./navigation.css/navigation.css");
 @import url("./components.css/components.css");
 @import url("./features.css/features.css");
 @import url("./ai.css/ai.css");
 @import url("./auth.css/auth.css");
 @import url("./footer.css/footer.css");
-
 @import url("./navigation-v2.css/navigation-v2.css");
 @import url("./responsive.css/responsive.css");
 @import url("./animations.css/animations.css");
