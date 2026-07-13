@@ -36,11 +36,38 @@
 }
 
 .logo{
-    font-size:20px;
-    font-weight:700;
-    color:#ffffff;
+    display:flex;
+    align-items:center;
+    gap:12px;
     text-decoration:none;
-    letter-spacing:.5px;
+}
+
+.logo-brain{
+    font-size:30px;
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1;
+}
+
+.logo-omnora{
+    color:#ffffff;
+    font-size:22px;
+    font-weight:800;
+}
+
+.logo-student{
+    font-size:22px;
+    font-weight:800;
+    background:linear-gradient(
+        90deg,
+        #7c5cff,
+        #5b8cff
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 
