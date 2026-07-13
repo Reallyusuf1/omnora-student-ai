@@ -6,17 +6,40 @@ const menuToggle = document.querySelector(".menu-toggle");
 const mobileSidebar = document.querySelector(".mobile-sidebar");
 const menuOverlay = document.querySelector(".menu-overlay");
 
-function openSidebar() {
+function activateSidebar() {
     mobileSidebar.classList.add("active");
-    menuOverlay.classList.add("active");
-    document.body.classList.add("menu-open");
     mobileSidebar.scrollTop = 0;
 }
 
-function closeSidebar() {
+function activateOverlay() {
+    menuOverlay.classList.add("active");
+}
+
+function activateNavigationState() {
+    document.body.classList.add("menu-open");
+}
+
+function openSidebar() {
+    activateSidebar();
+    activateOverlay();
+    activateNavigationState();
+}
+function deactivateSidebar() {
     mobileSidebar.classList.remove("active");
+}
+
+function deactivateOverlay() {
     menuOverlay.classList.remove("active");
+}
+
+function deactivateNavigationState() {
     document.body.classList.remove("menu-open");
+}
+
+function closeSidebar() {
+    deactivateSidebar();
+    deactivateOverlay();
+    deactivateNavigationState();
 }
 
 function toggleSidebar() {
