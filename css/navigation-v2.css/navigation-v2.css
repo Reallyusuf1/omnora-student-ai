@@ -308,11 +308,6 @@ touch-action: pan-y;
     color:#7c58ed;
 }
 
-body.menu-open{
-    overflow: hidden;
-    touch-action: none;
-}
-
 /* ==========================================
    MENU OVERLAY
 ========================================== */
