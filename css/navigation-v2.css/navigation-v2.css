@@ -224,6 +224,9 @@
     overflow-y:auto;
 
     transition:left .35s ease;
+   
+   -webkit-overflow-scrolling: touch;
+overscroll-behavior: contain;
 
     z-index:1100;
 }
