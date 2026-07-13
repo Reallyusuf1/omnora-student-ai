@@ -293,6 +293,12 @@
     color:#7c58ed;
 }
 
+body.menu-open{
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
 /* ==========================================
    MENU OVERLAY
 ========================================== */
