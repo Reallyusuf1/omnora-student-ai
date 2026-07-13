@@ -1,6 +1,6 @@
-// ==========================================
-// Navigation V2
-// ==========================================
+// ======================================
+// Navigation V2 Module
+// ======================================
 
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileSidebar = document.querySelector(".mobile-sidebar");
@@ -25,6 +25,7 @@ function toggleSidebar() {
 }
 
 function initializeNavigation() {
+
     if (!menuToggle || !mobileSidebar || !menuOverlay) return;
 
     menuToggle.addEventListener("click", toggleSidebar);
