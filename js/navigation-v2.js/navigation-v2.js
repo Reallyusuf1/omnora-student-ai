@@ -16,6 +16,10 @@ function activateOverlay() {
 }
 
 function activateNavigationState() {
+
+    // Lock page scrolling while the navigation is open.
+    // This function must NOT control Hero, Sidebar, or Overlay behavior.
+
     document.body.classList.add("menu-open");
 }
 
@@ -33,6 +37,9 @@ function deactivateOverlay() {
 }
 
 function deactivateNavigationState() {
+
+    // Restore page scrolling after the navigation closes.
+
     document.body.classList.remove("menu-open");
 }
 
