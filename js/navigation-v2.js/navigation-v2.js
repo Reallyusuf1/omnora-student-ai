@@ -1,7 +1,7 @@
 // ==========================================
 // Navigation V2
 // ==========================================
-
+alert("Navigation JS Loaded");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileSidebar = document.querySelector(".mobile-sidebar");
 const menuOverlay = document.querySelector(".menu-overlay");
