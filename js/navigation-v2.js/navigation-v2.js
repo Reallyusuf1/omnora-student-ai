@@ -10,6 +10,8 @@ function openSidebar() {
     mobileSidebar.classList.add("active");
     menuOverlay.classList.add("active");
     document.body.classList.add("menu-open");
+
+    alert("Sidebar Open");
 }
 
 function closeSidebar() {
