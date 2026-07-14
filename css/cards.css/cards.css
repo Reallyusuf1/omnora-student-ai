@@ -24,20 +24,20 @@ display: block;
 }
 
 .floating-card-1 {
-    top: 20px;
-    right: 0;
+    top: 30px;
+    right: 350;
     left: auto;
 }
 
 .floating-card-2 {
     top: 230px;
-    right: 0;
+    right: 350;
     left: auto;
 }
 
 .floating-card-3 {
-    top: 230px;
-    right: 350;
+    top: 220px;
+    right: 0;
     left: auto;
 }
 
@@ -46,9 +46,9 @@ display: block;
 
     position: absolute;
 
-    top: 50px;
+    top: 18px;
     right: 350;
-    left:600;
+    left: auto;
 
     width: 210px;
     min-height: 210px;
