@@ -36,8 +36,8 @@ display: block;
 }
 
 .floating-card-3 {
-    top: 450px;
-    right: 0;
+    top: 230px;
+    right: 350;
     left: auto;
 }
 
@@ -46,8 +46,8 @@ display: block;
 
     position: absolute;
 
-    top: 450px;
-    right: 300;
+    top: 50px;
+    right: 350;
     left:600;
 
     width: 210px;
