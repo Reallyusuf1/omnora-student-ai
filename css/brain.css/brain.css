@@ -90,9 +90,6 @@ radial-gradient(
     display: flex;
     align-items: center;
     justify-content: center;
-
-      .brain-image{
-    transform: translateY(-12px);
 }
       
 .brain-img{
