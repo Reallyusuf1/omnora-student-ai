@@ -110,7 +110,7 @@ z-index: 10002;
 .hero-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start
+    align-items: flex-start;
     gap: 40px;
     padding: 40px;
     border-radius: 32px;
@@ -118,12 +118,13 @@ z-index: 10002;
     overflow: hidden;
 
     background: linear-gradient(
-        135deg,
-        rgba(37, 99, 235, 0.08),
-        rgba(124, 58, 237, 0.05)
+        145deg,
+        #132440 0%,
+        #182C4F 45%,
+        #20365E 100%
     );
 
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(96,165,250,.12);
 }
 
 .hero-content {
