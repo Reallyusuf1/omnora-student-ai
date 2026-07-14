@@ -41,9 +41,9 @@ radial-gradient(
     content:"";
 
     position:absolute;
-    inset:16px;
+    inset:14px;
 
-    border-radius:50%;
+    border-radius:40%;
 
     border:1px solid rgba(255,255,255,.08);
 
