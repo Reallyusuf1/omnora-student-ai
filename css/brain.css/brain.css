@@ -121,7 +121,7 @@ radial-gradient(
 ===================================================== */
 
 
-.brain-ring{
+/*.brain-ring{
     position:absolute;
     top:50%;
     left:50%;
@@ -150,7 +150,6 @@ height: 420px;
     border-color:rgba(59,130,246,.08);
     animation:ringRotate 22s linear infinite;
 }
-
 /* =====================================================
    BRAIN ANIMATIONS
 ===================================================== */
@@ -215,7 +214,7 @@ height: 290px;
         height: 190px;
     }
 
-    .ring-1{
+    /*.ring-1{
         width:380px;
         height:380px;
     }
@@ -229,6 +228,7 @@ height: 290px;
         width:480px;
         height:480px;
     }
+   */
 
 }
    /* ===========================
