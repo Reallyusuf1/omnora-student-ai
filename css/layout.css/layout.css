@@ -275,9 +275,9 @@ overflow:visible;
 
 .hero-visual {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
- }
+}
 
 }
 
