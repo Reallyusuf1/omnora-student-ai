@@ -346,6 +346,23 @@ pointer-events: none;
     gap:12px;
 
 }
+.sidebar-footer a{
+    width:100%;
+    box-sizing:border-box;
+}
+.sidebar-footer .login-btn,
+.sidebar-footer .signup-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+
+    padding:16px 20px;
+
+    box-sizing:border-box;
+}
 
 body.menu-open #hero {
     overflow: hidden;
