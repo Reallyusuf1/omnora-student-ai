@@ -25,13 +25,13 @@ radial-gradient(
 
     border:1px solid rgba(96,165,250,.20);
 
-    box-shadow:
+    /*box-shadow:
 0 0 50px rgba(37,99,235,.45),
 0 0 120px rgba(124,58,237,.35),
 0 0 180px rgba(59,130,246,.15);
 
     overflow:hidden;
-}
+}*/
 .ai-brain::before{
     content:"AI";
 
@@ -149,7 +149,7 @@ height: 420px;
 /* =====================================================
    BRAIN ANIMATIONS
 ===================================================== */
-.brain-glow{
+/*.brain-glow{
     position: absolute;
     inset: 0;
 
@@ -162,7 +162,7 @@ height: 420px;
     rgba(59,130,246,.10) 35%,
     rgba(7,16,29,.95) 70%,
     #020617 100%
-);
+);*/
 
     filter: blur(80px);
     
