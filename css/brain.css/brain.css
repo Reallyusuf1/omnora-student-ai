@@ -109,21 +109,21 @@ radial-gradient(
 }
 
 .ring-1{
-    width: 330px;
-height: 330px;
+    width: 300px;
+height: 300px;
     animation:ringRotate 12s linear infinite;
 }
 
 .ring-2{
-    width: 370px;
-height: 370px;
+    width: 330px;
+height: 330px;
     border-color:rgba(124,58,237,.10);
     animation:ringRotateReverse 16s linear infinite;
 }
 
 .ring-3{
-    width: 420px;
-height: 420px;
+    width: 380px;
+height: 380px;
     border-color:rgba(59,130,246,.08);
     animation:ringRotate 22s linear infinite;
 }
