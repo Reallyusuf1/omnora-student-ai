@@ -16,10 +16,12 @@ height: 380px;
     border-radius:50%;
 
     background:
-        radial-gradient(circle at center,
-        rgba(255,255,255,.14) 0%,
-        rgba(124,58,237,.18) 45%,
-        rgba(37,99,235,.22) 100%);
+    radial-gradient(circle at center,
+    rgba(255,255,255,.95) 0%,
+    rgba(255,255,255,.85) 20%,
+    rgba(185,160,255,.65) 45%,
+    rgba(96,165,250,.40) 70%,
+    rgba(37,99,235,.15) 100%);
 
     border:1px solid rgba(96,165,250,.20);
 
@@ -156,10 +158,11 @@ height: 520px;
     border-radius: 50%;
 
     background:
-        radial-gradient(circle,
-        rgba(96,165,250,.18) 0%,
-        rgba(124,58,237,.10) 45%,
-        transparent 75%);
+    radial-gradient(circle,
+    rgba(255,255,255,.70) 0%,
+    rgba(185,160,255,.35) 45%,
+    rgba(96,165,250,.18) 70%,
+    transparent 100%);
 
     z-index: 1;
 
