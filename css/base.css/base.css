@@ -11,14 +11,28 @@
     box-sizing: border-box;
 }
 
-body {
-    background: linear-gradient(145deg, #0a0e1a 0%, #141b2d 50%, #1a2540 100%);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #ffffff;
-    padding: 16px;
-    line-height: 1.6;
-    min-height: 100vh;
-}
+body (
+background: radial-gradient(
+        circle at top,
+        rgba(96,165,250,.12),
+        transparent 45%
+    ),
+    radial-gradient(
+        circle at bottom right,
+        rgba(124,58,237,.08),
+        transparent 40%
+    ),
+    linear-gradient(
+        180deg,
+        #182544 0%,
+        #233257 45%,
+        #314570 100%
+    );
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+color: #ffffff;
+padding: 10px;
+line-height: 1.6;
+min-height: 100vh;
 
 .container {
     max-width: 1200px;
