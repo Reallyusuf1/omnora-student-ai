@@ -110,7 +110,7 @@ z-index: 10002;
 .hero-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start
     gap: 60px;
     padding: 50px;
     border-radius: 32px;
