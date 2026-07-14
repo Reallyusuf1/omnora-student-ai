@@ -210,7 +210,7 @@ overflow:visible;
     white-space: nowrap;
 }
 
-.visual-background {
+/*.visual-background {
     position: absolute;
     inset: 0;
     background:
@@ -254,6 +254,7 @@ overflow:visible;
     right: 20px;
     animation: orbTwo 8s ease-in-out infinite;
 }
+*/
 
 @keyframes orbOne {
     0%,100% {
