@@ -21,7 +21,7 @@ display: block;
 .floating-card {
     position: absolute;
     width: 170px;
-  gap: 20px
+  gap: 20px;
 }
 
 .floating-card-1 {
