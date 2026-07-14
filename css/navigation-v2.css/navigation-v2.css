@@ -347,6 +347,11 @@ pointer-events: none;
 
 }
 
+body.menu-open #hero {
+    overflow: hidden;
+    touch-action: none;
+}
+
 /*************************************************************
    END MOBILE NAVIGATION MODULE
 *************************************************************/
