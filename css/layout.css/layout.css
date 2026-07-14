@@ -273,10 +273,16 @@ overflow:visible;
     }
 }
 
-.hero-visual {
+.hero-visual{
+    flex: 1;
+    position: relative;
+    min-height: 700px;
+
     display: flex;
-    align-items: flex-start;
     justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 180px;
 }
 
 }
