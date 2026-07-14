@@ -16,10 +16,13 @@
     background:
 radial-gradient(
     circle at center,
-    #233b8f 0%,
-    #182b73 28%,
-    #0c1745 65%,
-    #050b22 100%
+
+    #2b3f97 0%,
+    #1b2f7d 22%,
+    #111f5a 45%,
+    #09122f 68%,
+    #040914 86%,
+    #02040b 100%
 );
 
     border:1px solid rgba(96,165,250,.20);
