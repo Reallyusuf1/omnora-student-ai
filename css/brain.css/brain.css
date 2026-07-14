@@ -15,7 +15,12 @@ height: 380px;
 
     border-radius:50%;
 
-    background: transparent;
+    background: radial-gradient(
+    circle,
+    #050B16 0%,
+    #030712 65%,
+    #020617 100%
+);
 
     border:1px solid rgba(96,165,250,.20);
 
@@ -154,13 +159,12 @@ height: 520px;
     .brain-glow{
     background: radial-gradient(
     circle,
-    rgba(96,165,250,.08) 0%,
-    rgba(59,130,246,.06) 25%,
-    rgba(30,41,59,.22) 60%,
-    transparent 100%
+    rgba(37,99,235,.03) 0%,
+    #07101D 45%,
+    #020617 100%
 );
 
-    filter: blur(60px);
+    filter: blur(80px);
     
 
     z-index: 1;
