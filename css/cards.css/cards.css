@@ -32,13 +32,13 @@ display: block;
 .floating-card-2 {
     top: 250px;
     right: 450;
-    left: auto;
+    left: 0;
 }
 
 .floating-card-3 {
     top: 260px;
     right: 0;
-    left: auto;
+    left: 0;
 }
 
 .floating-card-4 {
