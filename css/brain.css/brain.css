@@ -109,21 +109,21 @@ radial-gradient(
 }
 
 .ring-1{
-    width: 290px;
-height: 290px;
+    width: 330px;
+height: 330px;
     animation:ringRotate 12s linear infinite;
 }
 
 .ring-2{
-    width: 320px;
-height: 320px;
+    width: 430px;
+height: 430px;
     border-color:rgba(124,58,237,.10);
     animation:ringRotateReverse 16s linear infinite;
 }
 
 .ring-3{
-    width: 390px;
-height: 390px;
+    width: 480px;
+height: 480px;
     border-color:rgba(59,130,246,.08);
     animation:ringRotate 22s linear infinite;
 }
@@ -192,18 +192,18 @@ height: 290px;
     }
 
     .ring-1{
-        width:290px;
-        height:290px;
+        width:330px;
+        height:330px;
     }
 
     .ring-2{
-        width:320px;
-        height:320px;
+        width:430px;
+        height:430px;
     }
 
     .ring-3{
-        width:390px;
-        height:390px;
+        width:480px;
+        height:480px;
     }
    
 
