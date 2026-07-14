@@ -21,12 +21,11 @@ display: block;
 .floating-card {
     position: absolute;
     width: 170px;
-  gap: 20px;
 }
 
 .floating-card-1 {
     top: 30px;
-    right: 450;
+    right: 500;
     left: auto;
 }
 
