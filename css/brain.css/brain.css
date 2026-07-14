@@ -197,7 +197,9 @@ height: 290px;
     width:320px;
     height:320px;
 
-    transform: translate(-30px, 60px);
+    position: relative;
+    top: 100px;
+    left: -70px;
     }
 
     .brain-img{
