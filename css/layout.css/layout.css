@@ -111,8 +111,8 @@ z-index: 10002;
     display: flex;
     justify-content: space-between;
     align-items: flex-start
-    gap: 60px;
-    padding: 50px;
+    gap: 40px;
+    padding: 40px;
     border-radius: 32px;
     position: relative;
     overflow: hidden;
@@ -274,15 +274,12 @@ overflow:visible;
 }
 
 .hero-visual{
-    flex: 1;
     position: relative;
-    min-height: 700px;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    padding-top: 180px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:520px;
+    overflow:visible;
 }
 
 }
