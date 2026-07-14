@@ -9,6 +9,9 @@
 
     margin: 0 auto 36px;
 
+   top: 65px;
+   left: -50px;
+
     display:flex;
     align-items:center;
     justify-content:center;
