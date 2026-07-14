@@ -148,6 +148,12 @@ overflow:visible;
     color: #ffffff;
     animation: fadeUp 0.8s ease forwards;
 }
+/* Temporary test */
+    position: fixed;
+    top: 140px;
+    left: 24px;
+    z-index: 20;
+}
 
 .hero-title .gradient-text {
     background: linear-gradient(135deg, #60a5fa, #7c3aed, #38bdf8);
