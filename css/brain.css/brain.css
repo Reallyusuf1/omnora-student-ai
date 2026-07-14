@@ -29,10 +29,11 @@ radial-gradient(
 0 0 50px rgba(37,99,235,.45),
 0 0 120px rgba(124,58,237,.35),
 0 0 180px rgba(59,130,246,.15);
+   */
 
     overflow:hidden;
 }
-   */
+
    
 .ai-brain::before{
     content:"AI";
