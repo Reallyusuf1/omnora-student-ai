@@ -41,6 +41,7 @@ function showQuestion() {
                 optionsHTML += `<button onclick="selectAnswer('\( {opt[0]}')"> \){opt}</button>`;
             });
             document.getElementById('quizOptions').innerHTML = optionsHTML;
+          updateProgress();
             document.getElementById('nextBtn').style.display = 'none';
 }
 
@@ -55,8 +56,10 @@ function nextQuestion() {
             currentQuestionIndex++;
             if (currentQuestionIndex < dailyQuestions.length) {
                 showQuestion();
-            } else {
-                alert(`Quiz Complete! You earned ${Math.round(score)} points!`);
+                      clearInterval(quizTimer);
+            } 
+            else {
+                finishQuiz(`Quiz Complete! You earned ${Math.round(score)} points!`);
                 window.location.href = "index.html"; // Return to main page
             }
           clearInterval(quizTimer);
@@ -166,7 +169,7 @@ function startTimer() {
 
             clearInterval(quizTimer);
 
-            alert("Time is up!");
+            finishQuiz("Time is up!");
 
         }
 
@@ -191,10 +194,40 @@ function updateTimer() {
 // ==============================
 // Progress
 // ==============================
+function updateProgress() {
+
+    const progressText =
+        document.getElementById("progressText");
+
+    const progressFill =
+        document.getElementById("progressFill");
+
+    progressText.textContent =
+        `Question ${currentQuestionIndex + 1} / ${dailyQuestions.length}`;
+
+    progressFill.style.width =
+        `${((currentQuestionIndex + 1) / dailyQuestions.length) * 100}%`;
+
+}
 
 // ==============================
 // Results
 // ==============================
+function finishQuiz() {
+
+    clearInterval(quizTimer);
+
+    const totalQuestions = dailyQuestions.length;
+
+alert(`
+🎉 Congratulations!
+
+You scored ${score} / ${totalQuestions}
+
+You earned ${score} OSAI Points.
+`);
+
+}
 
 // ==============================
 // Storage
