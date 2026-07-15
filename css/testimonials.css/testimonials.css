@@ -35,10 +35,10 @@
     background: rgba(255, 255, 255, 0.04);
     border-color: rgba(37, 99, 235, 0.1);
 }
-.testi-card p {
+.testi-card p{
     font-size: 15px;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255,255,255,.82);
     line-height: 1.7;
 }
 .testi-card .name {
@@ -47,7 +47,7 @@
     font-style: normal;
     color: #fff;
 }
-.testi-card .place {
+.testi-card .place{
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255,255,255,.65);
 }
