@@ -12,7 +12,9 @@
     border-radius: 28px;
 
     padding: 30px;
-    margin: 36px 0;
+   
+    margin-top: 60px;
+    margin-bottom: 36px;
 
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
