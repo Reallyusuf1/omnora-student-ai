@@ -134,6 +134,30 @@ z-index: 10002;
     z-index: 2;
 }
 
+.hero-stats{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.stat{
+    display: flex;
+    flex-direction: column;
+}
+
+.stat strong{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.stat span{
+    color: rgba(255,255,255,.72);
+    font-size: 13px;
+}
+
 .hero-visual {
     flex: 1;
     position: relative;
