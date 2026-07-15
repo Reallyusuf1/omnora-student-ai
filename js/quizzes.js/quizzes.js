@@ -1,13 +1,3 @@
-// ================================
-// Quiz Data
-// ================================
-
-const dailyQuestions = [
-          { question: "Who is the current President of Nigeria?", options: ["A. Muhammadu Buhari", "B. Bola Ahmed Tinubu", "C. Goodluck Jonathan", "D. Atiku Abubakar"], answer: "B" },
-          { question: "What is the National Animal of Nigeria?", options: ["A. Lion", "B. Eagle", "C. Horse", "D. Camel"], answer: "A" },
-          { question: "Which is the National Anthem of Nigeria?", options: ["A. Arise, O Compatriots", "B. God Save the Queen", "C. The Star-Spangled Banner", "D. Nkosi Sikelel' iAfrika"], answer: "A" },
-          { question: "What does SSS3 stand for?", options: ["A. Senior Secondary School 3", "B. Science Students School 3", "C. Special Science School 3", "D. Secondary School Stage 3"], answer: "A" }
-        ];
 
 // ================================
 // Quiz State
@@ -17,6 +7,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let selectedAnswer = null;
 let quizStarted = false;
+let quizQuestions = [];
 let studentData = {};
 
 // ==================================================
@@ -33,7 +24,7 @@ let studentData = {};
 // ==================================================
 
 function showQuestion() {
-            const q = dailyQuestions[currentQuestionIndex];
+            const q = quizQuestions[currentQuestionIndex];
             document.getElementById('quizQuestion').innerHTML = `<p><strong>Question ${currentQuestionIndex + 1}:</strong> ${q.question}</p>`;
             
             let optionsHTML = '';
@@ -46,7 +37,7 @@ function showQuestion() {
 }
 
 function selectAnswer(selected) {
-            const correct = dailyQuestions[currentQuestionIndex].answer;
+            const correct = quizQuestions[currentQuestionIndex].answer;
             if (selected === correct) score += 2.5;
             document.getElementById('nextBtn').style.display = 'block';
 }
@@ -54,7 +45,7 @@ function selectAnswer(selected) {
 
 function nextQuestion() {
             currentQuestionIndex++;
-            if (currentQuestionIndex < dailyQuestions.length) {
+            if (currentQuestionIndex < quizQuestions.length) {
                 showQuestion();
                       clearInterval(quizTimer);
             } 
@@ -203,10 +194,10 @@ function updateProgress() {
         document.getElementById("progressFill");
 
     progressText.textContent =
-        `Question ${currentQuestionIndex + 1} / ${dailyQuestions.length}`;
+        `Question ${currentQuestionIndex + 1} / ${quizQuestions.length}`;
 
     progressFill.style.width =
-        `${((currentQuestionIndex + 1) / dailyQuestions.length) * 100}%`;
+        `${((currentQuestionIndex + 1) / quizQuestions.length) * 100}%`;
 
 }
 
@@ -217,7 +208,7 @@ function finishQuiz() {
 
     clearInterval(quizTimer);
 
-    const totalQuestions = dailyQuestions.length;
+    const totalQuestions = quizQuestions.length;
 
 alert(`
 🎉 Congratulations!
