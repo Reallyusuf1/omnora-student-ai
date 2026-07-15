@@ -119,11 +119,7 @@ function unlockQuiz() {
 
     document.getElementById("quizContainer").style.display = "block";
 
-    document.getElementById("registrationForm").style.display = "none";
-
-    document.querySelector("h1").style.display = "none";
-
-    document.querySelector("p").style.display = "none";
+    document.querySelector(".registration-container").style.display = "none";
 
     showQuestion();
     startTimer();
