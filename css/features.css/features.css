@@ -3,7 +3,7 @@
    ============================================================ */
 .features {
     display: grid;
-    grid-template-columns: repeat(3, 210px);
+    grid-template-columns: repeat(3, 250px);
     justify-content: center;
     gap: 16px;
     margin: 48px 0;
