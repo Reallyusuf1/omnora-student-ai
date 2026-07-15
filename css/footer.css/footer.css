@@ -43,7 +43,7 @@
 }
 
 .footer-desc {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255,255,255,.65);
     font-size: 14px;
     line-height: 1.7;
     max-width: 280px;
@@ -60,25 +60,25 @@
 .footer-links a {
     display: block;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255,255,255,.72);
     font-size: 13px;
     padding: 4px 0;
     transition: 0.3s;
 }
 .footer-links a:hover {
-    color: #60a5fa;
+    color: #7c5cff;
 }
 
 .footer-social a {
     display: block;
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255,255,255,.72);
     font-size: 13px;
     padding: 4px 0;
     transition: 0.3s;
 }
 .footer-social a:hover {
-    color: #60a5fa;
+    color: #7c5cff;
 }
 .footer-social a i {
     width: 22px;
@@ -87,7 +87,7 @@
 
 .footer-bottom {
     text-align: center;
-    color: rgba(255, 255, 255, 0.15);
+    color: rgba(255,255,255,.55);
     font-size: 13px;
     padding-top: 18px;
     border-top: 1px solid rgba(255, 255, 255, 0.03);
