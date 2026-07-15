@@ -16,6 +16,9 @@
     margin-top: 60px;
     margin-bottom: 36px;
 
+    max-width: 1280px;
+    margin-inline: auto;
+
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 
