@@ -118,6 +118,11 @@
     object-fit:cover;
     display:block;
 }
+.logo-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
    
 /* =====================================================
    AI BRAIN RINGS
