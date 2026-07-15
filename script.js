@@ -49,7 +49,7 @@ reply = reply
 response.innerHTML = reply
     .replace(/\r\n/g, "<br>")
     .replace(/\n/g, "<br>");
-
+    }
     catch (error) {
         console.error(error);
         response.innerHTML = "❌ Unable to connect. Please try again.";
