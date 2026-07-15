@@ -5,7 +5,7 @@
 .site-header{
     position: static;
 
-    width:100%;
+    width: auto;
 
     display:flex;
     align-items:center;
@@ -75,12 +75,34 @@
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
+
+.sidebar-header{
+    display:flex;
+    justify-content:center;
+    margin-bottom:32px;
+}
+
+.sidebar-header .logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+}
+
 .sidebar-logo-brain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 48px;
     height: 48px;
     flex-shrink: 0;
 }
 
+.logo-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 /* ==========================================
    DESKTOP NAVIGATION
 ========================================== */
