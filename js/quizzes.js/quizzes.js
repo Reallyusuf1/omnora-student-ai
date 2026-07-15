@@ -77,6 +77,10 @@ function registerStudent(event) {
     };
 
     quizStarted = true;
+     quizQuestions = questionBank
+    .filter(q => q.level === studentData.studentClass)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 10);
 
     unlockQuiz();
 }
