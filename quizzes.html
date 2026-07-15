@@ -4,66 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Quizzes - Omnora Student AI</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body { background: linear-gradient(145deg, #0a0e1a, #141b2d); color: #fff; font-family: 'Inter', sans-serif; padding: 20px; }
-        .quiz-container { max-width: 700px; margin: 40px auto; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        .question { font-size: 18px; margin-bottom: 20px; }
-        .options button { width: 100%; padding: 15px; margin: 8px 0; background: rgba(255,255,255,0.1); border: none; border-radius: 10px; color: white; font-size: 16px; cursor: pointer; }
-        .options button:hover { background: rgba(37,99,235,0.3); }
-        .score { font-size: 20px; font-weight: bold; color: #4CAF50; text-align: center; margin-bottom: 20px; }
-    </style>
+    <link rel="stylesheet" href="css/quizzes.css/quizzes.css">
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Daily Quiz</h1>
-        <div class="score">0/10 Points</div>
-        <div id="quizQuestion" class="question"></div>
-        <div id="quizOptions" class="options"></div>
-        <button id="nextBtn" onclick="nextQuestion()" style="display:none; width:100%; padding:15px; background:#4CAF50; border:none; border-radius:10px; margin-top:20px;">Next Question</button>
+    <div id="quizContainer" class="quiz-container" style="display:none;">
+
+    <h1>Student Registration</h1>
+    <p>Complete your information before starting today's quiz.</p>
+
+    <form id="registrationForm">
+
+        <input
+            type="text"
+            id="fullName"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="text"
+            id="schoolName"
+            placeholder="School Name"
+            required
+        >
+
+        <input
+            type="text"
+            id="admissionNumber"
+            placeholder="Admission Number"
+            required
+        >
+
+        <select id="country" required>
+            <option value="">Select Country</option>
+        </select>
+
+        <select id="studentClass" required>
+            <option value="">Select Class</option>
+
+            <optgroup label="Primary">
+                <option>Primary 1</option>
+                <option>Primary 2</option>
+                <option>Primary 3</option>
+                <option>Primary 4</option>
+                <option>Primary 5</option>
+                <option>Primary 6</option>
+            </optgroup>
+
+            <optgroup label="Junior Secondary">
+                <option>JSS 1</option>
+                <option>JSS 2</option>
+                <option>JSS 3</option>
+            </optgroup>
+
+            <optgroup label="Senior Secondary">
+                <option>SSS 1</option>
+                <option>SSS 2</option>
+                <option>SSS 3</option>
+            </optgroup>
+
+        </select>
+
+        <input
+            type="password"
+            id="quizPin"
+            maxlength="4"
+            placeholder="4 Digit Quiz PIN"
+            required
+        >
+
+        <button type="submit" id="startQuizBtn">
+            Start Quiz
+        </button>
+
+    </form>
+
+                    </div>
+    <div id="quizContainer" class="quiz-container" style="display:none;">
+
+    <h1>Daily Quiz</h1>
+
+    <div class="score">0/10 Points</div>
+
+    <div class="quiz-progress">
+
+        <div id="progressText">
+            Question 1 / 10
+        </div>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+        <div id="timer">
+            10:00
+        </div>
+
     </div>
 
-    <script>
-        let currentQuestionIndex = 0;
-        let score = 0;
+    <div id="quizQuestion" class="question"></div>
 
-        const dailyQuestions = [
-          { question: "Who is the current President of Nigeria?", options: ["A. Muhammadu Buhari", "B. Bola Ahmed Tinubu", "C. Goodluck Jonathan", "D. Atiku Abubakar"], answer: "B" },
-          { question: "What is the National Animal of Nigeria?", options: ["A. Lion", "B. Eagle", "C. Horse", "D. Camel"], answer: "A" },
-          { question: "Which is the National Anthem of Nigeria?", options: ["A. Arise, O Compatriots", "B. God Save the Queen", "C. The Star-Spangled Banner", "D. Nkosi Sikelel' iAfrika"], answer: "A" },
-          { question: "What does SSS3 stand for?", options: ["A. Senior Secondary School 3", "B. Science Students School 3", "C. Special Science School 3", "D. Secondary School Stage 3"], answer: "A" }
-        ];
+    <div id="quizOptions" class="options"></div>
 
-        function showQuestion() {
-            const q = dailyQuestions[currentQuestionIndex];
-            document.getElementById('quizQuestion').innerHTML = `<p><strong>Question ${currentQuestionIndex + 1}:</strong> ${q.question}</p>`;
-            
-            let optionsHTML = '';
-            q.options.forEach(opt => {
-                optionsHTML += `<button onclick="selectAnswer('\( {opt[0]}')"> \){opt}</button>`;
-            });
-            document.getElementById('quizOptions').innerHTML = optionsHTML;
-            document.getElementById('nextBtn').style.display = 'none';
-        }
+    <button id="nextBtn" onclick="nextQuestion()">
+        Next
+    </button>
 
-        function selectAnswer(selected) {
-            const correct = dailyQuestions[currentQuestionIndex].answer;
-            if (selected === correct) score += 2.5;
-            document.getElementById('nextBtn').style.display = 'block';
-        }
-
-        function nextQuestion() {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < dailyQuestions.length) {
-                showQuestion();
-            } else {
-                alert(`Quiz Complete! You earned ${Math.round(score)} points!`);
-                window.location.href = "index.html"; // Return to main page
-            }
-        }
-
-        // Start quiz
-        showQuestion();
-    </script>
+    <script src="js/quizzes.js/quizzes.js"></script>
 </body>
 </html>
