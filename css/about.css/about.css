@@ -279,6 +279,11 @@ padding:28px;
 border-radius:22px;
 
 }
+   .about-page .about-section li,
+.about-page .about-vision li{
+
+    font-size:1.08rem !important;
+}
 
 .about-section h2{
 
@@ -292,13 +297,11 @@ font-size:1.2rem;
 
 }
 
-.about-section p,
-.about-vision p{
+.about-page .about-section p,
+.about-page .about-vision p{
 
-    font-size:1.08rem;
-
-    line-height:1.9;
-
+    font-size:1.12rem !important;
+    line-height:2 !important;
 }
 
 }
