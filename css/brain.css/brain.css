@@ -60,10 +60,17 @@
     position: relative;
     z-index: 10;
 
+    width: 210px;
+    height: 210px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-}
+
+    overflow: hidden;
+
+    border-radius: 42px;
+   }
       
 .brain-img{
     width: 170px;
