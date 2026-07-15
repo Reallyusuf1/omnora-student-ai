@@ -38,10 +38,20 @@ async function askAI() {
             response.innerHTML = data.error || "Something went wrong.";
             return;
         }
+        let reply = data.reply || "No response received.";
 
-        response.innerHTML = data.reply || "No response received.";
+reply = reply
+  .replace(/\*\*/g, "")
+  .replace(/\*/g, "")
+  .replace(/###/g, "")
+  .replace(/##/g, "")
+  .replace(/#/g, "");
 
-    } catch (error) {
+response.innerHTML = reply
+  .replace(/\r\n/g, "<br>")
+  .replace(/\n/g, "<br>");
+
+         catch (error) {
         console.error(error);
         response.innerHTML = "❌ Unable to connect. Please try again.";
     } finally {
