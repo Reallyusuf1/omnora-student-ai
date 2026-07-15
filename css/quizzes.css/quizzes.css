@@ -16,7 +16,7 @@ body { background: linear-gradient(145deg, #0a0e1a, #141b2d); color: #fff; font-
     max-width:900px;
     width:95%;
     margin:60px auto;
-    padding:50px;
+    padding:70px;
     background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.10);
     border-radius:20px;
@@ -31,7 +31,7 @@ body { background: linear-gradient(145deg, #0a0e1a, #141b2d); color: #fff; font-
 .registration-container p{
     text-align:center;
     opacity:.8;
-    margin-bottom:30px;
+    margin-bottom: 50px;
 }
 
 /* ==========================================
@@ -41,6 +41,8 @@ body { background: linear-gradient(145deg, #0a0e1a, #141b2d); color: #fff; font-
 #registrationForm{
     display:grid;
     grid-template-columns:1fr;
+    max-width:520px;
+    margin:0 auto;
     gap:18px;
     width:100%;
 }
@@ -68,7 +70,9 @@ body { background: linear-gradient(145deg, #0a0e1a, #141b2d); color: #fff; font-
 }
 
 #registrationForm button{
-    padding:16px;
+    padding:18px;
+    font-size:18px;
+    font-weight:700;
     border:none;
     border-radius:12px;
     cursor:pointer;
