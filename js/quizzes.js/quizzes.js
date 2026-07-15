@@ -33,40 +33,164 @@ let studentData = {};
 // ==================================================
 
 function showQuestion() {
-    // Original implementation
+            const q = dailyQuestions[currentQuestionIndex];
+            document.getElementById('quizQuestion').innerHTML = `<p><strong>Question ${currentQuestionIndex + 1}:</strong> ${q.question}</p>`;
+            
+            let optionsHTML = '';
+            q.options.forEach(opt => {
+                optionsHTML += `<button onclick="selectAnswer('\( {opt[0]}')"> \){opt}</button>`;
+            });
+            document.getElementById('quizOptions').innerHTML = optionsHTML;
+            document.getElementById('nextBtn').style.display = 'none';
 }
 
 function selectAnswer(selected) {
-    // Original implementation
+            const correct = dailyQuestions[currentQuestionIndex].answer;
+            if (selected === correct) score += 2.5;
+            document.getElementById('nextBtn').style.display = 'block';
 }
 
+
 function nextQuestion() {
-    // Original implementation
+            currentQuestionIndex++;
+            if (currentQuestionIndex < dailyQuestions.length) {
+                showQuestion();
+            } else {
+                alert(`Quiz Complete! You earned ${Math.round(score)} points!`);
+                window.location.href = "index.html"; // Return to main page
+            }
+          clearInterval(quizTimer);
 }
 
 // ==============================
 // Registration
 // ==============================
 
-function registerStudent() {
+function registerStudent(event) {
+    event.preventDefault();
 
+    if (!validateRegistration()) {
+        return;
+    }
+
+    studentData = {
+        fullName: document.getElementById("fullName").value.trim(),
+        schoolName: document.getElementById("schoolName").value.trim(),
+        admissionNumber: document.getElementById("admissionNumber").value.trim(),
+        country: document.getElementById("country").value,
+        studentClass: document.getElementById("studentClass").value,
+        quizPin: document.getElementById("quizPin").value
+    };
+
+    quizStarted = true;
+
+    unlockQuiz();
 }
 
 function validateRegistration() {
 
+    const fullName = document.getElementById("fullName").value.trim();
+    const schoolName = document.getElementById("schoolName").value.trim();
+    const admissionNumber = document.getElementById("admissionNumber").value.trim();
+    const country = document.getElementById("country").value;
+    const studentClass = document.getElementById("studentClass").value;
+    const quizPin = document.getElementById("quizPin").value.trim();
+
+    if (
+        !fullName ||
+        !schoolName ||
+        !admissionNumber ||
+        !country ||
+        !studentClass
+    ) {
+        alert("Please complete all required fields.");
+        return false;
+    }
+
+    if (!/^\d{4}$/.test(quizPin)) {
+        alert("Quiz PIN must be exactly 4 digits.");
+        return false;
+    }
+
+    return true;
 }
 
 function unlockQuiz() {
 
+    document.getElementById("quizContainer").style.display = "block";
+
+    document.getElementById("registrationForm").style.display = "none";
+
+    document.querySelector("h1").style.display = "none";
+
+    document.querySelector("p").style.display = "none";
+
+    showQuestion();
+    startTimer();
+
 }
 
 function resetRegistration() {
+
+    document.getElementById("registrationForm").reset();
+
+    studentData = {};
+
+    quizStarted = false;
+
+    selectedAnswer = null;
+
+    currentQuestionIndex = 0;
+
+    score = 0;
 
 }
 
 // ==============================
 // Timer
 // ==============================
+let quizTimer = null;
+let timeRemaining = 600; // 10 minutes
+
+function startTimer() {
+
+    clearInterval(quizTimer);
+
+    timeRemaining = 600;
+
+    updateTimer();
+
+    quizTimer = setInterval(() => {
+
+        timeRemaining--;
+
+        updateTimer();
+
+        if (timeRemaining <= 0) {
+
+            clearInterval(quizTimer);
+
+            alert("Time is up!");
+
+        }
+
+    }, 1000);
+
+}
+
+function updateTimer() {
+
+    const minutes = Math.floor(timeRemaining / 60);
+    const seconds = timeRemaining % 60;
+
+    const timer = document.getElementById("timer");
+
+    if (timer) {
+        timer.textContent =
+            `${minutes}:${seconds.toString().padStart(2, "0")}`;
+    }
+
+}
 
 // ==============================
 // Progress
@@ -83,3 +207,6 @@ function resetRegistration() {
 // ==============================
 // Initialize Quiz
 // ==============================
+document
+    .getElementById("registrationForm")
+    .addEventListener("submit", registerStudent);
