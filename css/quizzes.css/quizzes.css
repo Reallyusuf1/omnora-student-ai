@@ -12,26 +12,15 @@ body { background: linear-gradient(145deg, #0a0e1a, #141b2d); color: #fff; font-
 /* ==========================================
    Registration Container
 ========================================== */
-
 .registration-container{
-    max-width: 900px;
-    width: 95%;
-    margin: 60px auto;
-    padding: 50px;
-}
-
-#registrationForm{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#registrationForm input,
-#registrationForm select,
-#registrationForm button{
-    width: 100%;
-    padding: 18px;
-    font-size: 17px;
+    max-width:900px;
+    width:95%;
+    margin:60px auto;
+    padding:50px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:20px;
+    backdrop-filter:blur(20px);
 }
 
 .registration-container h1{
