@@ -28,7 +28,7 @@ body{
     min-height: 100vh;
 }
 .container {
-    max-width: 1200px;
+    max-width: 1230px;
     margin: 0 auto;
     background: linear-gradient(165deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
     backdrop-filter: blur(20px);
