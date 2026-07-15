@@ -35,23 +35,22 @@ async function askAI() {
         const data = await res.json();
 
         if (!res.ok) {
-            response.innerHTML = data.error || "Something went wrong.";
-            return;
+    response.innerHTML = data.error || "Something went wrong.";
+    return;
         }
+        
         let reply = data.reply || "No response received.";
 
 reply = reply
-  .replace(/\*\*/g, "")
-  .replace(/\*/g, "")
-  .replace(/###/g, "")
-  .replace(/##/g, "")
-  .replace(/#/g, "");
+    .replace(/\*\*/g, "")
+    .replace(/^#/gm, "")
+    .replace(/`/g, "");
 
 response.innerHTML = reply
-  .replace(/\r\n/g, "<br>")
-  .replace(/\n/g, "<br>");
+    .replace(/\r\n/g, "<br>")
+    .replace(/\n/g, "<br>");
 
-         catch (error) {
+    catch (error) {
         console.error(error);
         response.innerHTML = "❌ Unable to connect. Please try again.";
     } finally {
