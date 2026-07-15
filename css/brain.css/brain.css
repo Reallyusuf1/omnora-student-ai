@@ -56,7 +56,7 @@
     padding-top: 40px;
     z-index:5;
 }
-   .brain-image{
+   .brain-frame {
     position: relative;
     z-index: 10;
 
@@ -68,26 +68,27 @@
     justify-content: center;
 
     overflow: hidden;
-
     border-radius: 42px;
-   }
-      
-.brain-img{
-    width: 170px;
-    height: 170px;
-    object-fit: contain;
+}
+
+.brain-frame-img {
+    width: 115%;
+    height: 115%;
+
+    object-fit: cover;
+    object-position: center;
+
     user-select: none;
     pointer-events: none;
 
-    filter:
-        drop-shadow(0 0 18px rgba(96,165,250,.25));
+    filter: drop-shadow(0 0 18px rgba(96,165,250,.25));
 
     transition:
         transform .4s ease,
         filter .4s ease;
 }
 
-.ai-brain:hover .brain-img{
+.ai-brain:hover .brain-frame-img {
     transform: scale(1.03);
     filter:
         drop-shadow(0 0 25px rgba(96,165,250,.65))
