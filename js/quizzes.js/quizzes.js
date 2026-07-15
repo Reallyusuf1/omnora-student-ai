@@ -27,10 +27,12 @@ function showQuestion() {
             const q = quizQuestions[currentQuestionIndex];
             document.getElementById('quizQuestion').innerHTML = `<p><strong>Question ${currentQuestionIndex + 1}:</strong> ${q.question}</p>`;
             
-            let optionsHTML = '';
-            q.options.forEach(opt => {
-                optionsHTML += `<button onclick="selectAnswer('\( {opt[0]}')"> \){opt}</button>`;
-            });
+            let optionsHTML = "";
+
+          q.options.forEach(opt => {
+          optionsHTML += `<button onclick="selectAnswer('${opt[0]}')">${opt}</button>`;
+           });
+            
             document.getElementById('quizOptions').innerHTML = optionsHTML;
           updateProgress();
             document.getElementById('nextBtn').style.display = 'none';
