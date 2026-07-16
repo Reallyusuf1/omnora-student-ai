@@ -21,11 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             event.preventDefault();
 
-            await window.supabaseClient.auth.signInWithOAuth(...)
+            await window.supabaseClient.auth.signInWithOAuth({
 
-        });
+    provider: "google",
+
+    options: {
+
+        redirectTo: window.location.origin
 
     }
+
+}};
 
     /* ===================================
        X AUTH
@@ -37,11 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             event.preventDefault();
 
-            await window.supabaseClient.auth.signInWithOAuth(...)
+            await window.supabaseClient.auth.signInWithOAuth({
 
-        });
+    provider: "twitter",
+
+    options: {
+
+        redirectTo: window.location.origin
 
     }
+
+});
 
     /* ===================================
        STUDENT REGISTRATION
