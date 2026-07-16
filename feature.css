@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Features | Omnora Students AI</title>
+
+    <meta name="description"
+          content="Explore every feature available on the Omnora Students AI Platform.">
+
+    <link rel="icon"
+          href="assets/images/favicon.png">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/main.css">
+
+    <link rel="stylesheet"
+          href="css/features.css">
+
+</head>
+
+<body>
+
+<main class="features-page">
+
+    <!-- Hero -->
+
+    <section class="features-hero">
+
+        <div class="container">
+
+            <span class="section-tag">
+                ✨ Omnora Features
+            </span>
+
+            <h1>
+                Everything You Need To Learn Smarter
+            </h1>
+
+            <p class="hero-text">
+                Omnora Students AI combines Artificial Intelligence,
+                personalized learning, quizzes, study planning,
+                motivation, and educational tools into one intelligent
+                learning platform built for students across Africa
+                and around the world.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- AI -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>🤖 Ask Omnora AI</h2>
+
+            <p>
+                Receive clear educational explanations instead of
+                simple answers. Omnora AI helps students understand
+                difficult topics while encouraging real learning.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Quiz -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>📝 Daily Quiz</h2>
+
+            <p>
+                Practice every day with interactive quizzes,
+                improve your knowledge,
+                and monitor your academic progress over time.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Study Plan -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>📚 AI Study Plan</h2>
+
+            <p>
+                Personalized study schedules will help every learner
+                build consistency, focus on weak subjects,
+                and achieve better academic performance.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Omnora Hub -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>🌍 Omnora Hub</h2>
+
+            <p>
+                Discover practical advice that helps students build
+                discipline, confidence, productive study habits,
+                and long-term academic success.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Leaderboard -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>🏆 Global Leaderboard</h2>
+
+            <p>
+                Celebrate outstanding students, schools,
+                and academic excellence through fair and transparent
+                educational rankings.
+
+                <strong>(Coming Soon)</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Student Profile -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>👤 Student Profile</h2>
+
+            <p>
+                Access your achievements,
+                learning history,
+                quiz performance,
+                and educational progress in one place.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Teacher -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>👨‍🏫 Teacher Dashboard</h2>
+
+            <p>
+                Teachers will monitor learning progress,
+                identify outstanding students,
+                and generate educational reports.
+
+                <strong>(Coming Soon)</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Parent -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>👨‍👩‍👧 Parent Dashboard</h2>
+
+            <p>
+                Parents will be able to follow their child's
+                educational growth, study consistency,
+                and quiz performance.
+
+                <strong>(Coming Soon)</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- School -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>🏫 School Dashboard</h2>
+
+            <p>
+                Schools will access educational analytics,
+                student performance insights,
+                and school-level academic statistics.
+
+                <strong>(Coming Soon)</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Voice AI -->
+
+    <section class="feature-card">
+
+        <div class="container">
+
+            <h2>🎙 Voice AI</h2>
+
+            <p>
+                Practice English pronunciation,
+                communicate naturally with AI,
+                and improve language skills through conversation.
+
+                <strong>(Coming Soon)</strong>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Future -->
+
+    <section class="feature-vision">
+
+        <div class="container">
+
+            <h2>
+                🚀 Our Future Vision
+            </h2>
+
+            <p>
+                Omnora Students AI is continuously evolving to create
+                one of the world's most intelligent educational
+                ecosystems for students, teachers, parents,
+                and schools.
+            </p>
+
+            <ul>
+
+                <li>🎓 Digital Certificates</li>
+
+                <li>🏅 Academic Awards</li>
+
+                <li>🌍 International School Rankings</li>
+
+                <li>🎯 Scholarship Opportunities</li>
+
+                <li>🤖 Smarter AI Learning</li>
+
+                <li>📈 Advanced Learning Analytics</li>
+
+                <li>🏫 Global School Partnerships</li>
+
+            </ul>
+
+            <blockquote>
+
+                Learn Better.<br>
+
+                Grow Smarter.<br>
+
+                Build Your Future.<br>
+
+                Powered by Omnora Students AI.
+
+            </blockquote>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
