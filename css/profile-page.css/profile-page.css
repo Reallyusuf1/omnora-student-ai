@@ -3,164 +3,281 @@
    STUDENT PROFILE
 ========================================== */
 
-.profile-page {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px 80px;
+.profile-page{
+    max-width:900px;
+    margin:0 auto;
+    padding:40px 20px 80px;
 }
 
 /* ==========================================
    PROFILE HEADER
 ========================================== */
 
-.profile-header {
-    text-align: center;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 20px;
-    padding: 40px 20px;
-    margin-bottom: 30px;
+.profile-header{
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+    padding:40px 25px;
+    margin-bottom:30px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(15,23,42,.05);
 }
 
-.profile-avatar img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #2563eb;
+.profile-avatar{
+    position:relative;
+    width:130px;
+    height:130px;
+    margin:0 auto 20px;
 }
 
-#student-name {
-    margin-top: 18px;
-    font-size: 2rem;
-    color: #111827;
+.profile-avatar img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #2563eb;
+    display:block;
 }
 
-#member-since {
-    margin-top: 8px;
-    color: #6b7280;
+.camera-button{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#2563eb;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    border:3px solid #fff;
+    transition:.3s;
+    box-shadow:0 4px 12px rgba(37,99,235,.25);
 }
 
-/* ==========================================
-   BUTTONS
-========================================== */
-
-.profile-header button,
-.profile-card button,
-.danger-zone button {
-    width: 100%;
-    padding: 14px;
-    margin-top: 14px;
-    border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: .3s;
+.camera-button:hover{
+    background:#1d4ed8;
+    transform:scale(1.05);
 }
 
-#change-photo-btn,
-#edit-profile-btn,
-#change-pin-btn,
-#theme-btn,
-#logout-btn {
-    background: #2563eb;
-    color: #ffffff;
+#student-name{
+    margin-top:15px;
+    font-size:2rem;
+    font-weight:700;
+    color:#111827;
 }
 
-#change-photo-btn:hover,
-#edit-profile-btn:hover,
-#change-pin-btn:hover,
-#theme-btn:hover,
-#logout-btn:hover {
-    background: #1d4ed8;
+#member-since{
+    margin-top:8px;
+    color:#6b7280;
+    font-size:.95rem;
 }
 
 /* ==========================================
    PROFILE CARD
 ========================================== */
 
-.profile-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 25px;
+.profile-card,
+.settings-list,
+.danger-zone{
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 10px 30px rgba(15,23,42,.05);
 }
 
-.profile-card h2 {
-    color: #111827;
-    margin-bottom: 20px;
+.profile-card h2,
+.settings-list h2{
+    color:#111827;
+    margin-bottom:20px;
+    font-size:1.5rem;
 }
 
-.profile-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #f1f5f9;
+/* ==========================================
+   PROFILE FIELD
+========================================== */
+
+.profile-field{
+    margin-bottom:22px;
 }
 
-.profile-item:last-child {
-    border-bottom: none;
+.profile-field:last-child{
+    margin-bottom:0;
 }
 
-.profile-item span {
-    color: #6b7280;
+.profile-field label{
+    display:block;
+    margin-bottom:8px;
+    font-size:.95rem;
+    font-weight:600;
+    color:#374151;
 }
 
-.profile-item p {
-    color: #111827;
-    font-weight: 600;
+.profile-field input,
+.profile-field select{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    background:#ffffff;
+    font-size:1rem;
+    color:#111827;
+    outline:none;
+    transition:.3s;
+}
+
+.profile-field input:focus,
+.profile-field select:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+}
+
+.profile-field input[readonly],
+.profile-field select:disabled{
+    background:#f9fafb;
+    color:#6b7280;
+    cursor:not-allowed;
+}
+
+/* ==========================================
+   SETTINGS
+========================================== */
+
+.settings-list button,
+.danger-zone button{
+    width:100%;
+    padding:14px;
+    margin-top:14px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:1rem;
+    transition:.3s;
+}
+
+#edit-profile-btn,
+#change-pin-btn,
+#logout-btn{
+    background:#2563eb;
+    color:#ffffff;
+}
+
+#edit-profile-btn:hover,
+#change-pin-btn:hover,
+#logout-btn:hover{
+    background:#1d4ed8;
+}
+
+.theme-setting{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    border-top:1px solid #f1f5f9;
+    border-bottom:1px solid #f1f5f9;
+    margin:18px 0;
+}
+
+/* ==========================================
+   SWITCH
+========================================== */
+
+.switch{
+    position:relative;
+    display:inline-block;
+    width:52px;
+    height:30px;
+}
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.slider{
+    position:absolute;
+    inset:0;
+    cursor:pointer;
+    background:#d1d5db;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.slider::before{
+    content:"";
+    position:absolute;
+    width:22px;
+    height:22px;
+    left:4px;
+    top:4px;
+    background:#fff;
+    border-radius:50%;
+    transition:.3s;
+}
+
+.switch input:checked + .slider{
+    background:#2563eb;
+}
+
+.switch input:checked + .slider::before{
+    transform:translateX(22px);
 }
 
 /* ==========================================
    DANGER ZONE
 ========================================== */
 
-.danger-zone {
-    background: #fff5f5;
-    border: 1px solid #fecaca;
-    border-radius: 20px;
-    padding: 25px;
+.danger-zone{
+    background:#fff5f5;
+    border-color:#fecaca;
 }
 
-.danger-zone h2 {
-    color: #b91c1c;
-    margin-bottom: 15px;
+.danger-zone h2{
+    color:#b91c1c;
+    margin-bottom:15px;
 }
 
-#delete-account-btn {
-    background: #dc2626;
-    color: #ffffff;
+#delete-account-btn{
+    background:#dc2626;
+    color:#ffffff;
 }
 
-#delete-account-btn:hover {
-    background: #b91c1c;
+#delete-account-btn:hover{
+    background:#b91c1c;
 }
 
 /* ==========================================
    RESPONSIVE
 ========================================== */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    .profile-page {
-        padding: 20px 15px 60px;
+    .profile-page{
+        padding:20px 15px 60px;
     }
 
-    .profile-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+    .profile-header{
+        padding:30px 20px;
     }
 
-    .profile-avatar img {
-        width: 110px;
-        height: 110px;
+    .profile-avatar{
+        width:110px;
+        height:110px;
     }
 
-    #student-name {
-        font-size: 1.6rem;
+    #student-name{
+        font-size:1.6rem;
+    }
+
+    .profile-card,
+    .settings-list,
+    .danger-zone{
+        padding:20px;
     }
 
 }
