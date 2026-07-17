@@ -14,20 +14,33 @@ document.addEventListener("DOMContentLoaded", () => {
     =================================== */
 
     if (googleButton) {
-        googleButton.addEventListener("click", async (event) => {
-    event.preventDefault();
+    googleButton.addEventListener("click", async (event) => {
+        event.preventDefault();
 
-    alert("Google button clicked");
+        alert("Google button clicked");
+       alert(typeof window.supabaseClient);
 
-    console.log(window.supabaseClient);
+        try {
+            const { data, error } =
+                await window.supabaseClient.auth.signInWithOAuth({
+                    provider: "google",
+                    options: {
+                        redirectTo: window.location.origin
+                    }
+                });
 
-    await window.supabaseClient.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-            redirectTo: window.location.origin
+            console.log("DATA:", data);
+            console.log("ERROR:", error);
+
+            if (error) {
+                alert(error.message);
+            }
+
+        } catch (err) {
+            console.error(err);
+            alert(err.message);
         }
     });
-});
     }
 
     /* ===================================
