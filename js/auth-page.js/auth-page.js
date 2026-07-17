@@ -15,15 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (googleButton) {
         googleButton.addEventListener("click", async (event) => {
-            event.preventDefault();
+    event.preventDefault();
 
-            await window.supabaseClient.auth.signInWithOAuth({
-                provider: "google",
-                options: {
-                    redirectTo: window.location.origin
-                }
-            });
-        });
+    alert("Google button clicked");
+
+    console.log(window.supabaseClient);
+
+    await window.supabaseClient.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+            redirectTo: window.location.origin
+        }
+    });
+});
     }
 
     /* ===================================
