@@ -1,0 +1,166 @@
+/* ==========================================
+   OMNORA STUDENTS AI
+   STUDENT PROFILE
+========================================== */
+
+.profile-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+/* ==========================================
+   PROFILE HEADER
+========================================== */
+
+.profile-header {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+.profile-avatar img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2563eb;
+}
+
+#student-name {
+    margin-top: 18px;
+    font-size: 2rem;
+    color: #111827;
+}
+
+#member-since {
+    margin-top: 8px;
+    color: #6b7280;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.profile-header button,
+.profile-card button,
+.danger-zone button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#change-photo-btn,
+#edit-profile-btn,
+#change-pin-btn,
+#theme-btn,
+#logout-btn {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+#change-photo-btn:hover,
+#edit-profile-btn:hover,
+#change-pin-btn:hover,
+#theme-btn:hover,
+#logout-btn:hover {
+    background: #1d4ed8;
+}
+
+/* ==========================================
+   PROFILE CARD
+========================================== */
+
+.profile-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.profile-card h2 {
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.profile-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.profile-item:last-child {
+    border-bottom: none;
+}
+
+.profile-item span {
+    color: #6b7280;
+}
+
+.profile-item p {
+    color: #111827;
+    font-weight: 600;
+}
+
+/* ==========================================
+   DANGER ZONE
+========================================== */
+
+.danger-zone {
+    background: #fff5f5;
+    border: 1px solid #fecaca;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.danger-zone h2 {
+    color: #b91c1c;
+    margin-bottom: 15px;
+}
+
+#delete-account-btn {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+#delete-account-btn:hover {
+    background: #b91c1c;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .profile-page {
+        padding: 20px 15px 60px;
+    }
+
+    .profile-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .profile-avatar img {
+        width: 110px;
+        height: 110px;
+    }
+
+    #student-name {
+        font-size: 1.6rem;
+    }
+
+}
