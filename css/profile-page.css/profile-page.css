@@ -15,11 +15,12 @@
 
 .profile-header{
     background:#f5f7fb;
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid #e2e8f0;
     border-radius:20px;
     padding: 30px 25px;
     margin-bottom:30px;
     text-align:center;
+    background:#f5f7fb;
     box-shadow:none;
 }
 
@@ -37,12 +38,15 @@
     object-fit:cover;
     border:4px solid #2563eb;
     display:block;
+   position:relative;
+    z-index:1;
 }
 
 .camera-button{
     position:absolute;
     right:0;
     bottom:0;
+    z-index:2;
     width:42px;
     height:42px;
     border-radius:50%;
@@ -78,17 +82,6 @@
 /* ==========================================
    PROFILE CARD
 ========================================== */
-
-.profile-card,
-.settings-list,
-.danger-zone{
-    background:#f5f7fb;
-    border:1px solid #e5e7eb;
-    border-radius:20px;
-    padding:25px;
-    margin-bottom:25px;
-    box-shadow:none;
-}
 
 .profile-card h2,
 .settings-list h2{
@@ -129,25 +122,30 @@
     outline:none;
     transition:.3s;
 }
-
-.profile-field input:focus,
-.profile-field select:focus{
-    border-color:#2563eb;
-    box-shadow:0 0 0 4px rgba(37,99,235,.12);
-}
-
 .profile-field input[readonly],
 .profile-field select:disabled{
+
     background:#f9fafb;
     color:#6b7280;
     cursor:not-allowed;
+
 }
 
 /* ==========================================
    SETTINGS
 ========================================== */
 
-.settings-list button,
+.settings-list button{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+}
 .danger-zone button{
     width:100%;
     padding:14px;
@@ -172,13 +170,13 @@
     background:#1d4ed8;
 }
 
-.theme-setting{
+.theme-setting span{
+    font-weight:600;
+    color:#111827;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 0;
     padding:22px 0;
-    margin:18px 0;
 }
 
 /* ==========================================
@@ -234,11 +232,9 @@
 .danger-zone{
     background:#fff8f8;
     border:1px solid #f3c7c7;
-}
-
-.danger-zone h2{
-    color:#b91c1c;
-    margin-bottom:15px;
+    border-radius:20px;
+    padding:25px;
+    margin-top:30px;
 }
 
 #delete-account-btn{
