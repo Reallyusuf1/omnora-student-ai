@@ -32,12 +32,28 @@
 
             </div>
 
-            <button
-                id="change-photo-btn">
+            <div class="profile-avatar">
 
-                Change Profile Photo
+    <img
+        id="profile-image"
+        src="assets/images/default-avatar.png"
+        alt="Student Profile">
 
-            </button>
+    <label
+        for="profile-photo-input"
+        class="camera-button">
+
+        📷
+
+    </label>
+
+    <input
+        type="file"
+        id="profile-photo-input"
+        accept="image/*"
+        hidden>
+
+            </div>
 
             <h1 id="student-name">
 
@@ -57,83 +73,94 @@
              ACCOUNT INFORMATION
         ========================== -->
 
-        <section class="profile-card">
+        <div class="profile-field">
 
-            <h2>
+    <label>Full Name</label>
 
-                Account Information
+    <input
+        type="text"
+        id="full-name"
+        readonly>
 
-            </h2>
+</div>
 
-            <div class="profile-item">
+<div class="profile-field">
 
-                <span>Full Name</span>
+    <label>School Name</label>
 
-                <p id="full-name"></p>
+    <input
+        type="text"
+        id="school-name"
+        readonly>
 
-            </div>
+</div>
 
-            <div class="profile-item">
+<div class="profile-field">
 
-                <span>School Name</span>
+    <label>Class</label>
 
-                <p id="school-name"></p>
+    <select
+        id="student-class"
+        disabled>
 
-            </div>
+    </select>
 
-            <div class="profile-item">
+</div>
 
-                <span>Class</span>
+<div class="profile-field">
 
-                <p id="student-class"></p>
+    <label>Admission Number</label>
 
-            </div>
+    <input
+        type="text"
+        id="admission-number"
+        readonly>
 
-            <div class="profile-item">
-
-                <span>Admission Number</span>
-
-                <p id="admission-number"></p>
-
-            </div>
-
-        </section>
+</div>
 
         <!-- =========================
              SETTINGS
         ========================== -->
 
-        <section class="profile-card">
+        <section class="settings-list">
 
-            <h2>
+    <button id="edit-profile-btn">
 
-                Settings
+        ✏️ Edit Profile
 
-            </h2>
+    </button>
 
-            <button id="edit-profile-btn">
+    <button id="change-pin-btn">
 
-                Edit Profile
+        🔒 Change PIN
 
-            </button>
+    </button>
 
-            <button id="change-pin-btn">
+    <div class="theme-setting">
 
-                Change PIN
+        <span>
 
-            </button>
+            🌙 Dark Mode
 
-            <button id="theme-btn">
+        </span>
 
-                Theme
+        <label class="switch">
 
-            </button>
+            <input
+                type="checkbox"
+                id="theme-toggle">
 
-            <button id="logout-btn">
+            <span class="slider"></span>
 
-                Logout
+        </label>
 
-            </button>
+    </div>
+
+    <button id="logout-btn">
+
+        🚪 Logout
+
+    </button>
 
         </section>
 
