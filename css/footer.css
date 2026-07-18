@@ -1,1 +1,97 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
 
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px;
+    margin-bottom: 22px;
+}
+
+.footer-brand {
+    font-weight: 800;
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.footer-brand i {
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 22px;
+}
+.footer-brand .omnora {
+    background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.footer-brand .labs {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-desc {
+    color: rgba(255,255,255,.65);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 280px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: rgba(255,255,255,.72);
+    font-size: 13px;
+    padding: 4px 0;
+    transition: 0.3s;
+}
+.footer-links a:hover {
+    color: #7c5cff;
+}
+
+.footer-social a {
+    display: block;
+    text-decoration: none;
+    color: rgba(255,255,255,.72);
+    font-size: 13px;
+    padding: 4px 0;
+    transition: 0.3s;
+}
+.footer-social a:hover {
+    color: #7c5cff;
+}
+.footer-social a i {
+    width: 22px;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: rgba(255,255,255,.55);
+    font-size: 13px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+.footer-bottom i {
+    color: #fbbf24;
+}
