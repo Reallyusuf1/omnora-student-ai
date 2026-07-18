@@ -1,1 +1,28 @@
+@import url("./variables.css");
+@import url("./base.css");
+@import url("./typography.css");
 
+@import url("./layout.css");
+@import url("./cards.css");
+@import url("./brain.css");
+
+/* @import url("./navigation.css/navigation.css"); */
+@import url("./components.css");
+@import url("./features.css");
+@import url("./ai.css");
+@import url("./auth.css");
+@import url("./footer.css");
+@import url("./navigation-v2.css");
+@import url("./responsive.css");
+@import url("./animations.css");
+@import url("./utilities.css");
+@import url("./testimonials.css");
+@import url("./quizzes.css");
+@import url("./about.css");
+@import url("./leaderboard.css");
+@import url("./contact.css");
+@import url("./study-plan.css");
+@import url("./features.css");
+@import url("./auth-page.css");
+@import url("./student-register.css");
+@import url("./profile-page.css");
