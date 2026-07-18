@@ -1,1 +1,55 @@
+/* ============================================================
+   OMNORA STUDENT AI - COMPLETE STYLESHEET
+   ============================================================ */
 
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:
+        radial-gradient(circle at top, rgba(70,120,255,.10), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(98,58,255,.08), transparent 35%),
+        linear-gradient(
+            180deg,
+            #081325 0%,
+            #0C1833 25%,
+            #12244A 60%,
+            #1A2F5A 100%
+        );
+
+    color: #DCE7FF;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 36px;
+    padding: 32px 38px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2563eb, #7c3aed);
+    border-radius: 10px;
+}
