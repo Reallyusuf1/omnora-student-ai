@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ha">
+    
+    <head>
+    <!-- ==========================================
+         BASIC META
+    =========================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ==========================================
+         PRIMARY SEO
+    =========================================== -->
+    <title>Omnora Student AI Platform | Learn Smarter with AI</title>
+
+    <meta name="description"
+          content="Omnora Student AI Platform helps primary and secondary school students learn with AI, complete daily quizzes, earn points, and improve academic performance.">
+
+    <meta name="keywords"
+          content="Omnora, Student AI, AI Education, Daily Quiz, Primary School, Secondary School, JavaScript, HTML, Coding, Nigeria, Africa">
+
+    <meta name="author"
+          content="Omnora Labs">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <!-- ==========================================
+         PWA
+    =========================================== -->
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#6C63FF">
+
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="default">
+
+    <meta name="apple-mobile-web-app-title"
+          content="Omnora Student AI">
+
+    <!-- ==========================================
+         OPEN GRAPH
+    =========================================== -->
+    <meta property="og:type" content="website">
+
+    <meta property="og:title"
+          content="Omnora Student AI Platform">
+
+    <meta property="og:description"
+          content="AI-powered learning platform for African students.">
+
+    <meta property="og:image"
+          content="assets/images/social-preview.png">
+
+    <meta property="og:url"
+          content="https://reallyusuf1.github.io/omnora-student-ai/">
+
+    <!-- ==========================================
+         TWITTER / X
+    =========================================== -->
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="Omnora Student AI Platform">
+
+    <meta name="twitter:description"
+          content="Learn smarter with AI and Daily Quizzes.">
+
+    <meta name="twitter:image"
+          content="assets/images/social-preview.png">
+
+    <!-- ==========================================
+         FONTS & ICONS
+    =========================================== -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ==========================================
+         MAIN STYLESHEET
+    =========================================== -->
+    <!-- CSS Architecture -->
+<link rel="stylesheet" href="css/main.css">
+    </head>
+    
+<body>
+
+<div class="container">
+
+    <!-- ==========================================================
+    HEADER
+    ========================================================== -->
+    <header class="site-header">
+
+    <div class="header-container">
+
+        <a href="#" class="logo">
+    <div class="header-logo-brain">
+        <img src="assets/images/omnora-brain.png"
+             alt="Omnora AI"
+             class="header-logo-brain-img">
+    </div>
+
+    <span class="logo-text">
+        <span class="logo-omnora">Omnora</span>
+        <span class="logo-student">Student AI</span>
+    </span>
+        </a>
+
+        <nav class="desktop-nav">
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="feature.html">✨ Features</a></li>
+
+            <li><a href="about.html">ℹ️ About</a></li>
+
+            <li><a href="contact.html">📩 Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+        <div class="header-actions">
+
+    <a href="auth-page.html">
+        Login
+    </a>
+
+    <a href="auth-page.html">
+        Sign Up
+    </a>
+
+        </div>
+
+        <button
+            class="menu-toggle"
+            aria-label="Open navigation">
+
+            ☰
+
+        </button>
+
+    </div>
+    </header>
+
+        <aside class="mobile-sidebar">
+
+    <div class="sidebar-header">
+        <a href="#" class="logo">
+            
+    <div class="sidebar-logo-brain">
+    <img
+        src="assets/images/omnora-brain.png"
+        alt="Omnora AI Brain"
+        class="sidebar-logo-brain-img">
+    </div>
+            
+            <span class="logo-text">
+                <span class="logo-omnora">Omnora</span>
+                <span class="logo-student">Student AI</span>
+            </span>
+        </a>
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <ul>
+
+            <li><a href="index.html">🏠 Home</a></li>
+
+            <li><a href="feature.html">✨ Features</a></li>
+
+            <li><a href="#ask-ai">🤖 Ask Omnora AI</a></li>
+
+            <li><a href="quizzes.html">📝 Daily Quiz</a></li>
+
+            <li><a href="study-plan.html">📚 Study Plan</a></li>
+
+            <li><a href="leaderboard.html">🏆 Leaderboard</a></li>
+
+            <li><a href="omnora-hub.html">🌍 Omnora Hub</a></li>
+
+            <li><a href="student-profile.html">👤 Student Profile</a></li>
+
+            <li><a href="about.html">ℹ️ About</a></li>
+
+            <li><a href="contact.html">📩 Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <div class="sidebar-footer">
+
+    <a href="auth-page.html"
+       class="login-btn">
+        Login
+    </a>
+
+    <a href="auth-page.html"
+       class="signup-btn">
+        Sign Up
+    </a>
+
+    </div>
+
+        </aside>
+
+<div class="menu-overlay"></div>
+
+
+    <!-- ==========================================================
+    HERO
+    ========================================================== -->
+        <section id="hero">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+    <i class="fas fa-sparkles"></i>
+    <span>AI-Powered Learning</span>
+            </div>
+
+            <h1 class="hero-title">
+    Omnora
+    <span class="gradient-text">Student AI</span>
+            </h1>
+
+            <p class="hero-description">
+    Your intelligent study companion built for African students.
+    Learn faster, understand deeper, practice smarter, and achieve
+    academic excellence with AI-powered learning.
+            </p>
+
+            <div class="hero-actions">
+
+    <a href="#ai-platform" class="btn-primary">
+        <i class="fas fa-paper-plane"></i>
+        Start Learning
+    </a>
+
+    <a href="#quick-actions" class="btn-secondary">
+        <i class="fas fa-arrow-right"></i>
+        Explore Features
+    </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+    <div class="stat">
+        <strong>10M+</strong>
+        <span>Students</span>
+    </div>
+
+    <div class="stat">
+        <strong>AI</strong>
+        <span>Powered</span>
+    </div>
+
+    <div class="stat">
+        <strong>24/7</strong>
+        <span>Available</span>
+    </div>
+
+            </div>
+
+        </div>
+
+            <div class="hero-visual">
+    <div class="visual-background">
+        <!-- Background glow -->
+    </div>
+
+    <div class="visual-content">
+        <div class="ai-brain">
+
+    <div class="brain-glow"></div>
+
+    <div class="brain-ring ring-1"></div>
+    <div class="brain-ring ring-2"></div>
+    <div class="brain-ring ring-3"></div>
+
+    <div class="brain-core">
+    <div class="brain-frame">
+    <img
+        src="assets/images/omnora-brain.png"
+        alt="Omnora AI Brain"
+        class="brain-frame-img">
+    </div>
+    </div>
+
+    <div class="brain-pulse"></div>
+
+        </div>
+
+        <div class="floating-elements">
+            <div class="floating-card floating-card-1">
+                <div class="card-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="card-content">
+                    <h3>AI Tutor</h3>
+                    <p>Ask smart questions instantly.</p>
+                </div>
+            </div>
+
+            <div class="floating-card floating-card-2">
+                <div class="card-icon">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Daily Quiz</h3>
+                    <p>Practice daily and improve your skills.</p>
+                </div>
+            </div>
+
+            <div class="floating-card floating-card-3">
+                <div class="card-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Voice AI</h3>
+                    <p>Coming Soon</p>
+                </div>
+            </div>
+
+            <div class="floating-card floating-card-4">
+                <div class="card-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Teacher Dashboard</h3>
+                    <p>Generate lesson plans and classroom resources.</p>
+                    <p>Coming Soon</p>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+
+    </section>
+
+    <!-- ==========================================================
+    FEATURES
+    ========================================================== -->
+    <section id="quick-actions">
+    <div class="features">
+        <article class="feature-card">
+            <i class="fas fa-question-circle"></i>
+            <h3>Ask Questions</h3>
+<p>Get instant answers to any academic question.</p>
+
+<a href="#ai-platform">
+    Ask now <i class="fas fa-arrow-right"></i>
+</a>
+        </article>
+        
+        <article class="feature-card">
+            <i class="fas fa-calendar-alt"></i>
+            
+            <h3>Teachers Dashboard</h3>
+<p>
+For teachers only. Create
+    AI lesson plans, quizzes,
+and classroom resources.
+</p>
+
+<span class="coming-soon">Coming Soon</span>
+
+<a href="#hero">
+    Teacher Access → <i class="fas fa-arrow-right"></i>
+</a>
+        </article>
+            
+        <article class="feature-card">
+    <i class="fas fa-puzzle-piece"></i>
+    <h3>Daily Quizzes for Students</h3>
+    <p>Test your knowledge with AI-powered quizzes. Earn points daily!</p>
+
+<button class="quiz-btn" onclick="window.location.href='quizzes.html'">
+    Start Daily Quiz
+</button>
+        </article>
+    </div>
+    </section>
+
+    <!-- ==========================================================
+    AI SECTION - BIG BOX
+    ========================================================== -->
+    <section id="ai-platform">
+        <div class="ai-wrapper">
+            <div class="ai-left">
+                <h2><i class="fas fa-comment-dots"></i> Ask Omnora AI</h2>
+                <p>Type your question below to get smart answers.</p>
+                <div class="ai-platform-brain">
+    <i class="fas fa-brain"></i>
+                </div>
+                <div class="divider"></div>
+            </div>
+            <div class="ai-right">
+                <div class="question-row">
+                    <input type="text" id="userQuestion" placeholder="Type your question here..." />
+                    <button id="askBtn"><i class="fas fa-paper-plane"></i> Ask AI</button>
+                </div>
+                <div class="ai-response">
+                    <div class="label">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Response</span>
+                    </div>
+                    <div class="response-text" id="responseText">Ask me anything about math, science, history, and more!</div>
+                    <div class="suggestions">
+                        <a data-question="Explain algebra">Explain algebra</a>
+                        <a data-question="Chemistry help">Chemistry help</a>
+                        <a data-question="Essay outline">Essay outline</a>
+                        <a data-question="History summary">History summary</a>
+                        <a data-question="What is photosynthesis?">Photosynthesis</a>
+                        <a data-question="Newton's laws">Newton's laws</a>
+                        <a data-question="What is DNA?">What is DNA?</a>
+                        <a data-question="Calculus explained">Calculus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+    <!-- Quiz Verification Modal -->
+<div id="quizModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; color:#000; padding:25px; border-radius:12px; width:90%; max-width:480px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+    <h2 style="margin-top:0;">Daily Quiz Access</h2>
+    <p>Shigar da bayanan ka (Primary 1 - SSS3)</p>
+    
+    <input type="text" id="fullName" placeholder="Full Name" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    <input type="text" id="schoolName" placeholder="School Name" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    <input type="text" id="studentClass" placeholder="Class (e.g. JSS2, SSS3)" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    <input type="text" id="admissionNumber" placeholder="Admission Number" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    <input type="text" id="promoCode" placeholder="Promo Code (Optional)" style="width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px;">
+    
+    <button onclick="verifyStudent()" style="width:100%; padding:14px; background:#2196F3; color:white; border:none; border-radius:8px; margin:15px 0 8px;">Verify & Start Quiz</button>
+    <button onclick="closeModal()" style="width:100%; padding:14px; background:#666; color:white; border:none; border-radius:8px;">Cancel</button>
+  </div>
+</div>
+
+    <!-- Daily Quiz Container -->
+<div id="dailyQuizContainer" style="display:none; padding:20px; background:#f8f9fa; border-radius:12px; margin:20px; color:#000;">
+  <h2>Daily Quiz <span id="quizScore" style="float:right; color:green;">0/10 Points</span></h2>
+  <div id="quizQuestion"></div>
+  <div id="quizOptions" style="margin:15px 0;"></div>
+  <button onclick="nextQuestion()" id="nextBtn" style="display:none; width:100%; padding:12px; background:#4CAF50; color:white; border:none; border-radius:8px;">Next Question</button>
+</div>
+        
+
+    <!-- ==========================================================
+    TESTIMONIALS
+    ========================================================== -->
+    <section id="testimonials">
+        <h3><i class="fas fa-quote-left"></i> What Students Say</h3>
+        <div class="testi-grid">
+            <article class="testi-card">
+                <p>"Omnora AI helped me understand complex topics in minutes. The quizzes are a game-changer!"</p>
+                <div class="name">— Ada Okonkwo</div>
+                <div class="place">Lagos, Nigeria</div>
+            </div>
+            <article class="testi-card">
+                <p>"I love the study plans. They keep me on track and I've improved my grades significantly."</p>
+                <div class="name">— Kofi Mensah</div>
+                <div class="place">Accra, Ghana</div>
+            </div>
+            <article class="testi-card">
+                <p>"The AI brain is like having a personal tutor 24/7. Absolutely brilliant for African students."</p>
+                <div class="name">— Zara Hassan</div>
+                <div class="place">Nairobi, Kenya</div>
+            </div>
+        </div>
+    </div>
+            </section>
+
+    <!-- ==========================================================
+    FOOTER
+    ========================================================== -->
+    <footer id="site-footer">
+        <div class="footer-top">
+            <div>
+                <div class="footer-brand">
+                    <i class="fas fa-brain"></i>
+                    <span class="omnora">OMNORA</span> <span class="labs">LABS</span>
+                </div>
+                <div class="footer-desc">
+                    Building the future of Education in Africa through Artificial Intelligence.
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#">Home</a>
+                <a href="#">Features</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fas fa-envelope"></i> Gmail</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <i class="fas fa-heart"></i> &copy; 2026 Omnora Labs. All rights reserved.
+        </div>
+    </div>
+
+</div>
+
+<!-- ==========================================================
+JAVASCRIPT
+========================================================== -->
+<script src="script.js"></script>
+    <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(() => console.log("Service Worker Registered"))
+      .catch((err) => console.log(err));
+  });
+}
+        
+    </script>
+<!-- ==========================================
+     AUTHENTICATION MODAL
+========================================== -->
+
+<div id="auth-modal" class="auth-modal">
+
+  <div class="auth-container">
+
+    <button class="auth-close" aria-label="Close">
+      &times;
+    </button>
+
+    <div class="auth-tabs">
+      <button class="tab-btn active" data-tab="login">
+        Login
+      </button>
+
+      <button class="tab-btn" data-tab="signup">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- LOGIN -->
+
+    <div id="login-form" class="auth-form active">
+
+      <h2>Welcome Back</h2>
+
+      <p>Login to your Omnora Account.</p>
+
+      <input
+        type="email"
+        placeholder="Email Address"
+      >
+
+      <input
+        type="password"
+        placeholder="Password"
+      >
+
+      <button class="auth-submit">
+        Login
+      </button>
+
+    </div>
+
+    <!-- SIGN UP -->
+
+    <div id="signup-form" class="auth-form">
+
+      <h2>Create Account</h2>
+
+      <p>Create your Omnora Student AI account.</p>
+
+      <input
+        type="text"
+        placeholder="Full Name"
+      >
+
+      <input
+        type="email"
+        placeholder="Email Address"
+      >
+
+      <input
+        type="tel"
+        placeholder="Phone Number (Optional)"
+      >
+
+      <input
+        type="password"
+        placeholder="Password"
+      >
+
+      <input
+        type="password"
+        placeholder="Confirm Password"
+      >
+
+      <button class="auth-submit">
+        Create Account
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+        <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+<script>
+eruda.init();
+</script>
+
+        <script src="js/navigation-v2.js/navigation-v2.js"></script>
+        
+    </body>
+      </html>
