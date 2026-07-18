@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Quizzes - Omnora Student AI</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body>
 
+
+    <div class="registration-container">
+    
+    <h1>Student Registration</h1>
+    <p>Complete your information before starting today's quiz.</p>
+
+    <form id="registrationForm">
+
+        <input
+            type="text"
+            id="fullName"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="text"
+            id="schoolName"
+            placeholder="School Name"
+            required
+        >
+
+        <input
+            type="text"
+            id="admissionNumber"
+            placeholder="Admission Number"
+            required
+        >
+
+<select id="country" required>
+    <option value="">Select Country</option>
+
+    <!-- Featured -->
+    <option value="United States">🇺🇸 United States (USA)</option>
+
+    <!-- Africa -->
+    <optgroup label="Africa">
+        <option>Nigeria</option>
+        <option>Ghana</option>
+        <option>South Africa</option>
+        <option>Kenya</option>
+        <option>Uganda</option>
+        <option>Tanzania</option>
+        <option>Ethiopia</option>
+        <option>Egypt</option>
+        <option>Morocco</option>
+        <option>Algeria</option>
+        <option>Tunisia</option>
+        <option>Libya</option>
+        <option>Sudan</option>
+        <option>South Sudan</option>
+        <option>Niger</option>
+        <option>Chad</option>
+        <option>Cameroon</option>
+        <option>Central African Republic</option>
+        <option>Republic of the Congo</option>
+        <option>Democratic Republic of the Congo</option>
+        <option>Gabon</option>
+        <option>Equatorial Guinea</option>
+        <option>Senegal</option>
+        <option>Mali</option>
+        <option>Burkina Faso</option>
+        <option>Benin</option>
+        <option>Togo</option>
+        <option>Ivory Coast</option>
+        <option>Liberia</option>
+        <option>Sierra Leone</option>
+        <option>Guinea</option>
+        <option>Guinea-Bissau</option>
+        <option>Gambia</option>
+        <option>Cape Verde</option>
+        <option>Mauritania</option>
+        <option>Rwanda</option>
+        <option>Burundi</option>
+        <option>Zimbabwe</option>
+        <option>Zambia</option>
+        <option>Botswana</option>
+        <option>Namibia</option>
+        <option>Angola</option>
+        <option>Mozambique</option>
+        <option>Malawi</option>
+        <option>Madagascar</option>
+        <option>Mauritius</option>
+        <option>Seychelles</option>
+        <option>Comoros</option>
+        <option>Djibouti</option>
+        <option>Eritrea</option>
+        <option>Somalia</option>
+        <option>Lesotho</option>
+        <option>Eswatini</option>
+        <option>São Tomé and Príncipe</option>
+    </optgroup>
+
+    <!-- Major Countries -->
+    <optgroup label="Major Countries">
+        <option>United Kingdom</option>
+        <option>China</option>
+        <option>Russia</option>
+        <option>Japan</option>
+        <option>South Korea</option>
+        <option>India</option>
+        <option>Canada</option>
+        <option>Germany</option>
+        <option>France</option>
+        <option>Italy</option>
+        <option>Spain</option>
+        <option>Netherlands</option>
+        <option>Australia</option>
+        <option>Brazil</option>
+        <option>Mexico</option>
+        <option>Turkey</option>
+        <option>Saudi Arabia</option>
+        <option>United Arab Emirates</option>
+        <option>Singapore</option>
+        <option>Malaysia</option>
+    </optgroup>
+
+    <option value="Other">Other Country...</option>
+</select>
+
+        
+        
+        <select id="studentClass" required>
+            <option value="">Select Class</option>
+
+            <optgroup label="Primary">
+                <option>Primary 1</option>
+                <option>Primary 2</option>
+                <option>Primary 3</option>
+                <option>Primary 4</option>
+                <option>Primary 5</option>
+                <option>Primary 6</option>
+            </optgroup>
+
+            <optgroup label="Junior Secondary">
+                <option>JSS 1</option>
+                <option>JSS 2</option>
+                <option>JSS 3</option>
+            </optgroup>
+
+            <optgroup label="Senior Secondary">
+                <option>SSS 1</option>
+                <option>SSS 2</option>
+                <option>SSS 3</option>
+            </optgroup>
+
+        </select>
+
+        <input
+            type="password"
+            id="quizPin"
+            maxlength="4"
+            placeholder="4 Digit Quiz PIN"
+            required
+        >
+
+        <button type="submit" id="startQuizBtn">
+            Start Quiz
+        </button>
+
+    </form>
+
+ </div>
+        
+    <div id="quizContainer" class="quiz-container" style="display:none;">
+
+    <h1>Daily Quiz</h1>
+
+    <div class="score">0/10 Points</div>
+
+    <div class="quiz-progress">
+
+        <div id="progressText">
+            Question 1 / 10
+        </div>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+        <div id="timer">
+            5:00
+        </div>
+
+    </div>
+
+    <div id="quizQuestion" class="question"></div>
+
+    <div id="quizOptions" class="options"></div>
+
+    <button id="nextBtn" onclick="nextQuestion()">
+        Next
+    </button>
+    <script src="js/question-bank.js/question-bank.js"></script>
+        
+    <script src="js/quizzes.js/quizzes.js"></script>
+</body>
+  </html>
