@@ -35,15 +35,24 @@ async function askAI() {
         const data = await res.json();
 
         if (!res.ok) {
-            response.innerHTML = data.error || "Something went wrong.";
-            return;
+    response.innerHTML = data.error || "Something went wrong.";
+    return;
         }
+        
+        let reply = data.reply || "No response received.";
 
-        response.innerHTML = data.reply || "No response received.";
+reply = reply
+    .replace(/\*\*/g, "")
+    .replace(/^#/gm, "")
+    .replace(/`/g, "");
 
-    } catch (error) {
+response.innerHTML = reply
+    .replace(/\r\n/g, "<br>")
+    .replace(/\n/g, "<br>");
+    }
+    catch (error) {
         console.error(error);
-        response.innerHTML = "❌ Unable to connect to Omnora Student AI. Please try again.";
+        response.innerHTML = "❌ Unable to connect. Please try again.";
     } finally {
         setTimeout(() => {
             askBtn.disabled = false;
@@ -77,7 +86,7 @@ function showQuestion() {
     
     let optionsHTML = '';
     q.options.forEach(opt => {
-        optionsHTML += `<button onclick="selectAnswer('\( {opt[0]}')" style="display:block; width:100%; margin:8px 0; padding:12px; background:#eee; border:none; border-radius:6px;"> \){opt}</button>`;
+        optionsHTML += `<button onclick="selectAnswer('${opt[0]}')" style="display:block; width:100%; margin:8px 0; padding:12px; background:#eee; border:none; border-radius:6px;"> \){opt}</button>`;
     });
     document.getElementById('quizOptions').innerHTML = optionsHTML;
     document.getElementById('nextBtn').style.display = 'none';
