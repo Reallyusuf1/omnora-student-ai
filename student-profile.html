@@ -1,1 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile | Omnora Students AI</title>
+
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <main class="profile-page">
+
+        <!-- =========================
+             PROFILE HEADER
+        ========================== -->
+
+        <section class="profile-header">
+
+            <div class="profile-avatar">
+
+    <img
+        id="profile-image"
+        src="assets/images/default-avatar.png"
+        alt="Student Profile">
+
+    <label
+        for="profile-photo-input"
+        class="camera-button">
+
+        📷
+
+    </label>
+
+    <input
+        type="file"
+        id="profile-photo-input"
+        accept="image/*"
+        hidden>
+
+            </div>
+
+            <h1 id="student-name">
+
+                Student Name
+
+            </h1>
+
+            <p id="member-since">
+
+                Joined Omnora • 2026
+
+            </p>
+
+        </section>
+
+        <!-- =========================
+             ACCOUNT INFORMATION
+        ========================== -->
+
+        <div class="profile-field">
+
+    <label>Full Name</label>
+
+    <input
+        type="text"
+        id="full-name"
+        readonly>
+
+</div>
+
+<div class="profile-field">
+
+    <label>School Name</label>
+
+    <input
+        type="text"
+        id="school-name"
+        readonly>
+
+</div>
+
+<div class="profile-field">
+
+    <label>Class</label>
+
+    <select
+        id="student-class"
+        disabled>
+
+    </select>
+
+</div>
+
+<div class="profile-field">
+
+    <label>Admission Number</label>
+
+    <input
+        type="text"
+        id="admission-number"
+        readonly>
+
+</div>
+
+        <!-- =========================
+             SETTINGS
+        ========================== -->
+
+        <section class="settings-list">
+
+    <button id="edit-profile-btn">
+
+        ✏️ Edit Profile
+
+    </button>
+
+    <button id="change-pin-btn">
+
+        🔒 Change PIN
+
+    </button>
+
+    <div class="theme-setting">
+
+        <span>
+
+            🌙 Dark Mode
+
+        </span>
+
+        <label class="switch">
+
+            <input
+                type="checkbox"
+                id="theme-toggle">
+
+            <span class="slider"></span>
+
+        </label>
+
+    </div>
+
+    <button id="logout-btn">
+
+        🚪 Logout
+
+    </button>
+
+        </section>
+
+        <!-- =========================
+             DANGER ZONE
+        ========================== -->
+
+        <section class="danger-zone">
+
+            <h2>
+
+                Danger Zone
+
+            </h2>
+
+            <button id="delete-account-btn">
+
+                Delete Account
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="js/question-bank.js/question-bank.js"></script>
+        
+    <script src="js/profile-page.js/profile-page.js"></script>
+
+</body>
+
+</html>
