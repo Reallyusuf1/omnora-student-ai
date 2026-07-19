@@ -67,19 +67,31 @@ document.addEventListener("DOMContentLoaded", async () => {
        (Za a maye gurbinsa da Supabase DB daga baya)
     ========================================== */
 
-    const savedProfile = JSON.parse(
-        localStorage.getItem("studentProfile") || "{}"
-    );
+    const { data: profile } =
+await window.supabaseClient
+.from("profiles")
+.select("*")
+.eq("id", user.id)
+.single();
 
-    if (schoolName)
-        schoolName.value = savedProfile.schoolName || "";
+if (profile) {
 
-    if (studentClass)
-        studentClass.value = savedProfile.studentClass || "";
+    schoolName.value =
+        profile.school_name || "";
 
-    if (admissionNumber)
-        admissionNumber.value =
-            savedProfile.admissionNumber || "";
+    studentClass.value =
+        profile.class || "";
+
+    admissionNumber.value =
+        profile.admission_number || "";
+
+}
+   const editButton =
+document.getElementById("edit-profile-btn");
+
+if (editButton) {
+    editButton.addEventListener("click", editProfile);
+}
 
 });
 
@@ -88,22 +100,83 @@ document.addEventListener("DOMContentLoaded", async () => {
    EDIT PROFILE
 ========================================== */
 
-const editButton =
-document.getElementById("edit-profile-btn");
+let editMode = false;
 
-if (editButton) {
+async function editProfile() {
 
-    editButton.addEventListener("click", () => {
+    const button = document.getElementById("edit-profile-btn");
 
-        document.getElementById("school-name").readOnly = false;
+    const school =
+        document.getElementById("school-name");
 
-        document.getElementById("student-class").disabled = false;
+    const studentClass =
+        document.getElementById("student-class");
 
-        document.getElementById("admission-number").readOnly = false;
+    const admission =
+        document.getElementById("admission-number");
 
-        alert("You can now edit your profile.");
+    if (!editMode) {
 
-    });
+        school.removeAttribute("readonly");
+
+        studentClass.disabled = false;
+
+        admission.removeAttribute("readonly");
+
+        button.textContent = "💾 Save Profile";
+
+        editMode = true;
+
+        return;
+
+    }
+
+    const {
+        data: {
+            session
+        }
+    } = await window.supabaseClient.auth.getSession();
+
+    if (!session) return;
+
+    const user = session.user;
+
+    const { error } =
+        await window.supabaseClient
+        .from("profiles")
+        .upsert({
+
+            id: user.id,
+
+            school_name: school.value,
+
+            class: studentClass.value,
+
+            admission_number: admission.value
+
+        });
+
+    if (error) {
+
+        alert(error.message);
+
+        return;
+
+    }
+
+    school.setAttribute("readonly", true);
+
+    studentClass.disabled = true;
+
+    admission.setAttribute("readonly", true);
+
+    button.textContent = "✏️ Edit Profile";
+
+    editMode = false;
+
+    alert("✅ Profile updated successfully.");
+
+}
 
 }
 
@@ -137,14 +210,19 @@ if (logoutButton) {
 
     logoutButton.addEventListener("click", async () => {
 
-        const confirmLogout =
-            confirm("Are you sure you want to logout?");
+        const confirmLogout = confirm(
+            "Are you sure you want to logout?"
+        );
 
         if (!confirmLogout) return;
 
+        const { error } =
         await window.supabaseClient.auth.signOut();
 
-        localStorage.removeItem("studentProfile");
+        if (error) {
+            alert(error.message);
+            return;
+        }
 
         window.location.href = "index.html";
 
@@ -169,3 +247,5 @@ if (themeToggle) {
     });
 
 }
+
+});
