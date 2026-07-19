@@ -1,152 +1,171 @@
 /* ==========================================
-   OMNORA STUDENTS AI
+   OMNORA STUDENTS AI V2
    PROFILE PAGE
 ========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadProfile();
+document.addEventListener("DOMContentLoaded", async () => {
 
-    document
-        .getElementById("change-photo-btn")
-        ?.addEventListener("click", changeProfilePhoto);
-
-    document
-        .getElementById("edit-profile-btn")
-        ?.addEventListener("click", editProfile);
-
-    document
-        .getElementById("change-pin-btn")
-        ?.addEventListener("click", changePin);
-
-    document
-        .getElementById("theme-btn")
-        ?.addEventListener("click", toggleTheme);
-
-    document
-        .getElementById("logout-btn")
-        ?.addEventListener("click", logoutUser);
-
-    document
-        .getElementById("delete-account-btn")
-        ?.addEventListener("click", deleteAccount);
-});
-
-/* ==========================================
-   LOAD PROFILE
-========================================== */
-
-function loadProfile() {
-
-    const student = JSON.parse(
-        localStorage.getItem("student")
-    );
-
-    if (!student) return;
-
-    document.getElementById("student-name").textContent =
-        student.fullName || "Student";
-
-    document.getElementById("full-name").textContent =
-        student.fullName || "-";
-
-    document.getElementById("school-name").textContent =
-        student.schoolName || "-";
-
-    document.getElementById("student-class").textContent =
-        student.className || "-";
-
-    document.getElementById("admission-number").textContent =
-        student.admissionNumber || "-";
-
-    document.getElementById("member-since").textContent =
-        student.memberSince || "Joined Omnora";
-
-    if (student.photo) {
-        document.querySelector(".profile-avatar img").src =
-            student.photo;
+    if (!window.supabaseClient) {
+        console.error("Supabase Client not found.");
+        return;
     }
 
-}
+    const {
+        data: { session }
+    } = await window.supabaseClient.auth.getSession();
 
-/* ==========================================
-   CHANGE PHOTO
-========================================== */
+    if (!session) {
+        window.location.href = "auth-page.html";
+        return;
+    }
 
-function changeProfilePhoto() {
+    const user = session.user;
 
-    alert("Profile photo upload coming soon.");
+    /* ==========================================
+       PROFILE ELEMENTS
+    ========================================== */
 
-}
+    const avatar = document.getElementById("profile-image");
+    const studentName = document.getElementById("student-name");
+    const studentEmail = document.getElementById("student-email");
+    const memberSince = document.getElementById("member-since");
+
+    const fullName = document.getElementById("full-name");
+    const email = document.getElementById("email-address");
+
+    const schoolName = document.getElementById("school-name");
+    const studentClass = document.getElementById("student-class");
+    const admissionNumber = document.getElementById("admission-number");
+
+    /* ==========================================
+       USER DATA
+    ========================================== */
+
+    const profilePhoto =
+        user.user_metadata.avatar_url ||
+        "assets/images/default-avatar.png";
+
+    const name =
+        user.user_metadata.full_name ||
+        user.user_metadata.name ||
+        "Student";
+
+    const joinedYear =
+        new Date(user.created_at).getFullYear();
+
+    avatar.src = profilePhoto;
+
+    studentName.textContent = name;
+    studentEmail.textContent = user.email;
+    memberSince.textContent = "Joined Omnora • " + joinedYear;
+
+    fullName.value = name;
+    email.value = user.email;
+
+    /* ==========================================
+       OPTIONAL LOCAL PROFILE
+       (Za a maye gurbinsa da Supabase DB daga baya)
+    ========================================== */
+
+    const savedProfile = JSON.parse(
+        localStorage.getItem("studentProfile") || "{}"
+    );
+
+    if (schoolName)
+        schoolName.value = savedProfile.schoolName || "";
+
+    if (studentClass)
+        studentClass.value = savedProfile.studentClass || "";
+
+    if (admissionNumber)
+        admissionNumber.value =
+            savedProfile.admissionNumber || "";
+
+});
+
 
 /* ==========================================
    EDIT PROFILE
 ========================================== */
 
-function editProfile() {
+const editButton =
+document.getElementById("edit-profile-btn");
 
-    alert("Edit Profile feature coming soon.");
+if (editButton) {
+
+    editButton.addEventListener("click", () => {
+
+        document.getElementById("school-name").readOnly = false;
+
+        document.getElementById("student-class").disabled = false;
+
+        document.getElementById("admission-number").readOnly = false;
+
+        alert("You can now edit your profile.");
+
+    });
 
 }
+
 
 /* ==========================================
    CHANGE PIN
 ========================================== */
 
-function changePin() {
+const pinButton =
+document.getElementById("change-pin-btn");
 
-    alert("Change PIN feature coming soon.");
+if (pinButton) {
 
-}
+    pinButton.addEventListener("click", () => {
 
-/* ==========================================
-   THEME
-========================================== */
+        alert("PIN feature coming soon.");
 
-function toggleTheme() {
-
-    document.body.classList.toggle("light-theme");
-
-    const isLight =
-        document.body.classList.contains("light-theme");
-
-    localStorage.setItem("theme", isLight);
+    });
 
 }
+
 
 /* ==========================================
    LOGOUT
 ========================================== */
 
-function logoutUser() {
+const logoutButton =
+document.getElementById("logout-btn");
 
-    const confirmLogout = confirm(
-        "Are you sure you want to logout?"
-    );
+if (logoutButton) {
 
-    if (!confirmLogout) return;
+    logoutButton.addEventListener("click", async () => {
 
-    localStorage.removeItem("student");
+        const confirmLogout =
+            confirm("Are you sure you want to logout?");
 
-    window.location.href = "auth-page.html";
+        if (!confirmLogout) return;
+
+        await window.supabaseClient.auth.signOut();
+
+        localStorage.removeItem("studentProfile");
+
+        window.location.href = "index.html";
+
+    });
 
 }
 
+
 /* ==========================================
-   DELETE ACCOUNT
+   DARK MODE
 ========================================== */
 
-function deleteAccount() {
+const themeToggle =
+document.getElementById("theme-toggle");
 
-    const confirmDelete = confirm(
-        "Delete your account permanently?"
-    );
+if (themeToggle) {
 
-    if (!confirmDelete) return;
+    themeToggle.addEventListener("change", () => {
 
-    localStorage.removeItem("student");
+        document.body.classList.toggle("dark-mode");
 
-    alert("Account deleted successfully.");
-
-    window.location.href = "index.html";
+    });
 
 }
