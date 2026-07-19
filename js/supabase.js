@@ -1,25 +1,45 @@
-// ==========================================
-// OMNORA STUDENTS AI
-// SUPABASE CLIENT
-// ==========================================
+/**
+ * =====================================================
+ * OMNORA STUDENTS AI V2
+ * Supabase Client Initialization
+ * =====================================================
+ */
 
-alert("Supabase JS loaded");
+const SUPABASE_URL =
+    "https://qnheojayfgtdohmezxju.supabase.co";
 
-alert(typeof window.supabase);
+const SUPABASE_ANON_KEY =
+    "sb_publishable_xds1jJt0bjywElP-9tN_sg_TUBC6zgT";
 
-const SUPABASE_URL = "https://qnheojayfgtdohmezxju.supabase.co";
-
-const SUPABASE_ANON_KEY =  = "sb_publishable_xds1jJt0bjywElP-9tN_sg_TUBC6zgT";
-
+// Ensure Supabase SDK is loaded
 if (!window.supabase) {
-    alert("Supabase SDK not loaded");
-    throw new Error("Supabase SDK not loaded");
+    console.error("Supabase SDK failed to load.");
+} else {
+
+    try {
+
+        window.supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_ANON_KEY
+            );
+
+        console.log("✅ Supabase Client Ready");
+
+    } catch (error) {
+
+        console.error(
+            "Failed to initialize Supabase:",
+            error
+        );
+
+    }
+
 }
-const supabase = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_ANON_KEY
-);
 
-window.supabaseClient = supabase;
-
-alert(typeof window.supabaseClient);
+/**
+ * Returns true if Supabase Client is available.
+ */
+window.isSupabaseReady = function () {
+    return !!window.supabaseClient;
+};
