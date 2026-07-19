@@ -1,7 +1,9 @@
-/* ==========================================
-   OMNORA STUDENTS AI
-   AUTHENTICATION PAGE
-========================================== */
+/*
+=========================================
+OMNORA STUDENTS AI
+AUTHENTICATION PAGE
+=========================================
+*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -9,65 +11,115 @@ document.addEventListener("DOMContentLoaded", () => {
     const xButton = document.querySelector(".x-auth");
     const studentButton = document.querySelector(".student-button");
 
-    /* ===================================
-       GOOGLE AUTH
-    =================================== */
+    /*
+    =========================================
+    GOOGLE AUTH
+    =========================================
+    */
 
     if (googleButton) {
-    googleButton.addEventListener("click", async (event) => {
-        event.preventDefault();
 
-        alert("Google button clicked");
-       alert(typeof window.supabaseClient);
+        googleButton.addEventListener("click", async (event) => {
 
-        try {
-            const { data, error } =
-                await window.supabaseClient.auth.signInWithOAuth({
-                    provider: "google",
-                    options: {
-                        redirectTo: window.location.origin
-                    }
-                });
-
-            console.log("DATA:", data);
-            console.log("ERROR:", error);
-
-            if (error) {
-                alert(error.message);
-            }
-
-        } catch (err) {
-            console.error(err);
-            alert(err.message);
-        }
-    });
-    }
-
-    /* ===================================
-       X AUTH
-    =================================== */
-
-    if (xButton) {
-        xButton.addEventListener("click", async (event) => {
             event.preventDefault();
 
-            await window.supabaseClient.auth.signInWithOAuth({
-                provider: "twitter",
-                options: {
-                    redirectTo: window.location.origin
+            try {
+
+                if (!window.supabaseClient) {
+                    alert("Supabase Client not initialized.");
+                    return;
                 }
-            });
+
+                const { data, error } =
+                    await window.supabaseClient.auth.signInWithOAuth({
+
+                        provider: "google",
+
+                        options: {
+                            redirectTo:
+                                window.location.origin + "/auth-page.html"
+                        }
+
+                    });
+
+                console.log("DATA:", data);
+                console.log("ERROR:", error);
+
+                if (error) {
+                    throw error;
+                }
+
+            } catch (err) {
+
+                console.error(err);
+                alert(err.message);
+
+            }
+
         });
+
     }
 
-    /* ===================================
-       STUDENT REGISTRATION
-    =================================== */
+    /*
+    =========================================
+    X AUTH
+    =========================================
+    */
+
+    if (xButton) {
+
+        xButton.addEventListener("click", async (event) => {
+
+            event.preventDefault();
+
+            try {
+
+                if (!window.supabaseClient) {
+                    alert("Supabase Client not initialized.");
+                    return;
+                }
+
+                const { error } =
+                    await window.supabaseClient.auth.signInWithOAuth({
+
+                        provider: "twitter",
+
+                        options: {
+                            redirectTo:
+                                window.location.origin + "/auth-page.html"
+                        }
+
+                    });
+
+                if (error) {
+                    throw error;
+                }
+
+            } catch (err) {
+
+                console.error(err);
+                alert(err.message);
+
+            }
+
+        });
+
+    }
+
+    /*
+    =========================================
+    STUDENT REGISTRATION
+    =========================================
+    */
 
     if (studentButton) {
+
         studentButton.addEventListener("click", () => {
+
             window.location.href = "student-register.html";
+
         });
+
     }
 
 });
