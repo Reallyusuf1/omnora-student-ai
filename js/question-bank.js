@@ -1344,4 +1344,859 @@ const questionBank = [
     options: [
         "A. Earth",
         "B. Venus",
-        "C.
+        "C. Mercury",
+        "D. Mars"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 164,
+    subject: "Mathematics",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "What is 14 × 3?",
+
+    options: [
+        "A. 40",
+        "B. 41",
+        "C. 42",
+        "D. 43"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 165,
+    subject: "English",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Choose the correct plural of 'Mouse'.",
+
+    options: [
+        "A. Mouses",
+        "B. Mice",
+        "C. Mousees",
+        "D. Mousies"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 166,
+    subject: "Science",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which of these animals is a reptile?",
+
+    options: [
+        "A. Frog",
+        "B. Crocodile",
+        "C. Goat",
+        "D. Pigeon"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 167,
+    subject: "General Knowledge",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which is the largest country in Africa by land area?",
+
+    options: [
+        "A. Nigeria",
+        "B. Egypt",
+        "C. Algeria",
+        "D. Kenya"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 168,
+    subject: "Mathematics",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "How many sides does a hexagon have?",
+
+    options: [
+        "A. 4",
+        "B. 5",
+        "C. 6",
+        "D. 7"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 169,
+    subject: "English",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which punctuation mark is used to separate items in a list?",
+
+    options: [
+        "A. Full stop (.)",
+        "B. Comma (,)",
+        "C. Question mark (?)",
+        "D. Exclamation mark (!)"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 170,
+    subject: "Science",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which part of the body helps us breathe?",
+
+    options: [
+        "A. Heart",
+        "B. Lungs",
+        "C. Liver",
+        "D. Kidney"
+    ],
+
+    answer: "B"
+},
+
+  {
+    id: 171,
+    subject: "Mathematics",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "What is 45 + 27?",
+
+    options: [
+        "A. 70",
+        "B. 71",
+        "C. 72",
+        "D. 73"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 172,
+    subject: "English",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which word is an adjective?",
+
+    options: [
+        "A. Beautiful",
+        "B. Sing",
+        "C. School",
+        "D. Jump"
+    ],
+
+    answer: "A"
+},
+   
+{
+    id: 173,
+    subject: "Science",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which of these animals is an insect?",
+
+    options: [
+        "A. Butterfly",
+        "B. Snake",
+        "C. Goat",
+        "D. Fish"
+    ],
+
+    answer: "A"
+},
+
+{
+    id: 174,
+    subject: "Mathematics",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "What is half of 40?",
+
+    options: [
+        "A. 10",
+        "B. 15",
+        "C. 20",
+        "D. 25"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 175,
+    subject: "English",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which word is the opposite of 'Strong'?",
+
+    options: [
+        "A. Heavy",
+        "B. Weak",
+        "C. Fast",
+        "D. Bright"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 176,
+    subject: "Science",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which of these is a source of heat and light?",
+
+    options: [
+        "A. Moon",
+        "B. Sun",
+        "C. River",
+        "D. Tree"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 177,
+    subject: "General Knowledge",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "How many colours are there in a rainbow?",
+
+    options: [
+        "A. 5",
+        "B. 6",
+        "C. 7",
+        "D. 8"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 178,
+    subject: "Mathematics",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "What is 100 - 46?",
+
+    options: [
+        "A. 52",
+        "B. 53",
+        "C. 54",
+        "D. 55"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 179,
+    subject: "English",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which sentence is correct?",
+
+    options: [
+        "A. They is playing.",
+        "B. They are playing.",
+        "C. They am playing.",
+        "D. They was playing."
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 180,
+    subject: "Science",
+    level: "Primary 3",
+    difficulty: "Easy",
+
+    question: "Which of these materials is attracted by a magnet?",
+
+    options: [
+        "A. Plastic",
+        "B. Wood",
+        "C. Iron",
+        "D. Rubber"
+    ],
+
+    answer: "C"
+},
+
+// ============================================================
+// PRIMARY 4
+// ============================================================
+{
+    id: 31,
+    subject: "Mathematics",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "What is 48 ÷ 6?",
+
+    options: [
+        "A. 6",
+        "B. 7",
+        "C. 8",
+        "D. 9"
+    ],
+           answer: "C"
+},
+
+{
+    id: 32,
+    subject: "English",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which word is an adjective?",
+
+    options: [
+        "A. Beautiful",
+        "B. Quickly",
+        "C. Run",
+        "D. School"
+    ],
+
+    answer: "A"
+},
+
+{
+    id: 33,
+    subject: "Science",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which part of the plant absorbs water from the soil?",
+
+    options: [
+        "A. Leaf",
+        "B. Flower",
+        "C. Root",
+        "D. Stem"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 34,
+    subject: "Mathematics",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "What is the perimeter of a square with each side measuring 5 cm?",
+
+    options: [
+        "A. 10 cm",
+        "B. 15 cm",
+        "C. 20 cm",
+        "D. 25 cm"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 35,
+    subject: "English",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which sentence is written correctly?",
+
+    options: [
+        "A. we are going to school.",
+        "B. We are Going to school.",
+        "C. We are going to school.",
+        "D. we Are going to School."
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 36,
+    subject: "Science",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Water changes into ice when it is...",
+
+    options: [
+        "A. Heated",
+        "B. Frozen",
+        "C. Boiled",
+        "D. Mixed"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 37,
+    subject: "General Knowledge",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "How many continents are there in the world?",
+
+    options: [
+        "A. 5",
+        "B. 6",
+        "C. 7",
+        "D. 8"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 38,
+    subject: "Mathematics",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "What is 125 + 275?",
+
+    options: [
+        "A. 350",
+        "B. 375",
+        "C. 400",
+        "D. 425"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 39,
+    subject: "English",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which word is a verb?",
+
+    options: [
+        "A. Table",
+        "B. Honest",
+        "C. Write",
+        "D. Pencil"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 40,
+    subject: "Science",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which planet is known as the Red Planet?",
+
+    options: [
+        "A. Venus",
+        "B. Mars",
+        "C. Saturn",
+        "D. Mercury"
+    ],
+   
+    answer: "B"
+},
+
+  {
+    id: 181,
+    subject: "Mathematics",
+    level: "Primary 4",
+    difficulty: "Easy",
+
+    question: "What is 84 ÷ 7?",
+
+    options: [
+        "A. 10",
+        "B. 11",
+        "C. 12",
+        "D. 13"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 182,
+    subject: "English",
+    level: "Primary 4",
+    difficulty: "Easy",
+
+    question: "Which of these is a proper noun?",
+
+    options: [
+        "A. City",
+        "B. Nigeria",
+        "C. River",
+        "D. School"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 183,
+    subject: "Science",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which process changes water into water vapour?",
+
+    options: [
+        "A. Freezing",
+        "B. Condensation",
+        "C. Evaporation",
+        "D. Melting"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 184,
+    subject: "Mathematics",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "What is 225 + 175?",
+
+    options: [
+        "A. 350",
+        "B. 375",
+        "C. 400",
+        "D. 425"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 185,
+    subject: "English",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Choose the correct past tense of 'Go'.",
+
+    options: [
+        "A. Goed",
+        "B. Gone",
+        "C. Went",
+        "D. Going"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 186,
+    subject: "Science",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which organ helps humans breathe?",
+
+    options: [
+        "A. Liver",
+        "B. Heart",
+        "C. Lungs",
+        "D. Kidney"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 187,
+    subject: "General Knowledge",
+    level: "Primary 4",
+    difficulty: "Easy",
+
+    question: "Which is the largest ocean in the world?",
+
+    options: [
+        "A. Atlantic Ocean",
+        "B. Pacific Ocean",
+        "C. Indian Ocean",
+        "D. Arctic Ocean"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 188,
+    subject: "Mathematics",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "How many right angles are in a rectangle?",
+
+    options: [
+        "A. 2",
+        "B. 3",
+        "C. 4",
+        "D. 5"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 189,
+    subject: "English",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which sentence is punctuated correctly?",
+
+    options: [
+        "A. What is your name.",
+        "B. What is your name!",
+        "C. What is your name?",
+        "D. What is, your name?"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 190,
+    subject: "Science",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which of these animals is a mammal?",
+
+    options: [
+        "A. Eagle",
+        "B. Crocodile",
+        "C. Whale",
+        "D. Snake"
+    ],
+
+    answer: "C"
+},
+
+  {
+    id: 191,
+    subject: "Mathematics",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "What is 16 × 8?",
+
+    options: [
+        "A. 124",
+        "B. 126",
+        "C. 128",
+        "D. 130"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 192,
+    subject: "English",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which word is a synonym of 'Large'?",
+
+    options: [
+        "A. Tiny",
+        "B. Huge",
+        "C. Narrow",
+        "D. Short"
+    ],
+   
+    answer: "B"
+},
+
+{
+    id: 193,
+    subject: "Science",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which planet is known as the Blue Planet?",
+
+    options: [
+        "A. Mars",
+        "B. Earth",
+        "C. Jupiter",
+        "D. Venus"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 194,
+    subject: "Mathematics",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "What is the place value of 5 in the number 5,482?",
+
+    options: [
+        "A. Tens",
+        "B. Hundreds",
+        "C. Thousands",
+        "D. Ones"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 195,
+    subject: "English",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Choose the correct comparative form of 'Good'.",
+
+    options: [
+        "A. Gooder",
+        "B. More good",
+        "C. Better",
+        "D. Best"
+    ],
+
+    answer: "C"
+},
+
+{
+    id: 196,
+    subject: "Science",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which gas do humans breathe in for respiration?",
+
+    options: [
+        "A. Carbon dioxide",
+        "B. Oxygen",
+        "C. Nitrogen",
+        "D. Hydrogen"
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 197,
+    subject: "General Knowledge",
+    level: "Primary 4",
+    difficulty: "Easy",
+
+    question: "Which of these is a means of water transportation?",
+
+    options: [
+        "A. Boat",
+        "B. Bicycle",
+        "C. Train",
+        "D. Bus"
+    ],
+
+    answer: "A"
+},
+
+{
+    id: 198,
+    subject: "Mathematics",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "A square has ______ equal sides.",
+
+    options: [
+        "A. 2",
+        "B. 3",
+        "C. 4",
+        "D. 5"
+    ],
+
+    answer: "C"
+},
+   
+   {
+    id: 199,
+    subject: "English",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which sentence is written correctly?",
+
+    options: [
+        "A. We was happy yesterday.",
+        "B. We were happy yesterday.",
+        "C. We is happy yesterday.",
+        "D. We are happy yesterday."
+    ],
+
+    answer: "B"
+},
+
+{
+    id: 200,
+    subject: "Science",
+    level: "Primary 4",
+    difficulty: "Medium",
+
+    question: "Which of these materials is transparent?",
+
+    options: [
+        "A. Wood",
+        "B. Glass",
+        "C. Stone",
+        "D. Iron"
+    ],
+
+    answer: "B"
+},
+   
+   
