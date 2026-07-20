@@ -247,5 +247,3 @@ if (themeToggle) {
     });
 
 }
-
-});
