@@ -137,8 +137,8 @@ document.addEventListener(
     updateAuthUI
 );
 
-window.supabaseClient?.auth.onAuthStateChange(() => {
-
+window.supabaseClient?.auth.onAuthStateChange((event, session) => {
+    console.log("AUTH EVENT:", event);
+    console.log("SESSION:", session);
     updateAuthUI();
-
 });
