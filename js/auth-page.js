@@ -5,7 +5,23 @@ AUTHENTICATION PAGE
 =========================================
 */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    if (window.supabaseClient) {
+
+    const {
+        data: { session },
+        error
+    } = await window.supabaseClient.auth.getSession();
+
+    if (error) {
+        console.error(error);
+    }
+
+    if (session && session.user) {
+        window.location.href = "student-profile.html";
+        return;
+    }
+    }
 
     const googleButton = document.querySelector(".google-auth");
     const xButton = document.querySelector(".x-auth");
