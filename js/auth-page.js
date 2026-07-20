@@ -16,6 +16,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (error) {
         console.error(error);
     }
+        console.log("SESSION:", session);
+console.log("SESSION ERROR:", error);
+
+const {
+    data: { user },
+    error: userError,
+} = await window.supabaseClient.auth.getUser();
+
+console.log("USER:", user);
+console.log("USER ERROR:", userError);
 
     if (session && session.user) {
         window.location.href = "student-profile.html";
