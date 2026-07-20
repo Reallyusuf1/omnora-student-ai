@@ -10,16 +10,23 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    const {
-        data: { session }
-    } = await window.supabaseClient.auth.getSession();
+    console.log("Profile page loaded");
 
-    if (!session) {
-        window.location.href = "auth-page.html";
-        return;
-    }
+const {
+    data: { session }
+} = await window.supabaseClient.auth.getSession();
 
-    const user = session.user;
+console.log("SESSION:", session);
+
+if (!session) {
+    console.log("No session found");
+    window.location.href = "auth-page.html";
+    return;
+}
+
+const user = session.user;
+
+console.log("USER:", user);
 
     /* ==========================================
        PROFILE ELEMENTS
