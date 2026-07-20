@@ -28,6 +28,10 @@ const user = session.user;
 
 console.log("USER:", user);
 
+   console.log("USER METADATA:", user.user_metadata);
+
+   console.log("APP METADATA:", user.app_metadata);
+
     /* ==========================================
        PROFILE ELEMENTS
     ========================================== */
