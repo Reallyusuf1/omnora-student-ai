@@ -1,3 +1,49 @@
+document.addEventListener("DOMContentLoaded", async () => {
+
+    console.clear();
+
+    console.log("========== PROFILE DEBUG ==========");
+
+    console.log("Current URL:", window.location.href);
+
+    console.log("Supabase Client:", window.supabaseClient);
+
+    if (!window.supabaseClient) {
+        console.error("❌ Supabase Client NOT FOUND");
+        return;
+    }
+
+    const {
+        data: { session },
+        error: sessionError
+    } = await window.supabaseClient.auth.getSession();
+
+    console.log("SESSION:", session);
+
+    console.log("SESSION ERROR:", sessionError);
+
+    if (!session) {
+        console.error("❌ No session");
+        return;
+    }
+
+    console.log("USER:", session.user);
+
+    const {
+        data: profile,
+        error: profileError
+    } = await window.supabaseClient
+        .from("profiles")
+        .select("*")
+        .eq("id", session.user.id)
+        .single();
+
+    console.log("PROFILE:", profile);
+
+    console.log("PROFILE ERROR:", profileError);
+
+});
+
 /* ==========================================
    OMNORA STUDENTS AI V2
    PROFILE PAGE
