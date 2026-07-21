@@ -1,172 +1,205 @@
-/* ==========================================
-   OMNORA STUDENTS AI
-   STUDENT REGISTRATION
-========================================== */
+/**
+ * ==========================================================
+ * Omnora Students AI V2
+ * Student Registration Controller
+ * File: js/student-register.js
+ * ==========================================================
+ */
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    const form = document.getElementById("studentForm");
+    const form = document.getElementById("studentRegisterForm");
 
     if (!form) return;
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", handleStudentRegistration);
+});
 
-        e.preventDefault();
+/**
+ * Student Registration
+ */
+async function handleStudentRegistration(event) {
+    event.preventDefault();
 
-        const fullName = form.querySelector('input[placeholder="Full Name"]').value.trim();
+    try {
+        // --------------------------------------------------
+        // Collect Form Data
+        // --------------------------------------------------
 
-        const schoolName = form.querySelector('input[placeholder="School Name"]').value.trim();
-
-        const admissionNumber = form.querySelector('input[placeholder="Admission Number"]').value.trim();
-
-        const studentClass = form.querySelector("select").value;
-
-        const gender = form.querySelectorAll("select")[1].value;
-
-        const country = form.querySelector('input[placeholder="Country"]').value.trim();
-
-        const state = form.querySelector('input[placeholder="State / Province"]').value.trim();
-
-        const city = form.querySelector('input[placeholder="City / LGA"]').value.trim();
-
-        const dob = form.querySelector('input[type="date"]').value;
-
-        const goal = form.querySelector("textarea").value.trim();
-
-        const password = form.querySelector('input[placeholder="Create Password"]').value;
-
-        const confirmPassword = form.querySelector('input[placeholder="Confirm Password"]').value;
-
-        const agree = form.querySelector('input[type="checkbox"]').checked;
-
-        /* ===========================
-           VALIDATION
-        =========================== */
-
-        if (
-            !fullName ||
-            !schoolName ||
-            !admissionNumber ||
-            !country ||
-            !state ||
-            !city ||
-            !dob ||
-            !password ||
-            !confirmPassword
-        ) {
-
-            alert("⚠ Please complete all required fields.");
-
-            return;
-
-        }
-
-        if (studentClass === "Select Class") {
-
-            alert("⚠ Please select your class.");
-
-            return;
-
-        }
-
-        if (gender === "Gender") {
-
-            alert("⚠ Please select your gender.");
-
-            return;
-
-        }
-
-        if (password !== confirmPassword) {
-
-            alert("❌ Passwords do not match.");
-
-            return;
-
-        }
-
-        if (!agree) {
-
-            alert("⚠ Please accept the Terms of Service.");
-
-            return;
-
-        }
-
-        /* ===========================
-           CREATE STUDENT ACCOUNT
-        =========================== */
-
-        const student = {
-
-            id: "OMNORA-" + Date.now(),
-
-            fullName,
-
-            schoolName,
-
-            admissionNumber,
-
-            studentClass,
-
-            gender,
-
-            country,
-
-            state,
-
-            city,
-
-            dateOfBirth: dob,
-
-            learningGoal: goal,
-
-            password,
-
-            points: 0,
-
-            streak: 0,
-
-            quizzesCompleted: 0,
-
-            verified: false,
-
-            loginProvider: "Student",
-
-            createdAt: new Date().toISOString()
-
+        const formData = {
+            fullName: getValue("fullName"),
+            schoolName: getValue("schoolName"),
+            admissionNumber: getValue("admissionNumber"),
+            classLevel: getValue("classLevel"),
+            gender: getValue("gender"),
+            country: getValue("country"),
+            state: getValue("state"),
+            city: getValue("city"),
+            dateOfBirth: getValue("dateOfBirth"),
+            goal: getValue("goal"),
+            password: getValue("password"),
+            confirmPassword: getValue("confirmPassword"),
+            acceptedTerms: document.getElementById("terms").checked
         };
 
-        /* ===========================
-           SAVE
-        =========================== */
+        // --------------------------------------------------
+        // Validation
+        // --------------------------------------------------
 
-        localStorage.setItem(
-            "omnoraStudent",
-            JSON.stringify(student)
-        );
+        const validation = validateRegistration(formData);
 
-        localStorage.setItem(
-            "omnoraLoggedIn",
-            "true"
-        );
+        if (!validation.success) {
+            return showError(validation.message);
+        }
 
-        /* ===========================
-           SUCCESS
-        =========================== */
+        // --------------------------------------------------
+        // Loading
+        // --------------------------------------------------
 
-        alert(
-`🎉 Congratulations!
+        showLoading(true);
 
-Welcome to Omnora Students AI.
+        // --------------------------------------------------
+        // Send To Authentication Layer
+        // --------------------------------------------------
 
-Your student account has been created successfully.
+        const result = await OmnoraAuth.registerStudent(formData);
 
-Click OK to continue to Home.`
-        );
+        // --------------------------------------------------
+        // Success
+        // --------------------------------------------------
 
-        window.location.href = "index.html";
+        if (result.success) {
 
-    });
+            showSuccess(
+                `Registration successful!\n\nYour Student ID is:\n${result.omsId}`
+            );
 
-});
+            window.location.href = "student-login.html";
+
+            return;
+        }
+
+        // --------------------------------------------------
+        // Error
+        // --------------------------------------------------
+
+        showError(result.message);
+
+    } catch (error) {
+
+        console.error(error);
+
+        showError("Something went wrong.");
+
+    } finally {
+
+        showLoading(false);
+
+    }
+}
+
+/**
+ * Validate Registration Form
+ */
+function validateRegistration(data) {
+
+    if (!data.fullName.trim()) {
+        return {
+            success: false,
+            message: "Full Name is required."
+        };
+    }
+
+    if (!data.schoolName.trim()) {
+        return {
+            success: false,
+            message: "School Name is required."
+        };
+    }
+
+    if (!data.country.trim()) {
+        return {
+            success: false,
+            message: "Country is required."
+        };
+    }
+
+    if (!data.password) {
+        return {
+            success: false,
+            message: "Password is required."
+        };
+    }
+
+    if (data.password.length < 8) {
+        return {
+            success: false,
+            message: "Password must be at least 8 characters."
+        };
+    }
+
+    if (data.password !== data.confirmPassword) {
+        return {
+            success: false,
+            message: "Passwords do not match."
+        };
+    }
+
+    if (!data.acceptedTerms) {
+        return {
+            success: false,
+            message: "Please accept the Terms & Privacy Policy."
+        };
+    }
+
+    return {
+        success: true
+    };
+}
+
+/**
+ * Get Input Value
+ */
+function getValue(id) {
+
+    const input = document.getElementById(id);
+
+    return input ? input.value.trim() : "";
+
+}
+
+/**
+ * Loading UI
+ */
+function showLoading(status) {
+
+    const button = document.querySelector(
+        "#studentRegisterForm button[type='submit']"
+    );
+
+    if (!button) return;
+
+    button.disabled = status;
+
+    button.textContent = status
+        ? "Creating Account..."
+        : "Create Student Account";
+
+}
+
+/**
+ * Success UI
+ */
+function showSuccess(message) {
+
+    alert(message);
+
+}
+
+/**
+ * Error UI
+ */
+function showError(message) {
+
+    alert(message);
+
+}
