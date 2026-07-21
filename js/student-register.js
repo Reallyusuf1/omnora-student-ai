@@ -26,20 +26,20 @@ async function handleStudentRegistration(event) {
         // --------------------------------------------------
 
         const formData = {
-            fullName: getValue("fullName"),
-            schoolName: getValue("schoolName"),
-            admissionNumber: getValue("admissionNumber"),
-            classLevel: getValue("classLevel"),
-            gender: getValue("gender"),
-            country: getValue("country"),
-            state: getValue("state"),
-            city: getValue("city"),
-            dateOfBirth: getValue("dateOfBirth"),
-            goal: getValue("goal"),
-            password: getValue("password"),
-            confirmPassword: getValue("confirmPassword"),
-            acceptedTerms: document.getElementById("terms").checked
-        };
+    full_name: getValue("fullName"),
+    school_name: getValue("schoolName"),
+    admission_number: getValue("admissionNumber"),
+    class_level: getValue("classLevel"),
+    gender: getValue("gender"),
+    country: getValue("country"),
+    state: getValue("state"),
+    city: getValue("city"),
+    date_of_birth: getValue("dateOfBirth"),
+    goal: getValue("goal"),
+    password: getValue("password"),
+    confirm_password: getValue("confirmPassword"),
+    accepted_terms: document.getElementById("terms").checked
+};
 
         // --------------------------------------------------
         // Validation
@@ -70,7 +70,7 @@ async function handleStudentRegistration(event) {
         if (result.success) {
 
             showSuccess(
-                `Registration successful!\n\nYour Student ID is:\n${result.omsId}`
+                `Registration successful!\n\nYour Student ID is:\n${result.oms_id}`
             );
 
             window.location.href = "student-login.html";
@@ -102,14 +102,14 @@ async function handleStudentRegistration(event) {
  */
 function validateRegistration(data) {
 
-    if (!data.fullName.trim()) {
+    if (!data.full_Name.trim()) {
         return {
             success: false,
             message: "Full Name is required."
         };
     }
 
-    if (!data.schoolName.trim()) {
+    if (!data.school_Name.trim()) {
         return {
             success: false,
             message: "School Name is required."
@@ -137,14 +137,14 @@ function validateRegistration(data) {
         };
     }
 
-    if (data.password !== data.confirmPassword) {
+    if (data.password !== data.confirm_password) {
         return {
             success: false,
             message: "Passwords do not match."
         };
     }
 
-    if (!data.acceptedTerms) {
+    if (!data.accepted_terms) {
         return {
             success: false,
             message: "Please accept the Terms & Privacy Policy."
