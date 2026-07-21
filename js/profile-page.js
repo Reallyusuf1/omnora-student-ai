@@ -235,8 +235,6 @@ async function editProfile() {
 
 }
 
-}
-
 
 /* ==========================================
    CHANGE PIN
