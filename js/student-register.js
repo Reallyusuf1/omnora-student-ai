@@ -69,14 +69,24 @@ async function handleStudentRegistration(event) {
 
         if (result.success) {
 
-            showSuccess(
-                `Registration successful!\n\nYour Student ID is:\n${result.oms_id}`
-            );
+            const proceed = confirm(
+`🎉 Registration Successful!
 
-            window.location.href = "student-login.html";
+Your Student ID is:
 
-            return;
-        }
+${result.oms_id}
+
+Please save this OMS-ID carefully.
+You will use it every time you log in.
+
+Press OK to continue to Login Page.`
+);
+
+if (proceed) {
+    window.location.href = "student-login.html";
+}
+
+return;
 
         // --------------------------------------------------
         // Error
