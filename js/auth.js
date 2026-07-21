@@ -120,6 +120,10 @@ window.OmnoraAuth = {
 
     requireAuth,
 
+    registerStudent,
+
+    loginStudent,
+    
     logoutStudent
 
 };
@@ -256,3 +260,47 @@ if (omsError) {
     };
 
                 }
+/**
+ * Login Student
+ */
+async function loginStudent(loginData) {
+
+    const supabase = getSupabase();
+
+    const { data: profile, error: profileError } = await supabase
+        .from("profiles")
+        .select("oms_id")
+        .eq("oms_id", loginData.omsId)
+        .single();
+
+    if (profileError || !profile) {
+        return {
+            success: false,
+            message: "Invalid OMS-ID or password."
+        };
+    }
+
+    const pseudoEmail =
+        `${loginData.omsId.toLowerCase()}@students.omnora.ai`;
+
+    const {
+        error
+    } = await supabase.auth.signInWithPassword({
+
+        email: pseudoEmail,
+
+        password: loginData.password
+
+    });
+
+    if (error) {
+        return {
+            success: false,
+            message: "Invalid OMS-ID or password."
+        };
+    }
+
+    return {
+        success: true
+    };
+}
