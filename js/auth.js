@@ -123,3 +123,136 @@ window.OmnoraAuth = {
     logoutStudent
 
 };
+
+
+/**
+ * Create Student Profile
+ */
+async function createStudentProfile(
+    userId,
+    profile
+) {
+
+    const supabase = getSupabase();
+
+    const { error } =
+        await supabase
+            .from("profiles")
+            .insert({
+
+                id: userId,
+
+                oms_id: profile.oms_id,
+
+                full_name: profile.full_name,
+
+                school_name: profile.school_name,
+
+                country: profile.country,
+
+                admission_number:
+                    profile.admission_number || null,
+
+                class_level:
+                    profile.class_level || null,
+
+                gender:
+                    profile.gender || null,
+
+                state:
+                    profile.state || null,
+
+                city:
+                    profile.city || null,
+
+                date_of_birth:
+                    profile.date_of_birth || null,
+
+                goal:
+                    profile.goal || null,
+
+                avatar_url:
+                    profile.avatar_url || null,
+
+                role: "student"
+
+            });
+
+    if (error) {
+        throw error;
+    }
+}
+
+
+/**
+ * Register Student
+ */
+async function registerStudent(formData) {
+
+    const supabase = getSupabase();
+
+    if (
+        !formData.full_name ||
+        !formData.school_name ||
+        !formData.country ||
+        !formData.password
+    ) {
+
+        throw new Error(
+            "Please complete all required fields."
+        );
+    }
+
+    const {
+    data: omsId,
+    error: omsError
+} = await supabase.rpc("generate_oms_id");
+
+if (omsError) {
+    throw omsError;
+}
+
+    const pseudoEmail =
+        `${omsId.toLowerCase()}@students.omnora.ai`;
+
+    const {
+
+        data,
+
+        error
+
+    } = await supabase.auth.signUp({
+
+        email: pseudoEmail,
+
+        password: formData.password
+
+    });
+
+    if (error) {
+        throw error;
+    }
+
+    await createStudentProfile(
+
+        data.user.id,
+
+        {
+
+            ...formData,
+
+            oms_id: omsId
+
+        }
+
+    );
+
+    return {
+
+        success: true,
+
+        oms_id: omsId
+
+    };
+
+                }
