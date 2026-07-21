@@ -1,0 +1,281 @@
+/* ==========================================
+   Student Login
+========================================== */
+
+.student-login-page{
+
+    min-height:100vh;
+
+    padding:120px 0 80px;
+
+}
+
+/* ==========================================
+   Hero
+========================================== */
+
+.login-hero{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.login-hero h1{
+
+    font-size:clamp(2.2rem,5vw,3.4rem);
+
+    margin:22px 0;
+
+    color:#ffffff;
+
+}
+
+.login-hero .hero-text{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    color:#cfd5ec;
+
+    line-height:1.9;
+
+    font-size:1.08rem;
+
+}
+
+/* ==========================================
+   Login Card
+========================================== */
+
+.login-section{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.student-login-form{
+
+    width:100%;
+
+    max-width:620px;
+
+    background:rgba(18,22,42,.82);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:42px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.student-login-form h2{
+
+    text-align:center;
+
+    color:#ffffff;
+
+    margin-bottom:30px;
+
+    font-size:2rem;
+
+}
+
+/* ==========================================
+   Inputs
+========================================== */
+
+.student-login-form input{
+
+    width:100%;
+
+    margin-bottom:20px;
+
+    padding:18px 20px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:#1a203c;
+
+    color:#ffffff;
+
+    font-size:1rem;
+
+    transition:.3s ease;
+
+}
+
+.student-login-form input::placeholder{
+
+    color:#9ea7d6;
+
+}
+
+.student-login-form input:focus{
+
+    outline:none;
+
+    border-color:#7d6bff;
+
+    box-shadow:0 0 0 4px rgba(125,107,255,.15);
+
+}
+
+/* ==========================================
+   Remember Me
+========================================== */
+
+.remember{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#d9def5;
+
+    margin-bottom:26px;
+
+    font-size:.98rem;
+
+}
+
+.remember input{
+
+    width:18px;
+
+    height:18px;
+
+    margin:0;
+
+}
+
+/* ==========================================
+   Button
+========================================== */
+
+.student-login-form button{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    background:linear-gradient(90deg,#5d4cff,#8b3dff);
+
+    color:#ffffff;
+
+    font-size:1.08rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+    box-shadow:0 20px 45px rgba(93,76,255,.35);
+
+}
+
+.student-login-form button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 28px 55px rgba(93,76,255,.45);
+
+}
+
+/* ==========================================
+   Links
+========================================== */
+
+.forgot-id{
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
+.forgot-id a{
+
+    color:#8b7dff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.forgot-id a:hover{
+
+    text-decoration:underline;
+
+}
+
+.register-text{
+
+    margin-top:18px;
+
+    text-align:center;
+
+    color:#cfd5ec;
+
+}
+
+.register-link{
+
+    color:#8b7dff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+.register-link:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media(max-width:768px){
+
+.student-login-form{
+
+    padding:28px;
+
+}
+
+.login-hero{
+
+    margin-bottom:50px;
+
+}
+
+.login-hero h1{
+
+    font-size:2.3rem;
+
+}
+
+}
