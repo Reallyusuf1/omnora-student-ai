@@ -1,6 +1,4 @@
-// ===== OMNORA STUDENT AI =====
-
-let isCooldown = false;
+// ===== OMNORA STUDENT AI ====
 
 // ==================== AI CHAT ====================
 async function askAI() {
