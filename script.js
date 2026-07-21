@@ -1,5 +1,4 @@
 // ===== OMNORA STUDENT AI ====
-
 // ==================== AI CHAT ====================
 async function askAI() {
     const input = document.getElementById("userQuestion");
