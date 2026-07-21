@@ -206,6 +206,55 @@
 
 }
 
+/* =====================================
+   STUDENT LOGIN
+===================================== */
+
+.student-login-button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:18px;
+
+    text-decoration:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        90deg,
+        #5d4cff,
+        #8d3dff
+    );
+
+    color:#ffffff;
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.student-login-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(93,76,255,.35);
+
+}
+
 /* ===================================
    DIVIDER
 =================================== */
@@ -231,6 +280,65 @@
     background:rgba(255,255,255,.05);
 
     color:#aab4d8;
+
+}
+/* =====================================
+   REGISTER TEXT
+===================================== */
+
+.register-text{
+
+    margin:22px 0 18px;
+
+    text-align:center;
+
+    color:#cfd7f2;
+
+    font-size:.95rem;
+
+}
+
+/* =====================================
+   STUDENT REGISTER
+===================================== */
+
+.student-register-button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    width:100%;
+
+    padding:18px;
+
+    text-decoration:none;
+
+    border-radius:18px;
+
+    border:1px solid rgba(120,140,255,.25);
+
+    background:rgba(255,255,255,.04);
+
+    color:#ffffff;
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.student-register-button:hover{
+
+    background:rgba(120,140,255,.12);
+
+    transform:translateY(-3px);
 
 }
 
