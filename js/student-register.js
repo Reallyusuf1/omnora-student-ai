@@ -124,14 +124,14 @@ return;
  */
 function validateRegistration(data) {
 
-    if (!data.full_Name.trim()) {
+    if (!data.full_name.trim()) {
         return {
             success: false,
             message: "Full Name is required."
         };
     }
 
-    if (!data.school_Name.trim()) {
+    if (!data.school_name.trim()) {
         return {
             success: false,
             message: "School Name is required."
