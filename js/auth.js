@@ -273,22 +273,6 @@ async function loginStudent(loginData) {
 
     console.log("OMS-ID RECEIVED:", loginData.omsId);
 
-    const { data: profile, error: profileError } = await supabase
-        .from("profiles")
-        .select("oms_id")
-        .eq("oms_id", loginData.omsId)
-        .maybeSingle();
-
-    console.log("PROFILE:", profile);
-console.log("PROFILE ERROR:", profileError);
-
-    if (profileError || !profile) {
-        return {
-            success: false,
-            message: "Invalid OMS-ID or password."
-        };
-    }
-
     const pseudoEmail =
 await OmnoraResolver.resolveOmsEmail(
     loginData.omsId
