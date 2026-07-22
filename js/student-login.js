@@ -63,7 +63,7 @@ async function handleStudentLogin(event) {
 
             showSuccess("Login successful.");
 
-            window.location.href = "index.html";
+            window.location.href="index.html";
 
             return;
 
