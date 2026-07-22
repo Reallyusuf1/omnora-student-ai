@@ -237,6 +237,10 @@ if (omsError) {
         throw error;
     }
 
+    if (!data?.user) {
+    throw new Error("Student account was not created.");
+    }
+
     await createStudentProfile(
 
         data.user.id,
