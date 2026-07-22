@@ -277,6 +277,9 @@ async function loginStudent(loginData) {
         .eq("oms_id", loginData.omsId)
         .single();
 
+    console.log("PROFILE:", profile);
+console.log("PROFILE ERROR:", profileError);
+
     if (profileError || !profile) {
         return {
             success: false,
@@ -286,16 +289,19 @@ async function loginStudent(loginData) {
 
     const pseudoEmail =
         `${loginData.omsId.toLowerCase()}@students.omnora.ai`;
+    
+    console.log("Pseudo Email:", pseudoEmail);
 
     const {
-        error
-    } = await supabase.auth.signInWithPassword({
+    data,
+    error
+} = await supabase.auth.signInWithPassword({
+    email: pseudoEmail,
+    password: loginData.password
+});
 
-        email: pseudoEmail,
-
-        password: loginData.password
-
-    });
+console.log("AUTH DATA:", data);
+console.log("AUTH ERROR:", error);
 
     if (error) {
         return {
