@@ -61,7 +61,12 @@ async function handleStudentRegistration(event) {
         // Send To Authentication Layer
         // --------------------------------------------------
 
-        const result = await OmnoraAuth.registerStudent(formData);
+        console.log("Submitting registration...");
+console.log(formData);
+
+const result = await OmnoraAuth.registerStudent(formData);
+
+console.log("Registration Result:", result);
 
         // --------------------------------------------------
         // Success
@@ -96,13 +101,18 @@ return;
 
         showError(result.message);
 
-    } catch (error) {
+    }
+        catch (error) {
 
-        console.error(error);
+    console.error("Registration Error:", error);
 
-        showError("Something went wrong.");
+    alert(error.message || JSON.stringify(error));
 
-    } finally {
+    showError(error.message || "Something went wrong.");
+
+        }
+    
+        finally {
 
         showLoading(false);
 
@@ -202,6 +212,10 @@ function showLoading(status) {
  * Success UI
  */
 function showSuccess(message) {
+
+    console.log("SUCCESS MESSAGE:");
+
+    console.log(message);
 
     alert(message);
 
