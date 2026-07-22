@@ -51,139 +51,141 @@
     </section>
 
     <!-- Registration Form -->
+<section class="register-section">
 
-    <section class="register-section">
+    <div class="container">
 
-        <div class="container">
+        <form class="student-form" id="studentRegisterForm">
 
-            <form class="student-form" id="studentForm">
+            <h2>Account Information</h2>
 
-                <h2>
-                    Account Information
-                </h2>
+            <input
+                id="fullName"
+                type="text"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                id="schoolName"
+                type="text"
+                placeholder="School Name"
+                required
+            >
+
+            <input
+                id="admissionNumber"
+                type="text"
+                placeholder="Admission Number (Optional)"
+            >
+
+            <select id="classLevel">
+                <option value="">Select Class (Optional)</option>
+
+                <option>Primary 1</option>
+                <option>Primary 2</option>
+                <option>Primary 3</option>
+                <option>Primary 4</option>
+                <option>Primary 5</option>
+                <option>Primary 6</option>
+
+                <option>JSS 1</option>
+                <option>JSS 2</option>
+                <option>JSS 3</option>
+
+                <option>SSS 1</option>
+                <option>SSS 2</option>
+                <option>SSS 3</option>
+            </select>
+
+            <select id="gender">
+                <option value="">Gender (Optional)</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+
+            <input
+                id="country"
+                type="text"
+                placeholder="Country"
+                required
+            >
+
+            <input
+                id="state"
+                type="text"
+                placeholder="State / Province (Optional)"
+            >
+
+            <input
+                id="city"
+                type="text"
+                placeholder="City / LGA (Optional)"
+            >
+
+            <label for="dateOfBirth">
+                Enter Your Date of Birth (Optional)
+            </label>
+
+            <input
+                id="dateOfBirth"
+                type="date"
+            >
+
+            <textarea
+                id="goal"
+                rows="4"
+                placeholder="What do you want to achieve with Omnora Students AI? (Optional)"
+            ></textarea>
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Create Password"
+                required
+            >
+
+            <input
+                id="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                required
+            >
+
+            <label class="terms">
 
                 <input
-                    type="text"
-                    placeholder="Full Name"
+                    id="terms"
+                    type="checkbox"
                     required
                 >
 
-                <input
-                    type="text"
-                    placeholder="School Name"
-                    required
+                I agree to the Terms of Service and Privacy Policy.
+
+            </label>
+
+            <button type="submit">
+                🚀 Create Student Account
+            </button>
+
+            <p class="login-text">
+
+                Already have an account?
+
+                <a
+                    href="student-login.html"
+                    class="login-link"
                 >
+                    Student Login
+                </a>
 
-                <input
-    type="text"
-    placeholder="Admission Number (Optional)"
->
+            </p>
 
-                <select>
+        </form>
 
-    <option selected>
-        Select Class (Optional)
-    </option>
+    </div>
 
-    <option>Primary 1</option>
-    <option>Primary 2</option>
-    <option>Primary 3</option>
-    <option>Primary 4</option>
-    <option>Primary 5</option>
-    <option>Primary 6</option>
-
-    <option>JSS 1</option>
-    <option>JSS 2</option>
-    <option>JSS 3</option>
-
-    <option>SSS 1</option>
-    <option>SSS 2</option>
-    <option>SSS 3</option>
-
-                </select>
-
-                <select>
-
-    <option selected>
-        Gender (Optional)
-    </option>
-
-    <option>Male</option>
-    <option>Female</option>
-
-                </select>
-
-                <input
-    type="text"
-    placeholder="Country"
-    required
->
-
-                <input
-    type="text"
-    placeholder="State / Province (Optional)"
->
-
-                <input
-    type="text"
-    placeholder="City / LGA (Optional)"
->
-
-                <label for="dob">
-    Enter Your Date of Birth (Optional)
-</label>
-
-<input
-    id="dob"
-    type="date"
->
-
-                <textarea
-    rows="4"
-    placeholder="What do you want to achieve with Omnora Students AI? (Optional)"
-></textarea>
-
-                <input
-                    type="password"
-                    placeholder="Create Password"
-                    required
-                >
-
-                <input
-                    type="password"
-                    placeholder="Confirm Password"
-                    required
-                >
-
-                <label class="terms">
-
-                    <input type="checkbox" required>
-
-                    I agree to the Terms of Service and Privacy Policy.
-
-                </label>
-
-                <button type="submit">
-
-                    🚀 Create Student Account
-
-                </button>
-
-                <p class="login-text">
-    Already have an account?
-    <a
-        href="student-login.html"
-        class="login-link"
-    >
-        Student Login
-    </a>
-                </p>
-
-            </form>
-
-        </div>
-
-    </section>
+</section>
 
     <!-- Benefits -->
 
