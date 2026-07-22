@@ -277,7 +277,7 @@ async function loginStudent(loginData) {
         .from("profiles")
         .select("oms_id")
         .eq("oms_id", loginData.omsId)
-        .single();
+        .maybeSingle();
 
     console.log("PROFILE:", profile);
 console.log("PROFILE ERROR:", profileError);
