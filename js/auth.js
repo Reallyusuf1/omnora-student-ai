@@ -271,6 +271,8 @@ async function loginStudent(loginData) {
 
     const supabase = getSupabase();
 
+    console.log("OMS-ID RECEIVED:", loginData.omsId);
+
     const { data: profile, error: profileError } = await supabase
         .from("profiles")
         .select("oms_id")
