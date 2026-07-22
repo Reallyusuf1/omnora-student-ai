@@ -290,7 +290,9 @@ console.log("PROFILE ERROR:", profileError);
     }
 
     const pseudoEmail =
-        `${loginData.omsId.toLowerCase()}@students.omnora.ai`;
+await OmnoraResolver.resolveOmsEmail(
+    loginData.omsId
+);
     
     console.log("Pseudo Email:", pseudoEmail);
 
