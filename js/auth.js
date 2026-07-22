@@ -273,23 +273,25 @@ async function loginStudent(loginData) {
 
     console.log("OMS-ID RECEIVED:", loginData.omsId);
 
+try {
+
     const pseudoEmail =
-await OmnoraResolver.resolveOmsEmail(
-    loginData.omsId
-);
-    
-    console.log("Pseudo Email:", pseudoEmail);
+        await OmnoraResolver.resolveOmsEmail(
+            loginData.omsId
+        );
+
+    console.log("Resolved Email:", pseudoEmail);
 
     const {
-    data,
-    error
-} = await supabase.auth.signInWithPassword({
-    email: pseudoEmail,
-    password: loginData.password
-});
+        data,
+        error
+    } = await supabase.auth.signInWithPassword({
+        email: pseudoEmail,
+        password: loginData.password
+    });
 
-console.log("AUTH DATA:", data);
-console.log("AUTH ERROR:", error);
+    console.log("AUTH DATA:", data);
+    console.log("AUTH ERROR:", error);
 
     if (error) {
         return {
@@ -301,4 +303,10 @@ console.log("AUTH ERROR:", error);
     return {
         success: true
     };
+
+} catch (e) {
+
+    console.error("LOGIN EXCEPTION:", e);
+
+    throw e;
 }
