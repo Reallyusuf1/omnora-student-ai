@@ -21,7 +21,7 @@ async function resolveOmsEmail(omsId) {
     const { data, error } = await supabase.rpc(
         "resolve_oms_email",
         {
-            p_oms_id: omsId
+    oms_id_input: omsId
         }
     );
 
