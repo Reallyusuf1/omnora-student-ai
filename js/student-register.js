@@ -106,7 +106,6 @@ return;
 
     console.error("Registration Error:", error);
 
-    alert(error.message || JSON.stringify(error));
 
     showError(error.message || "Something went wrong.");
 
