@@ -103,9 +103,10 @@ console.log("USER:", user);
         "assets/images/default-avatar.png";
 
     const name =
-        user.user_metadata.full_name ||
-        user.user_metadata.name ||
-        "Student";
+    profile?.full_name ||
+    user.user_metadata.full_name ||
+    user.user_metadata.name ||
+    "Student";
 
     const joinedYear =
         new Date(user.created_at).getFullYear();
