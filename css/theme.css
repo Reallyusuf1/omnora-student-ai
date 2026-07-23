@@ -317,3 +317,26 @@ body.light-theme .menu-btn i,
 body.light-theme .hamburger i{
     color:#233b8f !important;
 }
+/* ===============================
+   AUTH BUTTONS IN SIDEBAR
+================================ */
+
+body.light-theme .auth-buttons,
+body.light-theme .nav-auth,
+body.light-theme .sidebar-auth,
+body.light-theme .mobile-auth{
+    display:flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+}
+
+body.light-theme .auth-buttons a,
+body.light-theme .nav-auth a,
+body.light-theme .sidebar-auth a,
+body.light-theme .mobile-auth a,
+body.light-theme .login-btn,
+body.light-theme .signup-btn{
+    display:inline-flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+}
