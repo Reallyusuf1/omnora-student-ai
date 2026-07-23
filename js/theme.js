@@ -3,7 +3,7 @@
 // Theme Engine
 // ========================================
 
-import { supabase } from "./supabase.js";
+const supabase = window.supabaseClient;
 
 class ThemeEngine {
     constructor() {
@@ -86,7 +86,8 @@ class ThemeEngine {
     }
 }
 
-export const themeEngine = new ThemeEngine();
+window.themeEngine = new ThemeEngine();
+
 document.addEventListener("DOMContentLoaded", async () => {
-    await themeEngine.init();
+    await window.themeEngine.init();
 });
