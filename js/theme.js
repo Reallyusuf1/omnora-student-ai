@@ -3,8 +3,6 @@
 // Theme Engine
 // ========================================
 
-const supabase = window.supabaseClient;
-
 class ThemeEngine {
     constructor() {
         this.currentTheme = "dark";
@@ -18,15 +16,15 @@ class ThemeEngine {
     const {
         data: { session },
         error: sessionError
-    } = await supabase.auth.getSession();
+    } = await window.supabaseClient.auth.getSession()
 
     if (sessionError || !session) {
         this.applyTheme("dark");
         return;
     }
 
-    const { data: profile, error: profileError } = await supabase
-        .from("profiles")
+    const { data: profile, error: profileError } = await window.supabaseClient
+    .from("profiles")
         .select("theme")
         .eq("id", session.user.id)
         .single();
@@ -53,14 +51,14 @@ class ThemeEngine {
     const {
         data: { session },
         error: sessionError
-    } = await supabase.auth.getSession();
+    } = await window.supabaseClient.auth.getSession()
 
     if (sessionError || !session) {
         return;
     }
 
-    const { error } = await supabase
-        .from("profiles")
+    const { error } = await window.supabaseClient
+    .from("profiles")
         .update({
             theme: theme
         })
