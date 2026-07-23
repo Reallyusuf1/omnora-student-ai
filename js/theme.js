@@ -15,7 +15,28 @@ class ThemeEngine {
     }
 
     async loadTheme() {
-        // Za mu cika wannan a Phase 2
+    const {
+        data: { session },
+        error: sessionError
+    } = await supabase.auth.getSession();
+
+    if (sessionError || !session) {
+        this.applyTheme("dark");
+        return;
+    }
+
+    const { data: profile, error: profileError } = await supabase
+        .from("profiles")
+        .select("theme")
+        .eq("id", session.user.id)
+        .single();
+
+    if (profileError || !profile) {
+        this.applyTheme("dark");
+        return;
+    }
+
+    this.applyTheme(profile.theme || "dark");
     }
 
     applyTheme(theme) {
