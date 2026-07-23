@@ -165,9 +165,18 @@ if (avatar && avatarUpload) {
     avatar.addEventListener("click", () => {
         avatarUpload.click();
     });
-}
+
+    avatarUpload.addEventListener("change", (event) => {
+
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    avatar.src = URL.createObjectURL(file);
 
 });
+
+}
 
 
 /* ==========================================
