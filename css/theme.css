@@ -1,0 +1,88 @@
+/* ==========================================
+   Omnora Students AI V2
+   Theme System
+   Light Theme Overrides Only
+   ========================================== */
+
+/* ==========================
+   Global Background
+========================== */
+
+body.light-theme{
+    background:#f8fafc;
+}
+
+/* ==========================
+   Main Layout
+========================== */
+
+body.light-theme main,
+body.light-theme section{
+    background:transparent;
+}
+
+/* ==========================
+   Cards
+========================== */
+
+body.light-theme .card,
+body.light-theme .profile-card,
+body.light-theme .dashboard-card,
+body.light-theme .feature-card,
+body.light-theme .quiz-card,
+body.light-theme .leaderboard-card,
+body.light-theme .study-card{
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+/* ==========================
+   Forms
+========================== */
+
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select{
+    background:#ffffff;
+    border:1px solid #d1d5db;
+}
+
+/* ==========================
+   Tables
+========================== */
+
+body.light-theme table{
+    background:#ffffff;
+}
+
+body.light-theme th,
+body.light-theme td{
+    border-color:#e5e7eb;
+}
+
+/* ==========================
+   Modals
+========================== */
+
+body.light-theme .modal,
+body.light-theme .modal-content{
+    background:#ffffff;
+}
+
+/* ==========================
+   Sidebar
+========================== */
+
+body.light-theme .sidebar{
+    background:#ffffff;
+    border-right:1px solid #e5e7eb;
+}
+
+/* ==========================
+   Footer
+========================== */
+
+body.light-theme footer{
+    background:#ffffff;
+}
