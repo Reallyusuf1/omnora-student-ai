@@ -166,13 +166,97 @@ if (avatar && avatarUpload) {
         avatarUpload.click();
     });
 
-    avatarUpload.addEventListener("change", (event) => {
+    /* ==========================================
+   AVATAR UPLOAD
+========================================== */
+
+avatarUpload.addEventListener("change", async (event) => {
 
     const file = event.target.files[0];
 
     if (!file) return;
 
-    avatar.src = URL.createObjectURL(file);
+    try {
+
+        const {
+            data: { session }
+        } = await window.supabaseClient.auth.getSession();
+
+        if (!session) {
+            alert("Please login again.");
+            return;
+        }
+
+        const user = session.user;
+
+        /* ==============================
+           Generate unique filename
+        ============================== */
+
+        const extension =
+            file.name.split(".").pop();
+
+        const fileName =
+            `${user.id}-${Date.now()}.${extension}`;
+
+        /* ==============================
+           Upload to Storage
+        ============================== */
+
+        const { error: uploadError } =
+            await window.supabaseClient.storage
+            .from("avatars")
+            .upload(fileName, file, {
+                cacheControl: "3600",
+                upsert: true
+            });
+
+        if (uploadError)
+            throw uploadError;
+
+        /* ==============================
+           Get Public URL
+        ============================== */
+
+        const {
+            data: publicData
+        } = window.supabaseClient.storage
+            .from("avatars")
+            .getPublicUrl(fileName);
+
+        const avatarUrl =
+            publicData.publicUrl;
+
+        /* ==============================
+           Save URL to profiles table
+        ============================== */
+
+        const { error: profileError } =
+            await window.supabaseClient
+            .from("profiles")
+            .update({
+                avatar_url: avatarUrl
+            })
+            .eq("id", user.id);
+
+        if (profileError)
+            throw profileError;
+
+        /* ==============================
+           Update UI instantly
+        ============================== */
+
+        avatar.src = avatarUrl + "?t=" + Date.now();
+
+        alert("✅ Avatar updated successfully.");
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("❌ Avatar upload failed.\n\n" + error.message);
+
+    }
 
 });
 
