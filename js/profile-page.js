@@ -235,7 +235,7 @@ async function editProfile() {
 
             school_name: school.value,
 
-            class: studentClass.value,
+            class_level: studentClass.value,
 
             admission_number: admission.value
 
