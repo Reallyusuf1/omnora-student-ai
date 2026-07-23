@@ -169,3 +169,16 @@ body.light-theme video,
 body.light-theme canvas{
     filter:none !important;
 }
+/* ==========================================
+   LIGHT THEME - HERO FLOATING CARDS TEXT
+========================================== */
+
+body.light-theme .hero-card h3,
+body.light-theme .hero-card h4{
+    color:#ffffff !important;
+}
+
+body.light-theme .hero-card p,
+body.light-theme .hero-card span{
+    color:#d6deff !important;
+}
