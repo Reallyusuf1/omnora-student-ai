@@ -108,3 +108,64 @@ aside,
    logo
 
 =========================================*/
+
+/* =====================================================
+   LIGHT THEME TEXT COLORS
+===================================================== */
+
+body.light-theme .hero-title,
+body.light-theme .hero-description,
+body.light-theme .hero-badge,
+body.light-theme .stat strong,
+body.light-theme .stat span,
+
+body.light-theme .nav a,
+body.light-theme .footer-brand,
+body.light-theme .footer-desc,
+body.light-theme .footer-links h4,
+body.light-theme .footer-social h4,
+body.light-theme .footer-links a,
+body.light-theme .footer-social a,
+body.light-theme .footer-bottom,
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6,
+body.light-theme p,
+body.light-theme label,
+body.light-theme span:not(.gradient-text),
+body.light-theme li {
+    color: #1f2937 !important;
+}
+
+/* Secondary text */
+
+body.light-theme .hero-description,
+body.light-theme .footer-desc,
+body.light-theme .footer-bottom,
+body.light-theme .footer-links a,
+body.light-theme .footer-social a,
+body.light-theme .stat span {
+    color: #6b7280 !important;
+}
+
+/* Gradient text kada a taba */
+
+body.light-theme .gradient-text,
+body.light-theme .omnora,
+body.light-theme .labs{
+    color: unset !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* Images kada a taba */
+
+body.light-theme img,
+body.light-theme svg,
+body.light-theme video,
+body.light-theme canvas{
+    filter:none !important;
+}
