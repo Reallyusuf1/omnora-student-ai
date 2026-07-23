@@ -142,6 +142,9 @@ fullName.value =
     schoolName.value =
         profile.school_name || "";
 
+    country.value =
+    profile.country || "";
+
     studentClass.value =
     profile.class_level || "";
 
