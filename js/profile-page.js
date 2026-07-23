@@ -103,7 +103,6 @@ console.log("USER:", user);
         "assets/images/default-avatar.png";
 
     const name =
-    profile?.full_name ||
     user.user_metadata.full_name ||
     user.user_metadata.name ||
     "Student";
@@ -122,7 +121,6 @@ console.log("USER:", user);
 
     /* ==========================================
        OPTIONAL LOCAL PROFILE
-       (Za a maye gurbinsa da Supabase DB daga baya)
     ========================================== */
 
     const { data: profile } =
@@ -134,11 +132,17 @@ await window.supabaseClient
 
 if (profile) {
 
+    studentName.textContent =
+    profile.full_name || studentName.textContent;
+
+fullName.value =
+    profile.full_name || "";
+
     schoolName.value =
         profile.school_name || "";
 
     studentClass.value =
-        profile.class || "";
+    profile.class_level || "";
 
     admissionNumber.value =
         profile.admission_number || "";
