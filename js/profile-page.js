@@ -151,6 +151,10 @@ fullName.value =
     admissionNumber.value =
         profile.admission_number || "";
 
+if (profile.avatar_url && avatar) {
+    avatar.src = profile.avatar_url + "?t=" + Date.now();
+}
+
 }
    const editButton =
 document.getElementById("edit-profile-btn");
