@@ -50,7 +50,28 @@ class ThemeEngine {
     }
 
     async saveTheme(theme) {
-        // Za mu cika wannan a Phase 3
+    const {
+        data: { session },
+        error: sessionError
+    } = await supabase.auth.getSession();
+
+    if (sessionError || !session) {
+        return;
+    }
+
+    const { error } = await supabase
+        .from("profiles")
+        .update({
+            theme: theme
+        })
+        .eq("id", session.user.id);
+
+    if (error) {
+        console.error("Failed to save theme:", error);
+        return;
+    }
+
+    this.currentTheme = theme;
     }
 
     async toggleTheme() {
