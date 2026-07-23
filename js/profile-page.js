@@ -91,6 +91,7 @@ console.log("USER:", user);
     const email = document.getElementById("email-address");
 
     const schoolName = document.getElementById("school-name");
+    const country = document.getElementById("country");
     const studentClass = document.getElementById("student-class");
     const admissionNumber = document.getElementById("admission-number");
 
