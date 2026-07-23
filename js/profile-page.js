@@ -178,6 +178,8 @@ if (avatar && avatarUpload) {
 
 }
 
+    });
+
 
 /* ==========================================
    EDIT PROFILE
