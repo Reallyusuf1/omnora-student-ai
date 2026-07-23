@@ -411,10 +411,8 @@ document.getElementById("theme-toggle");
 
 if (themeToggle) {
 
-    themeToggle.addEventListener("change", () => {
-
-        document.body.classList.toggle("dark-mode");
-
-    });
+    themeToggle.addEventListener("change", async () => {
+    await window.themeEngine.toggleTheme();
+});
 
 }
