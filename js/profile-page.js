@@ -158,6 +158,14 @@ document.getElementById("edit-profile-btn");
 if (editButton) {
     editButton.addEventListener("click", editProfile);
 }
+    const avatarUpload =
+document.getElementById("avatar-upload");
+
+if (avatar && avatarUpload) {
+    avatar.addEventListener("click", () => {
+        avatarUpload.click();
+    });
+}
 
 });
 
