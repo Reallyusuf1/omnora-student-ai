@@ -25,14 +25,14 @@ display: block;
 
 .floating-card-1 {
     top: 30px;
-    right: 500;
+    right: 400px;
     left: auto;
 }
 
 .floating-card-2 {
     top: 250px;
-    right: 450;
-    left: 0;
+    right: 400px;
+    left: auto;
 }
 
 .floating-card-3 {
