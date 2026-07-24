@@ -115,7 +115,6 @@ aside,
 
 body.light-theme .hero-title,
 body.light-theme .hero-description,
-body.light-theme .hero-badge,
 body.light-theme .stat strong,
 body.light-theme .stat span,
 
@@ -152,16 +151,7 @@ body.light-theme .stat span {
     color: #6b7280 !important;
 }
 
-/* Gradient text kada a taba */
-
-body.light-theme .gradient-text,
-body.light-theme .omnora,
-body.light-theme .labs{
-    color: unset !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-/* Images kada a taba */
+/* Images */
 
 body.light-theme img,
 body.light-theme svg,
@@ -188,24 +178,33 @@ body.light-theme .hero-card span{
 
 /* Hero Heading */
 
-body.light-theme .hero-title,
-body.light-theme .hero-title span,
-body.light-theme .hero-title .omnora{
+body.light-theme .hero-title{
+    color:#ffffff !important;
+}
+
+body.light-theme .hero-title span:not(.omnora){
     color:#ffffff !important;
 }
 
 /* Gradient text kada a taba */
 
 body.light-theme .gradient-text{
-    color:inherit !important;
-    -webkit-text-fill-color:inherit !important;
-}
+    color:inherit
 
 /* AI Powered Learning badge */
 
-body.light-theme .hero-badge{
-    color:#dbe7ff !important;
-    border-color:rgba(255,255,255,.25) !important;
+body.light-theme .omnora{
+    background:linear-gradient(
+        90deg,
+        #7c3aed 0%,
+        #4f7cff 100%
+    ) !important;
+
+    background-clip:text !important;
+    -webkit-background-clip:text !important;
+
+    color:transparent !important;
+    -webkit-text-fill-color:transparent !important;
 }
 
 /* Hero description */
@@ -236,7 +235,7 @@ body.light-theme .floating-card small{
     color:#d6deff !important;
 }
 
-/* Kada a taba background */
+/* background */
 
 body.light-theme .floating-card{
     background:inherit !important;
